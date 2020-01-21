@@ -1,5 +1,5 @@
 jobs:
-- job: BuildMac
+- job: PrepareMacBuild
 
   pool:
     vmImage: 'macOS-10.14'

@@ -1,5 +1,5 @@
 jobs:
-- job: BuildWindows
+- job: PrepareWindowsBuild
 
 pool:
   vmImage: 'windows-2019'
