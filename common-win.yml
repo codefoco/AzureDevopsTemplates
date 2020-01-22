@@ -1,29 +1,4 @@
-jobs:
-- job: PrepareWindowsBuild
-
-pool:
-  vmImage: 'windows-2019'
-  demands:
-  - msbuild
-  - visualstudio
-  - vstest
-
 steps:
-- checkout: self 
-  submodules: true
-
-- task: UseDotNet@2
-  displayName: 'Install .NET Core 3.1.101'
-  inputs:
-    packageType: sdk
-    version: '3.1.101'
-    installationPath: $(Agent.ToolsDirectory)/dotnet
-
-- task: NuGetToolInstaller@1
-  displayName: 'Use NuGet 5.4.0'
-  inputs:
-    versionSpec: 5.4.0
-
 - powershell: 'Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString(''https://chocolatey.org/install.ps1''))'
   displayName: 'Install Choco'
 

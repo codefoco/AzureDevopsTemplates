@@ -1,14 +1,4 @@
-jobs:
-- job: PrepareLinuxBuild
-
-  pool:
-    vmImage: 'ubuntu-16.04'
-    demands: msbuild
-
   steps:
-  - checkout: self 
-    submodules: true
-
   - task: UseDotNet@2
     displayName: 'Install .NET Core 3.1.101'
     inputs:
@@ -20,3 +10,4 @@ jobs:
     displayName: 'Use NuGet 5.4.0'
     inputs:
       versionSpec: 5.4.0
+
