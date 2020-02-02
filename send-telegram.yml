@@ -7,7 +7,7 @@ steps:
     taskStatus: false
     message: |
             ⚠️ <b>Warning!</b>  <a href="$(Build.Repository.Uri)">$(Build.DefinitionName)</a> (<code>$(Build.SourceBranchName)</code>)
-            <br> Job: <i>$(Agent.JobName)</i> - <u>$(Agent.OS) $(Agent.OSArchitecture)</u>
+            Job: <i>$(Agent.JobName)</i> - <u>$(Agent.OS) $(Agent.OSArchitecture)</u>
             <pre>$(Build.SourceVersion)</pre>
             $(Build.SourceVersionMessage) by $(Build.QueuedBy)
 
@@ -20,7 +20,7 @@ steps:
     buildQueuedBy: false
     message: |
             ❌ <b>Fail!</b>  <a href="$(Build.Repository.Uri)">$(Build.DefinitionName)</a> (<code>$(Build.SourceBranchName)</code>)
-            <br> Job: <i>$(Agent.JobName)</i> - <u>$(Agent.OS) $(Agent.OSArchitecture)</u>
+            Job: <i>$(Agent.JobName)</i> - <u>$(Agent.OS) $(Agent.OSArchitecture)</u>
             <pre>$(Build.SourceVersion)</pre>
             $(Build.SourceVersionMessage) by $(Build.QueuedBy)
 
@@ -33,7 +33,7 @@ steps:
     buildQueuedBy: false
     message: |
             🛑 <b>Canceled!</b>  <a href="$(Build.Repository.Uri)">$(Build.DefinitionName)</a> (<code>$(Build.SourceBranchName)</code>)
-            <br> Job: <i>$(Agent.JobName)</i> - <u>$(Agent.OS) $(Agent.OSArchitecture)</u>
+            Job: <i>$(Agent.JobName)</i> - <u>$(Agent.OS) $(Agent.OSArchitecture)</u>
             <pre>$(Build.SourceVersion)</pre>
             $(Build.SourceVersionMessage) by $(Build.QueuedBy)
             
@@ -46,6 +46,6 @@ steps:
     buildQueuedBy: false
     message: |
             ✅ <b>Success!</b>  <a href="$(Build.Repository.Uri)">$(Build.DefinitionName)</a> (<code>$(Build.SourceBranchName)</code>)
-            <br> Job: <i>$(Agent.JobName)</i> - <u>$(Agent.OS) $(Agent.OSArchitecture)</u>
+            Job: <i>$(Agent.JobName)</i> - <u>$(Agent.OS) $(Agent.OSArchitecture)</u>
             <pre>$(Build.SourceVersion)</pre>
             $(Build.SourceVersionMessage) by $(Build.QueuedBy)
