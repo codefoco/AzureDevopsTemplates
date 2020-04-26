@@ -26,11 +26,8 @@
       provisioningProfileLocation: 'secureFiles'
       provProfileSecureFile: 'ca446ca9-779f-4e69-97db-5b9820baf0ae.mobileprovision'
 
-  - script: 'brew install gitversion'
+  - script: 'brew doctor; brew cleanup; brew install gitversion --ignore-dependencies'
     displayName: 'Install GitVersion'
-    
-  - script: 'brew uninstall mono'
-    displayName: 'Uninstall Mono, since we are installing a newer Mono after this'
     
   # Install Mono
   - task: CmdLine@2
