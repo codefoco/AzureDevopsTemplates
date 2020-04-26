@@ -26,6 +26,12 @@
       provisioningProfileLocation: 'secureFiles'
       provProfileSecureFile: 'ca446ca9-779f-4e69-97db-5b9820baf0ae.mobileprovision'
 
+  - script: 'brew install gitversion'
+    displayName: 'Install GitVersion'
+    
+  - script: 'brew uninstall mono'
+    displayName: 'Uninstall Mono, since we are installing a newer Mono after this'
+    
   # Install Mono
   - task: CmdLine@2
     displayName: 'Provisioning Mono SDK'
@@ -57,8 +63,6 @@
               curl -O https://download.visualstudio.microsoft.com/download/pr/8f94ca38-039a-4c9f-a51a-a6cb33c76a8c/aa46188c5f7a2e0c6f2d4bd4dc261604/xamarin.android-10.2.0.100.pkg;
               sudo installer -pkg ~/xamarin.android-10.2.0.100.pkg -target /'
 
-  - script: 'brew install gitversion --ignore-dependencies'
-    displayName: 'Install GitVersion'
 
   # Print the current version of Xamarin.iOS
   - task: CmdLine@2
