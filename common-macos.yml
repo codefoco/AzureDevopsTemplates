@@ -31,8 +31,8 @@
     displayName: 'Provisioning Mono SDK'
     inputs:
       script: 'cd ~;
-              curl -O https://download.visualstudio.microsoft.com/download/pr/c18ac127-f82f-4d9d-ab1f-2b730362dfaa/0ece4868d10aa6cb73e7ec537210c594/monoframework-mdk-6.10.0.106.macos10.xamarin.universal.pkg;
-              sudo installer -pkg ~/monoframework-mdk-6.10.0.106.macos10.xamarin.universal.pkg -target /'
+              curl -O https://download.visualstudio.microsoft.com/download/pr/b089be2f-932a-40ab-904b-b626f9e6427b/181543551dd690821723f9c2498fba00/monoframework-mdk-6.12.0.89.macos10.xamarin.universal.pkg;
+              sudo installer -pkg ~/monoframework-mdk-6.12.0.89.macos10.xamarin.universal.pkg -target /'
 
   # Azure DevOps hosted pool is still using an old version of Xamarin.iOS, 
   # so we will upgrade
@@ -40,22 +40,22 @@
     displayName: 'Provisioning Xamarin.iOS'
     inputs:
       script: 'cd ~;
-              curl -O https://download.visualstudio.microsoft.com/download/pr/f42979a0-52fb-454d-bc96-0916cf4450f9/f166874ceb133d80f48b38e4e7bdc2ee/xamarin.ios-13.18.3.2.pkg;
-              sudo installer -pkg ~/xamarin.ios-13.18.3.2.pkg -target /'
+              curl -O https://download.visualstudio.microsoft.com/download/pr/b089be2f-932a-40ab-904b-b626f9e6427b/186357848bab70642927eaf17410a051/xamarin.ios-13.20.2.2.pkg;
+              sudo installer -pkg ~/xamarin.ios-13.20.2.2.pkg -target /'
 
   - task: CmdLine@2
     displayName: 'Provisioning Xamarin.Mac'
     inputs:
       script: 'cd ~;
-              curl -O https://download.visualstudio.microsoft.com/download/pr/f42979a0-52fb-454d-bc96-0916cf4450f9/40dd78214c7790f18517b19d914d0bee/xamarin.mac-6.18.3.2.pkg;
-              sudo installer -pkg ~/xamarin.mac-6.18.3.2.pkg -target /'
+              curl -O https://download.visualstudio.microsoft.com/download/pr/b089be2f-932a-40ab-904b-b626f9e6427b/6aad9f3ea4fbfb92ce267e0f60b34797/xamarin.mac-6.20.2.2.pkg;
+              sudo installer -pkg ~/xamarin.mac-6.20.2.2.pkg -target /'
 
   - task: CmdLine@2
     displayName: 'Provisioning Xamarin.Android'
     inputs:
       script: 'cd ~;
-              curl -O https://download.visualstudio.microsoft.com/download/pr/68ffa29a-6a5b-41f7-af7b-506ddcf4bbfc/4f246332a0ae3a6dede762eefe988ccd/xamarin.android-10.3.1.4.pkg;
-              sudo installer -pkg ~/xamarin.android-10.3.1.4.pkg -target /'
+              curl -O https://https://download.visualstudio.microsoft.com/download/pr/b089be2f-932a-40ab-904b-b626f9e6427b/a2de5c0ea41003b611c064f0847d7b14/xamarin.android-11.0.0.3.pkg;
+              sudo installer -pkg ~/xamarin.android-11.0.0.3.pkg -target /'
 
   # Install GitVersion
   - task: CmdLine@2
