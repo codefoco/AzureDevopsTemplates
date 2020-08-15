@@ -1,9 +1,9 @@
   steps:
   - task: UseDotNet@2
-    displayName: 'Install .NET Core 3.1.401'
+    displayName: 'Install .NET Core 3.1.302'
     inputs:
       packageType: sdk
-      version: '3.1.401'
+      version: '3.1.302'
       installationPath: $(Agent.ToolsDirectory)/dotnet
 
   - task: NuGetToolInstaller@1
