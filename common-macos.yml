@@ -40,8 +40,8 @@
     displayName: 'Provisioning Xamarin.iOS'
     inputs:
       script: 'cd ~;
-              curl -O https://download.visualstudio.microsoft.com/download/pr/c939bb72-556b-4e8a-a9b4-0f90e9b5e336/f906a6ce183fb73f1bcd945ac32f984b/xamarin.ios-14.0.0.0.pkg;
-              sudo installer -pkg ~/xamarin.ios-14.0.0.0.pkg -target /'
+              curl -O https://download.visualstudio.microsoft.com/download/pr/7b60a920-c8b1-4798-b660-ae1a7294eb6d/bbdc2a9c6705520fd0a6d04f71e5ed3e/xamarin.ios-14.2.0.12.pkg;
+              sudo installer -pkg ~/xamarin.ios-14.2.0.12.pkg -target /'
 
   - task: CmdLine@2
     displayName: 'Provisioning Xamarin.Mac'
@@ -77,7 +77,7 @@
     displayName: 'Show current xcode-select path'
   - script: 'rm /Applications/Xcode.app'
     displayName: 'Remove Xcode.app symlink synce Xamarin.Mac/iOS'
-  - script: 'mv /Applications/Xcode_12.app /Applications/Xcode.app'
+  - script: 'mv /Applications/Xcode_12.1.app /Applications/Xcode.app'
     displayName: 'Move Xcode.app 12 to /Applications/Xcode.app'
   - script: 'sudo xcode-select -s /Applications/Xcode.app/Contents/Developer'
     displayName: 'Ensure xcode-select point to /Applications/Xcode.app'
