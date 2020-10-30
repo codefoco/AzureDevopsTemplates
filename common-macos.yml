@@ -2,21 +2,34 @@
   
   - script: '/usr/bin/xcodebuild -version'
     displayName: 'Show Xcode Version' 
+    
   - script: 'xcode-select -p'
     displayName: 'Show current xcode-select path'
+    
   - script: 'sudo rm -rf /Applications/Xcode.app'
     displayName: 'Remove Xcode_12.app symlink synce Xamarin.Mac/iOS'
-  - script: 'sudo rm -rf /Applications/Xcode_12.app'
-    displayName: 'Remove Xcode.app symlink synce Xamarin.Mac/iOS'
+    
+  - script: 'sudo mv /Applications/Xcode_12.app /Applications/Old_Xcode_12.app'
+    displayName: 'Rename Xcode_12.app to avoid someone using the old Xcode'
+    
   - script: 'sudo mv /Applications/Xcode_12.1.app /Applications/Xcode.app'
     displayName: 'Move Xcode.app 12 to /Applications/Xcode.app'
+    
   - script: 'sudo xcode-select -s /Applications/Xcode.app/Contents/Developer'
     displayName: 'Ensure xcode-select point to /Applications/Xcode.app'
+    
   - script: '/usr/bin/xcodebuild -version'
     displayName: 'Show Xcode Version'
+    
   - script: 'xcode-select -p'
     displayName: 'Show current xcode-select path'
-
+    
+  - script: >- '/usr/libexec/PlistBuddy -c "Set :AppleSdkRoot /Applications/Xcode.app" ~/Library/Preferences/Xamarin/Settings.plist'
+    displayName: 'Set Preferences/Xamarin/Settings'
+  
+  - script: '/usr/libexec/PlistBuddy -x -c ~/Library/Preferences/Xamarin/Settings.plist'
+    displayName: 'Show Preferences/Xamarin/Settings'
+    
   - task: InstallAppleCertificate@2
     inputs:
       certSecureFile: 'Dev.p12'
