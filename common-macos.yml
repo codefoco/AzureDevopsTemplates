@@ -24,7 +24,7 @@
   - script: 'xcode-select -p'
     displayName: 'Show current xcode-select path'
     
-  - script: 'cat /usr/libexec/PlistBuddy'
+  - script: 'cat ~/Library/Preferences/Xamarin/Settings.plist'
     displayName: 'cat ~/Library/Preferences/Xamarin/Settings.plist'
     
   - script: >- 
