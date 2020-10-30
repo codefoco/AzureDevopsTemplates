@@ -24,11 +24,10 @@
   - script: 'xcode-select -p'
     displayName: 'Show current xcode-select path'
    
-  - script: 'cat /Users/runner/Library/Preferences/Xamarin/Settings.plist'
-    displayName: 'cat /Users/runner/Library/Preferences/Xamarin/Settings.plist'
+  - script: 'rm /Users/runner/Library/Preferences/Xamarin/Settings.plist'
+    displayName: 'rm /Users/runner/Library/Preferences/Xamarin/Settings.plist'
     
-  - script: >- 
-            '/usr/libexec/PlistBuddy -c "Set :AppleSdkRoot /Applications/Xcode.app" /Users/runner/Library/Preferences/Xamarin/Settings.plist'
+  - script: '/usr/libexec/PlistBuddy -c "Set :AppleSdkRoot /Applications/Xcode.app" /Users/runner/Library/Preferences/Xamarin/Settings.plist'
     displayName: 'Set Preferences/Xamarin/Settings'
   
   - script: 'cat /Users/runner/Library/Preferences/Xamarin/Settings.plist'
