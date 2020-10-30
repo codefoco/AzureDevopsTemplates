@@ -4,14 +4,18 @@
     displayName: 'Show Xcode Version' 
   - script: 'xcode-select -p'
     displayName: 'Show current xcode-select path'
-  - script: 'rm /Applications/Xcode.app'
+  - script: 'sudo rm -rf /Applications/Xcode.app'
+    displayName: 'Remove Xcode_12.app symlink synce Xamarin.Mac/iOS'
+  - script: 'sudo rm -rf /Applications/Xcode_12.app'
     displayName: 'Remove Xcode.app symlink synce Xamarin.Mac/iOS'
-  - script: 'mv /Applications/Xcode_12.1.app /Applications/Xcode.app'
+  - script: 'sudo mv /Applications/Xcode_12.1.app /Applications/Xcode.app'
     displayName: 'Move Xcode.app 12 to /Applications/Xcode.app'
   - script: 'sudo xcode-select -s /Applications/Xcode.app/Contents/Developer'
     displayName: 'Ensure xcode-select point to /Applications/Xcode.app'
   - script: '/usr/bin/xcodebuild -version'
     displayName: 'Show Xcode Version'
+  - script: 'xcode-select -p'
+    displayName: 'Show current xcode-select path'
 
   - task: InstallAppleCertificate@2
     inputs:
