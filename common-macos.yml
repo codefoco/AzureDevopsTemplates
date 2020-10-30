@@ -23,9 +23,12 @@
     
   - script: 'xcode-select -p'
     displayName: 'Show current xcode-select path'
-    
-  - script: 'cat ~/Library/Preferences/Xamarin/Settings.plist'
-    displayName: 'cat ~/Library/Preferences/Xamarin/Settings.plist'
+   
+  - script: 'ls -l /Users/runner/Library/Preferences/'
+    displayName: 'ls -l /Users/runner/Library/Preferences/'
+  
+  - script: 'cat /Users/runner/Library/Preferences/Xamarin/Settings.plist'
+    displayName: 'cat /Users/runner/Library/Preferences/Xamarin/Settings.plist'
     
   - script: >- 
             '/usr/libexec/PlistBuddy -c "Set :AppleSdkRoot /Applications/Xcode.app" ~/Library/Preferences/Xamarin/Settings.plist'
