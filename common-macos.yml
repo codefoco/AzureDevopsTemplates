@@ -12,9 +12,9 @@
   - script: 'sudo mv /Applications/Xcode_12.app /Applications/Old_Xcode_12.app'
     displayName: 'Rename Xcode_12.app to avoid someone using the old Xcode'
     
-    ## Update this section to newer versions of Xcode (e.g 12.2)
-  - script: 'sudo mv /Applications/Xcode_12.1.app /Applications/Xcode.app'
-    displayName: 'Move Xcode.app 12.1 to /Applications/Xcode.app'
+    ## Update this section to newer versions of Xcode (e.g 12.3)
+  - script: 'sudo mv /Applications/Xcode_12.2.app /Applications/Xcode.app'
+    displayName: 'Move Xcode.app 12.2 to /Applications/Xcode.app'
     
   - script: 'sudo xcode-select -s /Applications/Xcode.app/Contents/Developer'
     displayName: 'Ensure xcode-select point to /Applications/Xcode.app'
@@ -75,22 +75,22 @@
     displayName: 'Provisioning Xamarin.iOS'
     inputs:
       script: 'cd ~;
-              curl -O https://download.visualstudio.microsoft.com/download/pr/7b60a920-c8b1-4798-b660-ae1a7294eb6d/bbdc2a9c6705520fd0a6d04f71e5ed3e/xamarin.ios-14.2.0.12.pkg;
-              sudo installer -pkg ~/xamarin.ios-14.2.0.12.pkg -target /'
+              curl -O https://download.visualstudio.microsoft.com/download/pr/68caeaf6-39d4-4b9b-85e3-d20c0a123d1e/4eea211b090c0fbef23b565939aad625/xamarin.ios-14.4.1.3.pkg;
+              sudo installer -pkg ~/xamarin.ios-14.4.1.3.pkg -target /'
 
   - task: CmdLine@2
     displayName: 'Provisioning Xamarin.Mac'
     inputs:
       script: 'cd ~;
-              curl -O https://download.visualstudio.microsoft.com/download/pr/b089be2f-932a-40ab-904b-b626f9e6427b/6aad9f3ea4fbfb92ce267e0f60b34797/xamarin.mac-6.20.2.2.pkg;
-              sudo installer -pkg ~/xamarin.mac-6.20.2.2.pkg -target /'
+              curl -O https://https://download.visualstudio.microsoft.com/download/pr/68caeaf6-39d4-4b9b-85e3-d20c0a123d1e/3fd74515e676be1f528bd4bec104ca6c/xamarin.mac-6.22.1.26.pkg;
+              sudo installer -pkg ~/xamarin.mac-6.22.1.26.pkg -target /'
 
   - task: CmdLine@2
     displayName: 'Provisioning Xamarin.Android'
     inputs:
       script: 'cd ~;
-              curl -O https://download.visualstudio.microsoft.com/download/pr/ea697e1c-ccb6-45cb-8425-952fb876d967/a2d2c3476403c2c238a77914cd8e8f7b/xamarin.android-11.0.2.0.pkg;
-              sudo installer -pkg ~/xamarin.android-11.0.2.0.pkg -target /'
+              curl -O https://download.visualstudio.microsoft.com/download/pr/68caeaf6-39d4-4b9b-85e3-d20c0a123d1e/d95b63683d4250c2c15e9b16c2453763/xamarin.android-11.1.0.17.pkg;
+              sudo installer -pkg ~/xamarin.android-11.1.0.17.pkg -target /'
 
   # Install GitVersion
   - task: CmdLine@2
