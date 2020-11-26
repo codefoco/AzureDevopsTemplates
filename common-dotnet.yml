@@ -7,7 +7,7 @@
       installationPath: $(Agent.ToolsDirectory)/dotnet
 
   - task: NuGetToolInstaller@1
-    displayName: 'Use NuGet 5.7.0'
+    displayName: 'Use NuGet 5.8.0'
     inputs:
-      versionSpec: 5.7.0
+      versionSpec: 5.8.0
 
