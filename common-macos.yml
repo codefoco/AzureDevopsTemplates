@@ -66,8 +66,8 @@
     displayName: 'Provisioning Mono SDK'
     inputs:
       script: 'cd ~;
-              curl -O https://download.visualstudio.microsoft.com/download/pr/f26cf521-1940-40d2-9956-862264cd30f8/e5b4eb107244cb8633e09876e9d8db9e/monoframework-mdk-6.12.0.93.macos10.xamarin.universal.pkg;
-              sudo installer -pkg ~/monoframework-mdk-6.12.0.93.macos10.xamarin.universal.pkg -target /'
+              curl -O https://download.visualstudio.microsoft.com/download/pr/d3525893-15cb-48ce-b5ad-2626f6bc8167/8211e69784055a00f444d85e079f444e/monoframework-mdk-6.12.0.107.macos10.xamarin.universal.pkg;
+              sudo installer -pkg ~/monoframework-mdk-6.12.0.107.macos10.xamarin.universal.pkg -target /'
 
   # Azure DevOps hosted pool is still using an old version of Xamarin.iOS, 
   # so we will upgrade
