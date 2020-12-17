@@ -12,9 +12,9 @@
   - script: 'sudo mv /Applications/Xcode_12.app /Applications/Old_Xcode_12.app'
     displayName: 'Rename Xcode_12.app to avoid someone using the old Xcode'
     
-    ## Update this section to newer versions of Xcode (e.g 12.3)
-  - script: 'sudo mv /Applications/Xcode_12.2.app /Applications/Xcode.app'
-    displayName: 'Move Xcode.app 12.2 to /Applications/Xcode.app'
+    ## Update this section to newer versions of Xcode (e.g 12.4)
+  - script: 'sudo mv /Applications/Xcode_12.3.app /Applications/Xcode.app'
+    displayName: 'Move Xcode.app 12.3 to /Applications/Xcode.app'
     
   - script: 'sudo xcode-select -s /Applications/Xcode.app/Contents/Developer'
     displayName: 'Ensure xcode-select point to /Applications/Xcode.app'
@@ -66,8 +66,8 @@
     displayName: 'Provisioning Mono SDK'
     inputs:
       script: 'cd ~;
-              curl -O https://download.visualstudio.microsoft.com/download/pr/d3525893-15cb-48ce-b5ad-2626f6bc8167/8211e69784055a00f444d85e079f444e/monoframework-mdk-6.12.0.107.macos10.xamarin.universal.pkg;
-              sudo installer -pkg ~/monoframework-mdk-6.12.0.107.macos10.xamarin.universal.pkg -target /'
+              curl -O https://download.visualstudio.microsoft.com/download/pr/98cec39a-ed8a-4d97-971d-48beb00aafb3/e3b4355c6b24db604c655ccdb3daf083/monoframework-mdk-6.12.0.113.macos10.xamarin.universal.pkg;
+              sudo installer -pkg ~/monoframework-mdk-6.12.0.113.macos10.xamarin.universal.pkg -target /'
 
   # Azure DevOps hosted pool is still using an old version of Xamarin.iOS, 
   # so we will upgrade
@@ -75,15 +75,15 @@
     displayName: 'Provisioning Xamarin.iOS'
     inputs:
       script: 'cd ~;
-              curl -O https://download.visualstudio.microsoft.com/download/pr/2d952143-6407-42dc-a589-f62cebff0634/645a2544f66c775fb3b66f8998499e98/xamarin.ios-14.6.0.15.pkg;
-              sudo installer -pkg ~/xamarin.ios-14.6.0.15.pkg -target /'
+              curl -O https://xamarin-storage.azureedge.net/dynamic/VSMRelease8.8/4569c276-1397-4adb-9485-82a7696df22e/xamarin.ios-14.8.0.3.pkg;
+              sudo installer -pkg ~/xamarin.ios-14.8.0.3.pkg -target /'
 
   - task: CmdLine@2
     displayName: 'Provisioning Xamarin.Mac'
     inputs:
       script: 'cd ~;
-              curl -O https://download.visualstudio.microsoft.com/download/pr/2d952143-6407-42dc-a589-f62cebff0634/6a061cf93f0dea18b27f65d697897b9e/xamarin.mac-7.0.0.15.pkg;
-              sudo installer -pkg ~/xamarin.mac-7.0.0.15.pkg -target /'
+              curl -O https://xamarin-storage.azureedge.net/dynamic/VSMRelease8.8/0ab364ff-c0e9-43a8-8747-3afb02dc7731/xamarin.mac-7.2.0.3.pkg;
+              sudo installer -pkg ~/xamarin.mac-7.2.0.3.pkg -target /'
 
   - task: CmdLine@2
     displayName: 'Provisioning Xamarin.Android'
