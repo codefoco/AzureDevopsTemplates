@@ -75,30 +75,30 @@
     displayName: 'Provisioning Xamarin.iOS'
     inputs:
       script: 'cd ~;
-              curl -O https://xamarin-storage.azureedge.net/dynamic/VSMRelease8.8/4569c276-1397-4adb-9485-82a7696df22e/xamarin.ios-14.8.0.3.pkg;
+              curl -O https://download.visualstudio.microsoft.com/download/pr/573004d1-39a9-4cf7-87b0-e0eea351cd00/4ab0eae8f20e3d59c08393aa77c8c123/xamarin.ios-14.8.0.3.pkg;
               sudo installer -pkg ~/xamarin.ios-14.8.0.3.pkg -target /'
 
   - task: CmdLine@2
     displayName: 'Provisioning Xamarin.Mac'
     inputs:
       script: 'cd ~;
-              curl -O https://xamarin-storage.azureedge.net/dynamic/VSMRelease8.8/0ab364ff-c0e9-43a8-8747-3afb02dc7731/xamarin.mac-7.2.0.3.pkg;
+              curl -O https://download.visualstudio.microsoft.com/download/pr/573004d1-39a9-4cf7-87b0-e0eea351cd00/b9b9a8e129dafd7cc8dc23a6d6b09185/xamarin.mac-7.2.0.3.pkg;
               sudo installer -pkg ~/xamarin.mac-7.2.0.3.pkg -target /'
 
   - task: CmdLine@2
     displayName: 'Provisioning Xamarin.Android'
     inputs:
       script: 'cd ~;
-              curl -O https://download.visualstudio.microsoft.com/download/pr/68caeaf6-39d4-4b9b-85e3-d20c0a123d1e/d95b63683d4250c2c15e9b16c2453763/xamarin.android-11.1.0.17.pkg;
+              curl -O https://download.visualstudio.microsoft.com/download/pr/573004d1-39a9-4cf7-87b0-e0eea351cd00/97344f8a365978fce27bffb3ec30cb92/xamarin.android-11.1.0.26.pkg;
               sudo installer -pkg ~/xamarin.android-11.1.0.17.pkg -target /'
 
   # Install GitVersion
   - task: CmdLine@2
-    displayName: 'Install GitVersion 5.2.4'
+    displayName: 'Install GitVersion 5.6.3'
     inputs:
       script: 'cd ~;
-              curl -OL https://github.com/GitTools/GitVersion/releases/download/5.2.4/gitversion-osx-5.2.4.tar.gz;
-              tar -xvf gitversion-osx-5.2.4.tar.gz;
+              curl -OL https://github.com/GitTools/GitVersion/releases/download/5.6.3/gitversion-osx-x64-5.6.3.tar.gz;
+              tar -xvf gitversion-osx-x64-5.6.3.tar.gz;
               mv gitversion /Applications/;
               sudo ln -s /Applications/gitversion /usr/local/bin/gitversion'
 
