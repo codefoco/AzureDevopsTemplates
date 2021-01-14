@@ -90,7 +90,7 @@
     inputs:
       script: 'cd ~;
               curl -O https://download.visualstudio.microsoft.com/download/pr/573004d1-39a9-4cf7-87b0-e0eea351cd00/97344f8a365978fce27bffb3ec30cb92/xamarin.android-11.1.0.26.pkg;
-              sudo installer -pkg ~/xamarin.android-11.1.0.17.pkg -target /'
+              sudo installer -pkg ~/xamarin.android-11.1.0.26.pkg -target /'
 
   # Install GitVersion
   - task: CmdLine@2
