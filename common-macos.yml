@@ -94,7 +94,7 @@
 
   # Install GitVersion
   - task: CmdLine@2
-    displayName: 'Install GitVersion 5.2.4'
+    displayName: 'Install GitVersion 5.6.3'
     inputs:
       script: 'cd ~;
               mkdir gitversion;
