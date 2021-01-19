@@ -97,10 +97,11 @@
     displayName: 'Install GitVersion 5.2.4'
     inputs:
       script: 'cd ~;
-              curl -OL https://github.com/GitTools/GitVersion/releases/download/5.2.4/gitversion-osx-5.2.4.tar.gz;
-              tar -xvf gitversion-osx-5.2.4.tar.gz;
-              mv gitversion /Applications/;
-              sudo ln -s /Applications/gitversion /usr/local/bin/gitversion'
+              mkdir gitversion;
+              cd ~/gitversion;
+              curl -OL https://github.com/GitTools/GitVersion/releases/download/5.6.3/gitversion-osx-x64-5.6.3.tar.gz;
+              tar -xvf gitversion-osx-x64-5.6.3.tar.gz;
+              sudo ln -s ~/gitversion/gitversion /usr/local/bin/gitversion'
 
   # Print the current version of Xamarin.iOS
   - task: CmdLine@2
