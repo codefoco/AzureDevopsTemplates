@@ -75,26 +75,26 @@
     displayName: 'Provisioning Xamarin.iOS'
     inputs:
       script: 'cd ~;
-              curl -O https://download.visualstudio.microsoft.com/download/pr/5cbc9033-e1da-4b8b-91ea-503356b2a52a/88941ab25ab54cb9f26df34d1f07f01e/xamarin.ios-14.10.0.4.pkg;
-              sudo installer -pkg ~/xamarin.ios-14.10.0.4.pkg -target /'
+              curl -O https://download.visualstudio.microsoft.com/download/pr/03bd1f2d-5b2a-4b65-8a7b-91da84bd241c/711a9ef9243e5765ed38b2312da39724/xamarin.ios-14.14.2.5.pkg;
+              sudo installer -pkg ~/xamarin.ios-14.14.2.5.pkg -target /'
 
   - task: CmdLine@2
     displayName: 'Provisioning Xamarin.Mac'
     inputs:
       script: 'cd ~;
-              curl -O https://download.visualstudio.microsoft.com/download/pr/65083286-ba60-4d43-a5bc-d8243c1823ea/acb7614cda0884db9ea09812c99e679b/xamarin.mac-7.4.0.10.pkg;
-              sudo installer -pkg ~/xamarin.mac-7.4.0.10.pkg -target /'
+              curl -O https://download.visualstudio.microsoft.com/download/pr/03bd1f2d-5b2a-4b65-8a7b-91da84bd241c/ed062e57143e80070fee1366105a30a6/xamarin.mac-7.8.2.5.pkg;
+              sudo installer -pkg ~/xamarin.mac-7.8.2.5.pkg -target /'
 
   - task: CmdLine@2
     displayName: 'Provisioning Xamarin.Android'
     inputs:
       script: 'cd ~;
-              curl -O https://download.visualstudio.microsoft.com/download/pr/573004d1-39a9-4cf7-87b0-e0eea351cd00/97344f8a365978fce27bffb3ec30cb92/xamarin.android-11.1.0.26.pkg;
-              sudo installer -pkg ~/xamarin.android-11.1.0.26.pkg -target /'
+              curl -O https://download.visualstudio.microsoft.com/download/pr/03bd1f2d-5b2a-4b65-8a7b-91da84bd241c/f19d5542887a2c88249b6403958f3718/xamarin.android-11.2.0.0.pkg;
+              sudo installer -pkg ~/xamarin.android-11.2.0.0.pkg -target /'
 
   # Install GitVersion
   - task: CmdLine@2
-    displayName: 'Install GitVersion 5.6.3'
+    displayName: 'Install GitVersion 5.6.6'
     inputs:
       script: 'cd ~;
               mkdir gitversion;
