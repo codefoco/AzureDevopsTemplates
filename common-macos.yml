@@ -66,8 +66,8 @@
     displayName: 'Provisioning Mono SDK'
     inputs:
       script: 'cd ~;
-              curl -O https://download.visualstudio.microsoft.com/download/pr/62fd9506-c93d-4eb5-b60a-922efb29985b/1510061fa054984214047d62f5747f09/monoframework-mdk-6.12.0.122.macos10.xamarin.universal.pkg;
-              sudo installer -pkg ~/monoframework-mdk-6.12.0.122.macos10.xamarin.universal.pkg -target /'
+              curl -O https://download.visualstudio.microsoft.com/download/pr/2516b6e5-6965-4f5b-af68-d1959a446e7a/443346a56436b5e2682b7c5b5b25e990/monoframework-mdk-6.12.0.125.macos10.xamarin.universal.pkg;
+              sudo installer -pkg ~/monoframework-mdk-6.12.0.125.macos10.xamarin.universal.pkg -target /'
 
   # Azure DevOps hosted pool is still using an old version of Xamarin.iOS, 
   # so we will upgrade
@@ -89,8 +89,8 @@
     displayName: 'Provisioning Xamarin.Android'
     inputs:
       script: 'cd ~;
-              curl -O https://download.visualstudio.microsoft.com/download/pr/6805727a-28d0-434c-8d77-7bd2cf15089d/fc63ed6c252f947c2b3ddc0a3ae01722/xamarin.android-11.2.0.21.pkg;
-              sudo installer -pkg ~/xamarin.android-11.2.0.21.pkg -target /'
+              curl -O https://download.visualstudio.microsoft.com/download/pr/2516b6e5-6965-4f5b-af68-d1959a446e7a/ebb9387736cfe9052fc77f23f6bebbf8/xamarin.android-11.2.2.1.pkg;
+              sudo installer -pkg ~/xamarin.android-11.2.2.1.pkg -target /'
 
   # Install GitVersion
   - task: CmdLine@2
