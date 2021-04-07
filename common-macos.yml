@@ -49,17 +49,17 @@
   - task: InstallAppleProvisioningProfile@1
     inputs:
       provisioningProfileLocation: 'secureFiles'
-      provProfileSecureFile: '0d6fe3df-fb0c-48eb-af91-9321c09913cd.mobileprovision'
+      provProfileSecureFile: '3f17d20d-82dd-4ca2-ad90-661e1c8564ca.mobileprovision'
 
   - task: InstallAppleProvisioningProfile@1
     inputs:
       provisioningProfileLocation: 'secureFiles'
-      provProfileSecureFile: '8a51b462-c8e1-4cc7-bc2e-6f68ba6631b7.mobileprovision'
+      provProfileSecureFile: '62ed4162-77d9-4931-8a97-f02218d4f204.mobileprovision'
 
   - task: InstallAppleProvisioningProfile@1
     inputs:
       provisioningProfileLocation: 'secureFiles'
-      provProfileSecureFile: 'ca446ca9-779f-4e69-97db-5b9820baf0ae.mobileprovision'
+      provProfileSecureFile: 'b424442b-e8e9-4ee8-b9bd-d11a86ec8089.mobileprovision'
 
   # Install Mono
   - task: CmdLine@2
