@@ -93,15 +93,11 @@
               sudo installer -pkg ~/xamarin.android-11.2.2.1.pkg -target /'
 
   # Install GitVersion
-  - task: CmdLine@2
-    displayName: 'Install GitVersion 5.6.6'
-    inputs:
-      script: 'cd ~;
-              mkdir gitversion;
-              cd ~/gitversion;
-              curl -OL https://github.com/GitTools/GitVersion/releases/download/5.6.3/gitversion-osx-x64-5.6.6.tar.gz;
-              tar -xvf gitversion-osx-x64-5.6.6.tar.gz;
-              sudo ln -s ~/gitversion/gitversion /usr/local/bin/gitversion'
+  - script: curl -OL https://github.com/GitTools/GitVersion/releases/download/5.6.8/gitversion-osx-x64-5.6.8.tar.gz &&
+            tar -xvf gitversion-osx-x64-5.6.8.tar.gz &&
+            mv gitversion /usr/local/bin &&
+            mv *.dylib /usr/local/bin
+    displayName: 'Install GitVersion 5.8.8'
 
   # Print the current version of Xamarin.iOS
   - task: CmdLine@2
