@@ -66,8 +66,8 @@
     displayName: 'Provisioning Mono SDK'
     inputs:
       script: 'cd ~;
-              curl -O https://xamjenkinsartifact.azureedge.net/build-package-osx-mono/2020-02/147/51d876a041efde9569b94d29743466ec6841109e/MonoFramework-MDK-6.12.0.140.macos10.xamarin.universal.pkg;
-              sudo installer -pkg ~/MonoFramework-MDK-6.12.0.140.macos10.xamarin.universal.pkg -target /'
+              curl -O https://download.visualstudio.microsoft.com/download/pr/414d1675-ca0b-4b5b-8a4e-26b693883581/a8438abad21d48b90d9e6b89a8f285b3/monoframework-mdk-6.12.0.140.macos10.xamarin.universal.pkg;
+              sudo installer -pkg ~/monoframework-mdk-6.12.0.140.macos10.xamarin.universal.pkg -target /'
 
   # Azure DevOps hosted pool is still using an old version of Xamarin.iOS, 
   # so we will upgrade
@@ -89,7 +89,7 @@
     displayName: 'Provisioning Xamarin.Android'
     inputs:
       script: 'cd ~;
-              curl -O https://dl.internalx.com/vsts-devdiv/Xamarin.Android/public/4711737/d16-10/22fc2b3007f1c196997b929182057cb2c4cc73f2/xamarin.android-11.3.0.1.pkg;
+              curl -O https://download.visualstudio.microsoft.com/download/pr/414d1675-ca0b-4b5b-8a4e-26b693883581/152d34244a330744a035175cbc8b0d04/xamarin.android-11.3.0.1.pkg;
               sudo installer -pkg ~/xamarin.android-11.3.0.1.pkg -target /'
 
   # Install GitVersion
