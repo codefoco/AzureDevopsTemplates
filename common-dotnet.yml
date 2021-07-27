@@ -1,8 +1,4 @@
   steps:
-  - task: UseDotNet@2
-    inputs:
-      packageType: 'runtime'
-      version: '5.x'
       
   - task: UseDotNet@2
     inputs:
