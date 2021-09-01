@@ -67,7 +67,7 @@
     displayName: 'Provisioning Mono SDK'
     inputs:
       script: 'cd ~;
-              curl -O https://download.visualstudio.microsoft.com/download/pr/414d1675-ca0b-4b5b-8a4e-26b693883581/a8438abad21d48b90d9e6b89a8f285b3/monoframework-mdk-6.12.0.140.macos10.xamarin.universal.pkg;
+              curl -OL https://download.visualstudio.microsoft.com/download/pr/414d1675-ca0b-4b5b-8a4e-26b693883581/a8438abad21d48b90d9e6b89a8f285b3/monoframework-mdk-6.12.0.140.macos10.xamarin.universal.pkg;
               sudo installer -pkg ~/monoframework-mdk-6.12.0.140.macos10.xamarin.universal.pkg -target /'
 
   # Azure DevOps hosted pool is still using an old version of Xamarin.iOS, 
@@ -76,21 +76,21 @@
     displayName: 'Provisioning Xamarin.iOS'
     inputs:
       script: 'cd ~;
-              curl -O https://bosstoragemirror.blob.core.windows.net/wrench/d16-10/c4b89cddb36e2036cf44b86f8119745eed214dfc/4876061/package/xamarin.ios-14.20.0.24.pkg;
+              curl -OL https://bosstoragemirror.blob.core.windows.net/wrench/d16-10/c4b89cddb36e2036cf44b86f8119745eed214dfc/4876061/package/xamarin.ios-14.20.0.24.pkg;
               sudo installer -pkg ~/xamarin.ios-14.20.0.24.pkg -target /'
 
   - task: CmdLine@2
     displayName: 'Provisioning Xamarin.Mac'
     inputs:
       script: 'cd ~;
-              curl -O https://bosstoragemirror.blob.core.windows.net/wrench/d16-10/c4b89cddb36e2036cf44b86f8119745eed214dfc/4876061/package/xamarin.mac-7.14.0.24.pkg;
+              curl -OL https://bosstoragemirror.blob.core.windows.net/wrench/d16-10/c4b89cddb36e2036cf44b86f8119745eed214dfc/4876061/package/xamarin.mac-7.14.0.24.pkg;
               sudo installer -pkg ~/xamarin.mac-7.14.0.24.pkg -target /'
 
   - task: CmdLine@2
     displayName: 'Provisioning Xamarin.Android'
     inputs:
       script: 'cd ~;
-              curl -O https://dl.internalx.com/vsts-devdiv/Xamarin.Android/public/4829460/d16-10/ae14cafda4befc69867db19eee0728efec9cf71b/xamarin.android-11.3.0.4.pkg;
+              curl -OL https://dl.internalx.com/vsts-devdiv/Xamarin.Android/public/4829460/d16-10/ae14cafda4befc69867db19eee0728efec9cf71b/xamarin.android-11.3.0.4.pkg;
               sudo installer -pkg ~/xamarin.android-11.3.0.4.pkg -target /'
 
   # Install GitVersion
