@@ -11,6 +11,15 @@
       packageType: sdk
       version: '5.0.402'
       installationPath: $(Agent.ToolsDirectory)/dotnet
+      
+  - task: UseDotNet@2
+    inputs:
+      packageType: 'sdk'
+      version: '6.*'
+      includePreviewVersions: true
+      
+  - script: 'dotnet workload install android ios macos'
+    displayName: 'Install .NET 6.0 iOS/Android/MacOS'
 
   - task: NuGetToolInstaller@1
     displayName: 'Use NuGet 5.11.0'
