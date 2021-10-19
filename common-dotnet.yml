@@ -15,7 +15,7 @@
   - task: UseDotNet@2
     inputs:
       packageType: 'sdk'
-      version: '6.*'
+      version: '6.x'
       includePreviewVersions: true
       
   - script: 'dotnet workload install android ios macos'
