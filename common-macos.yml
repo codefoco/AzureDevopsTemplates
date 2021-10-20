@@ -106,3 +106,5 @@
     inputs:
       script: '/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/bin/mtouch --version'
   
+  - script: 'dotnet workload install android ios macos'
+    displayName: 'Install .NET 6.0 iOS/Android/MacOS'
