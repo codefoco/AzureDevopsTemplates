@@ -106,5 +106,5 @@
     inputs:
       script: '/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/bin/mtouch --version'
   
-  - script: 'dotnet workload install android ios macos tvos'
-    displayName: 'Install .NET 6.0 Android iOS/macOS/tvOS'
+  - script: 'dotnet workload install android ios macos tvos maccatalyst'
+    displayName: 'Install .NET 6.0 Android iOS/macOS/tvOS/Catalyst'
