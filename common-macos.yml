@@ -14,8 +14,9 @@
     
     ## Update this section to newer versions of Xcode (e.g 13.1)
     ## Check Xcode path on ADO here: https://github.com/actions/virtual-environments/blob/main/images/macos/macos-11-Readme.md
-  - script: 'sudo mv /Applications/Xcode_13.0.app /Applications/Xcode.app'
-    displayName: 'Move Xcode.app 13.0 to /Applications/Xcode.app'
+    
+  - script: 'sudo mv /Applications/Xcode_13.1.app /Applications/Xcode.app'
+    displayName: 'Move Xcode.app 13.1 to /Applications/Xcode.app'
     
   - script: 'sudo xcode-select -s /Applications/Xcode.app/Contents/Developer'
     displayName: 'Ensure xcode-select point to /Applications/Xcode.app'
@@ -76,22 +77,22 @@
     displayName: 'Provisioning Xamarin.iOS'
     inputs:
       script: 'cd ~;
-              curl -OL https://bosstoragemirror.blob.core.windows.net/wrench/xcode13-ios/2771277e05ecbee29976a57ae0b596129fef605f/5242052/package/xamarin.ios-15.0.0.6.pkg;
-              sudo installer -pkg ~/xamarin.ios-15.0.0.6.pkg -target /'
+              curl -OL https://bosstoragemirror.blob.core.windows.net/wrench/xcode13.1/8fd9e62891f8e4fbaa040cdfbf8b96467060c85c/5371501/package/xamarin.ios-15.2.0.1.pkg;
+              sudo installer -pkg ~/xamarin.ios-15.2.0.1.pkg -target /'
 
   - task: CmdLine@2
     displayName: 'Provisioning Xamarin.Mac'
     inputs:
       script: 'cd ~;
-              curl -OL https://bosstoragemirror.blob.core.windows.net/wrench/d16-10/2566861a9e0495d6f3c2c303ef3924be3a9f49a7/5024030/package/xamarin.mac-7.14.0.27.pkg;
-              sudo installer -pkg ~/xamarin.mac-7.14.0.27.pkg -target /'
+              curl -OL https://bosstoragemirror.blob.core.windows.net/wrench/xcode13.1/8fd9e62891f8e4fbaa040cdfbf8b96467060c85c/5371501/package/xamarin.mac-8.2.0.1.pkg;
+              sudo installer -pkg ~/xamarin.mac-8.2.0.1.pkg -target /'
 
   - task: CmdLine@2
     displayName: 'Provisioning Xamarin.Android'
     inputs:
       script: 'cd ~;
-              curl -OL https://dl.internalx.com/vsts-devdiv/Xamarin.Android/public/4829460/d16-10/ae14cafda4befc69867db19eee0728efec9cf71b/xamarin.android-11.3.0.4.pkg;
-              sudo installer -pkg ~/xamarin.android-11.3.0.4.pkg -target /'
+              curl -OL https://dl.internalx.com/vsts-devdiv/Xamarin.Android/public/5160375/d16-11/f0e3c2d1d269d311bc83d6875ffec3bfe5d17edb/xamarin.android-12.0.0.3.pkg;
+              sudo installer -pkg ~/xamarin.android-12.0.0.3.pkg -target /'
 
   # Install GitVersion
   - script: curl -OL https://github.com/GitTools/GitVersion/releases/download/5.6.8/gitversion-osx-x64-5.6.8.tar.gz &&
