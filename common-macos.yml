@@ -63,6 +63,13 @@
       provisioningProfileLocation: 'secureFiles'
       provProfileSecureFile: 'b424442b-e8e9-4ee8-b9bd-d11a86ec8089.provisionprofile'
 
+  - task: JavaToolInstaller@0
+      displayName: install JDK 11
+      inputs:
+        versionSpec: '11'
+        jdkArchitectureOption: 'x64'
+        jdkSourceOption: 'PreInstalled'
+      
   # Install Mono
   - task: CmdLine@2
     displayName: 'Provisioning Mono SDK'
