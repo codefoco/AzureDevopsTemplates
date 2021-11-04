@@ -23,5 +23,3 @@
     inputs:
       versionSpec: 5.11.0
 
-  - script: 'dotnet workload install android'
-    displayName: 'Install .NET 6.0 Android '
