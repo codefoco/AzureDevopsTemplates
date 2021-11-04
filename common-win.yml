@@ -4,6 +4,13 @@ steps:
 
 - script: 'dotnet workload install android'
   displayName: 'Install .NET 6.0 Android'
+  
+- task: JavaToolInstaller@0
+    displayName: install JDK 11
+    inputs:
+      versionSpec: '11'
+      jdkArchitectureOption: 'x64'
+      jdkSourceOption: 'PreInstalled'
    
 # - task: CmdLine@2
 #   displayName: 'Setup NDK path (due bug on NDK)'
