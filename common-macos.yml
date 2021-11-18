@@ -84,15 +84,15 @@
     displayName: 'Provisioning Xamarin.iOS'
     inputs:
       script: 'cd ~;
-              curl -OL https://bosstoragemirror.blob.core.windows.net/wrench/xcode13.1/8fd9e62891f8e4fbaa040cdfbf8b96467060c85c/5371501/package/xamarin.ios-15.2.0.1.pkg;
-              sudo installer -pkg ~/xamarin.ios-15.2.0.1.pkg -target /'
+              curl -OL https://bosstoragemirror.blob.core.windows.net/wrench/xcode13.1/738fde34447a62cba0fe8edd45047a57dff44162/5425508/package/xamarin.ios-15.2.0.17.pkg;
+              sudo installer -pkg ~/xamarin.ios-15.2.0.17.pkg -target /'
 
   - task: CmdLine@2
     displayName: 'Provisioning Xamarin.Mac'
     inputs:
       script: 'cd ~;
-              curl -OL https://bosstoragemirror.blob.core.windows.net/wrench/xcode13.1/8fd9e62891f8e4fbaa040cdfbf8b96467060c85c/5371501/package/xamarin.mac-8.2.0.1.pkg;
-              sudo installer -pkg ~/xamarin.mac-8.2.0.1.pkg -target /'
+              curl -OL https://bosstoragemirror.blob.core.windows.net/wrench/xcode13.1/738fde34447a62cba0fe8edd45047a57dff44162/5425508/package/xamarin.mac-8.2.0.17.pkg;
+              sudo installer -pkg ~/xamarin.mac-8.2.0.17.pkg -target /'
 
   - task: CmdLine@2
     displayName: 'Provisioning Xamarin.Android'
