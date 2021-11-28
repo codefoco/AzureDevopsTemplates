@@ -2,24 +2,10 @@
       
   - task: UseDotNet@2
     inputs:
-      packageType: 'runtime'
-      version: '3.1.x'
-
-  - task: UseDotNet@2
-    displayName: 'Install .NET Core 5.0.403'
-    inputs:
-      packageType: sdk
-      version: '5.0.403'
-      installationPath: $(Agent.ToolsDirectory)/dotnet
-      
-  - task: UseDotNet@2
-    inputs:
       packageType: 'sdk'
       version: '6.x'
-      includePreviewVersions: true    
 
   - task: NuGetToolInstaller@1
     displayName: 'Use NuGet 5.11.0'
     inputs:
       versionSpec: 5.11.0
-
