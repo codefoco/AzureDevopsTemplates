@@ -12,11 +12,11 @@
 #   - script: 'sudo mv /Applications/Xcode_12.app /Applications/Old_Xcode_12.app'
 #     displayName: 'Rename Xcode_12.app to avoid someone using the old Xcode'
     
-    ## Update this section to newer versions of Xcode (e.g 13.1)
+    ## Update this section to newer versions of Xcode (e.g 13.3)
     ## Check Xcode path on ADO here: https://github.com/actions/virtual-environments/blob/main/images/macos/macos-11-Readme.md
     
-  - script: 'sudo mv /Applications/Xcode_13.1.app /Applications/Xcode.app'
-    displayName: 'Move Xcode.app 13.1 to /Applications/Xcode.app'
+  - script: 'sudo mv /Applications/Xcode_13.2.app /Applications/Xcode.app'
+    displayName: 'Move Xcode.app 13.2 to /Applications/Xcode.app'
     
   - script: 'sudo xcode-select -s /Applications/Xcode.app/Contents/Developer'
     displayName: 'Ensure xcode-select point to /Applications/Xcode.app'
@@ -84,15 +84,15 @@
     displayName: 'Provisioning Xamarin.iOS'
     inputs:
       script: 'cd ~;
-              curl -OL https://bosstoragemirror.blob.core.windows.net/wrench/xcode13.1/738fde34447a62cba0fe8edd45047a57dff44162/5425508/package/xamarin.ios-15.2.0.17.pkg;
-              sudo installer -pkg ~/xamarin.ios-15.2.0.17.pkg -target /'
+              curl -OL https://bosstoragemirror.blob.core.windows.net/wrench/xcode13.2/8fc41ae827657721729ca219668a75271f2e0bcb/5529761/package/xamarin.ios-15.4.0.0.pkg;
+              sudo installer -pkg ~/xamarin.ios-15.4.0.0.pkg -target /'
 
   - task: CmdLine@2
     displayName: 'Provisioning Xamarin.Mac'
     inputs:
       script: 'cd ~;
-              curl -OL https://bosstoragemirror.blob.core.windows.net/wrench/xcode13.1/738fde34447a62cba0fe8edd45047a57dff44162/5425508/package/xamarin.mac-8.2.0.17.pkg;
-              sudo installer -pkg ~/xamarin.mac-8.2.0.17.pkg -target /'
+              curl -OL https://bosstoragemirror.blob.core.windows.net/wrench/xcode13.2/8fc41ae827657721729ca219668a75271f2e0bcb/5529761/package/notarized/xamarin.mac-8.4.0.0.pkg;
+              sudo installer -pkg ~/xamarin.mac-8.4.0.0.pkg -target /'
 
   - task: CmdLine@2
     displayName: 'Provisioning Xamarin.Android'
