@@ -75,8 +75,8 @@
     displayName: 'Provisioning Mono SDK'
     inputs:
       script: 'cd ~;
-              curl -OL https://download.mono-project.com/archive/6.12.0/macos-10-universal/MonoFramework-MDK-6.12.0.165.macos10.xamarin.universal.pkg;
-              sudo installer -pkg ~/MonoFramework-MDK-6.12.0.165.macos10.xamarin.universal.pkg -target /'
+              curl -OL https://download.mono-project.com/archive/6.12.0/macos-10-universal/MonoFramework-MDK-6.12.0.168.macos10.xamarin.universal.pkg;
+              sudo installer -pkg ~/MonoFramework-MDK-6.12.0.168.macos10.xamarin.universal.pkg -target /'
 
   # Azure DevOps hosted pool is still using an old version of Xamarin.iOS, 
   # so we will upgrade
@@ -84,22 +84,22 @@
     displayName: 'Provisioning Xamarin.iOS'
     inputs:
       script: 'cd ~;
-              curl -OL https://bosstoragemirror.blob.core.windows.net/wrench/xcode13.2/8fc41ae827657721729ca219668a75271f2e0bcb/5529761/package/xamarin.ios-15.4.0.0.pkg;
-              sudo installer -pkg ~/xamarin.ios-15.4.0.0.pkg -target /'
+              curl -OL https://bosstoragemirror.blob.core.windows.net/wrench/main/e49c11f99e6a75e01ca9b1f811e20ed99f5fa172/5590612/package/xamarin.ios-15.5.0.5.pkg;
+              sudo installer -pkg ~/xamarin.ios-15.5.0.5.pkg -target /'
 
   - task: CmdLine@2
     displayName: 'Provisioning Xamarin.Mac'
     inputs:
       script: 'cd ~;
-              curl -OL https://bosstoragemirror.blob.core.windows.net/wrench/xcode13.2/8fc41ae827657721729ca219668a75271f2e0bcb/5529761/package/notarized/xamarin.mac-8.4.0.0.pkg;
-              sudo installer -pkg ~/xamarin.mac-8.4.0.0.pkg -target /'
+              curl -OL https://bosstoragemirror.blob.core.windows.net/wrench/main/e49c11f99e6a75e01ca9b1f811e20ed99f5fa172/5590612/package/xamarin.mac-8.5.0.5.pkg;
+              sudo installer -pkg ~/xamarin.mac-8.5.0.5.pkg -target /'
 
   - task: CmdLine@2
     displayName: 'Provisioning Xamarin.Android'
     inputs:
       script: 'cd ~;
-              curl -OL https://dl.internalx.com/vsts-devdiv/Xamarin.Android/public/5160375/d16-11/f0e3c2d1d269d311bc83d6875ffec3bfe5d17edb/xamarin.android-12.0.0.3.pkg;
-              sudo installer -pkg ~/xamarin.android-12.0.0.3.pkg -target /'
+              curl -OL https://dl.internalx.com/vsts-devdiv/Xamarin.Android/public/5593002/d17-1/e9c75038ccc4f2be31427ea92e83faefd37e23a3/xamarin.android-12.2.0.2.pkg;
+              sudo installer -pkg ~/xamarin.android-12.2.0.2.pkg -target /'
 
   # Install GitVersion
   - script: curl -OL https://github.com/GitTools/GitVersion/releases/download/5.6.8/gitversion-osx-x64-5.6.8.tar.gz &&
