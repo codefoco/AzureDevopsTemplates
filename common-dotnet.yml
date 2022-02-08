@@ -3,7 +3,7 @@
   - task: UseDotNet@2
     inputs:
       packageType: 'sdk'
-      version: '6.0.101'
+      version: '6.0.102'
 
   - task: NuGetToolInstaller@1
     displayName: 'Use NuGet 6.0.0'
