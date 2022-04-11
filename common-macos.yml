@@ -56,12 +56,12 @@
   - task: InstallAppleProvisioningProfile@1
     inputs:
       provisioningProfileLocation: 'secureFiles'
-      provProfileSecureFile: '62ed4162-77d9-4931-8a97-f02218d4f204.mobileprovision'
+      provProfileSecureFile: '62ed416277d949318a97f02218d4f204.mobileprovision'
 
   - task: InstallAppleProvisioningProfile@1
     inputs:
       provisioningProfileLocation: 'secureFiles'
-      provProfileSecureFile: 'b424442b-e8e9-4ee8-b9bd-d11a86ec8089.provisionprofile'
+      provProfileSecureFile: 'b424442be8e94ee8b9bdd11a86ec8089.provisionprofile'
 
   - task: JavaToolInstaller@0
     displayName: install JDK 11
