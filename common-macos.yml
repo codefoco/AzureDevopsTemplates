@@ -99,7 +99,7 @@
     inputs:
       script: 'cd ~;
               curl -OL https://dl.internalx.com/vsts-devdiv/Xamarin.Android/public/6188052/d17-2/4e061b739747f624ccb03c98940d8900548a98ad/xamarin.android-12.3.3.3.pkg;
-              sudo installer -pkg ~/xamarin.android-12.3.3.3.pkg; -target /'
+              sudo installer -pkg ~/xamarin.android-12.3.3.3.pkg -target /'
 
   # Install GitVersion
   - script: curl -OL https://github.com/GitTools/GitVersion/releases/download/5.6.8/gitversion-osx-x64-5.6.8.tar.gz &&
