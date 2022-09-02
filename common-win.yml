@@ -12,8 +12,8 @@ steps:
     jdkArchitectureOption: 'x64'
     jdkSourceOption: 'PreInstalled'
    
-- task: CmdLine@2
-  displayName: 'Setup NDK path (due bug on NDK)'
-  inputs:
-    script: 'mklink /D Android "C:\Program Files (x86)\Android"'
-    workingDirectory: 'C:\'
+# - task: CmdLine@2
+#   displayName: 'Setup NDK path (due bug on NDK)'
+#   inputs:
+#     script: 'mklink /D Android "C:\Program Files (x86)\Android"'
+#     workingDirectory: 'C:\'
