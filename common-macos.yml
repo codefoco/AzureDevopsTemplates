@@ -38,31 +38,53 @@
     
   - task: InstallAppleCertificate@2
     inputs:
-      certSecureFile: 'Dev.p12'
-      certPwd: '$(DevCertPwd)'
+      certSecureFile: 'Distribution.p12'
+      certPwd: '$(CertificatePwd)'
+      keychain: 'temp'
+  
+  - task: InstallAppleCertificate@2
+    inputs:
+      certSecureFile: 'DeveloperIDApplication.p12'
+      certPwd: '$(CertificatePwd)'
+      keychain: 'temp'
+
+  - task: InstallAppleCertificate@2
+    inputs:
+      certSecureFile: 'Development.p12'
+      certPwd: '$(CertificatePwd)'
       keychain: 'temp'
       
   - task: InstallAppleCertificate@2
     inputs:
-      certSecureFile: 'Deploy.p12'
-      certPwd: '$(DeployCertPwd)'
+      certSecureFile: 'MacInstallerDistribution.p12'
+      certPwd: '$(CertificatePwd)'
       keychain: 'temp'
 
   - task: InstallAppleProvisioningProfile@1
     inputs:
       provisioningProfileLocation: 'secureFiles'
-      provProfileSecureFile: '3f17d20d-82dd-4ca2-ad90-661e1c8564ca.mobileprovision'
+      provProfileSecureFile: 'AppStore.mobileprovision'
 
   - task: InstallAppleProvisioningProfile@1
     inputs:
       provisioningProfileLocation: 'secureFiles'
-      provProfileSecureFile: '62ed416277d949318a97f02218d4f204.mobileprovision'
+      provProfileSecureFile: 'Development.mobileprovision'
 
   - task: InstallAppleProvisioningProfile@1
     inputs:
       provisioningProfileLocation: 'secureFiles'
-      provProfileSecureFile: 'b424442be8e94ee8b9bdd11a86ec8089.provisionprofile'
+      provProfileSecureFile: 'MacAppStore.provisionprofile'
 
+  - task: InstallAppleProvisioningProfile@1
+    inputs:
+      provisioningProfileLocation: 'secureFiles'
+      provProfileSecureFile: 'tvOS_Development.mobileprovision'
+
+  - task: InstallAppleProvisioningProfile@1
+    inputs:
+      provisioningProfileLocation: 'secureFiles'
+      provProfileSecureFile: 'tvOSAppStore.mobileprovision'
+      
   - task: JavaToolInstaller@0
     displayName: install JDK 11
     inputs:
