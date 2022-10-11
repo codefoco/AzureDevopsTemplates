@@ -106,8 +106,8 @@
     displayName: 'Provisioning Xamarin.iOS'
     inputs:
       script: 'cd ~;
-              curl -OL https://bosstoragemirror.blob.core.windows.net/wrench/6.0.4xx-xcode14/6756a11462d8aa6e73d4a320712b276caba159c1/6718459/package/xamarin.ios-16.0.0.72.pkg;
-              sudo installer -pkg ~/xamarin.ios-16.0.0.72.pkg -target /'
+              curl -OL https://bosstoragemirror.blob.core.windows.net/wrench/6.0.4xx-xcode14/e5aac42c97b8a99eb29ce043b653c8797d1e9c11/6756005/package/xamarin.ios-16.0.0.82.pkg;
+              sudo installer -pkg ~/xamarin.ios-16.0.0.82.pkg -target /'
 
   - task: CmdLine@2
     displayName: 'Provisioning Xamarin.Mac'
@@ -120,8 +120,8 @@
     displayName: 'Provisioning Xamarin.Android'
     inputs:
       script: 'cd ~;
-              curl -OL https://dl.internalx.com/vsts-devdiv/Xamarin.Android/public/6713412/d17-4/9b43462bcb4fe6766b06a7a6be079f210c31473e/xamarin.android-13.1.0.0.pkg;
-              sudo installer -pkg ~/xamarin.android-13.1.0.0.pkg -target /'
+              curl -OL https://dl.internalx.com/vsts-devdiv/Xamarin.Android/public/6747100/d17-4/13ba222766e8e41d419327749426023194660864/xamarin.android-13.1.0.1.pkg;
+              sudo installer -pkg ~/xamarin.android-13.1.0.1.pkg -target /'
 
   # Install GitVersion
   - script: curl -OL https://github.com/GitTools/GitVersion/releases/download/5.6.8/gitversion-osx-x64-5.6.8.tar.gz &&
