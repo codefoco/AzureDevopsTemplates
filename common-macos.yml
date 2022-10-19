@@ -106,8 +106,8 @@
     displayName: 'Provisioning Xamarin.iOS'
     inputs:
       script: 'cd ~;
-              curl -OL https://bosstoragemirror.blob.core.windows.net/wrench/6.0.4xx-xcode14/e5aac42c97b8a99eb29ce043b653c8797d1e9c11/6756005/package/xamarin.ios-16.0.0.82.pkg;
-              sudo installer -pkg ~/xamarin.ios-16.0.0.82.pkg -target /'
+              curl -OL https://bosstoragemirror.blob.core.windows.net/wrench/6.0.4xx-xcode14/12aaa79efd7aefb65a3875e8c42da75e473077c6/6801533/package/xamarin.ios-16.0.0.88.pkg;
+              sudo installer -pkg ~/xamarin.ios-16.0.0.88.pkg -target /'
 
   - task: CmdLine@2
     displayName: 'Provisioning Xamarin.Mac'
