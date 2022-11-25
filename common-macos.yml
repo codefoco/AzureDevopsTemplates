@@ -126,7 +126,7 @@
   # Install GitVersion
   - script: curl -OL https://github.com/GitTools/GitVersion/releases/download/5.11.1/gitversion-osx-x64-5.11.1.tar.gz &&
             tar -xvf gitversion-osx-x64-5.11.1.tar.gz &&
-            mv gitversion /usr/local/bin &&
+            mv gitversion /usr/local/bin
     displayName: 'Install GitVersion 5.11.1'
 
   # Print the current version of Xamarin.iOS
