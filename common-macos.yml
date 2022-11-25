@@ -106,15 +106,15 @@
     displayName: 'Provisioning Xamarin.iOS'
     inputs:
       script: 'cd ~;
-              curl -OL https://github.com/codefoco/AzureDevopsTemplates/releases/download/v1.0/xamarin.ios-16.1.1.8.pkg;
-              sudo installer -pkg ~/xamarin.ios-16.1.1.8.pkg -target /'
+              curl -OL https://download.visualstudio.microsoft.com/download/pr/82c00e2b-6bfe-4450-8691-5cb8464c37dc/e67bae84054f6aa4e221ab7f63edf78a/xamarin.ios-16.1.1.27.pkg;
+              sudo installer -pkg ~/xamarin.ios-16.1.1.27.pkg -target /'
 
   - task: CmdLine@2
     displayName: 'Provisioning Xamarin.Mac'
     inputs:
       script: 'cd ~;
-              curl -OL https://github.com/codefoco/AzureDevopsTemplates/releases/download/v1.0/xamarin.mac-9.0.0.8.pkg;
-              sudo installer -pkg ~/xamarin.mac-9.0.0.8.pkg -target /'
+              curl -OL https://download.visualstudio.microsoft.com/download/pr/82c00e2b-6bfe-4450-8691-5cb8464c37dc/34dcb22cccb6f364e64346f6812b0adc/xamarin.mac-9.0.0.27.pkg;
+              sudo installer -pkg ~/xamarin.mac-9.0.0.27.pkg -target /'
 
   - task: CmdLine@2
     displayName: 'Provisioning Xamarin.Android'
@@ -124,11 +124,11 @@
               sudo installer -pkg ~/xamarin.android-13.1.0.1.pkg -target /'
 
   # Install GitVersion
-  - script: curl -OL https://github.com/GitTools/GitVersion/releases/download/5.6.8/gitversion-osx-x64-5.6.8.tar.gz &&
-            tar -xvf gitversion-osx-x64-5.6.8.tar.gz &&
+  - script: curl -OL https://github.com/GitTools/GitVersion/releases/download/5.11.1/gitversion-osx-x64-5.11.1.tar.gz &&
+            tar -xvf gitversion-osx-x64-5.11.1.tar.gz &&
             mv gitversion /usr/local/bin &&
             mv *.dylib /usr/local/bin
-    displayName: 'Install GitVersion 5.8.8'
+    displayName: 'Install GitVersion 5.11.1'
 
   # Print the current version of Xamarin.iOS
   - task: CmdLine@2
