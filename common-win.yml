@@ -3,7 +3,7 @@ steps:
   displayName: 'Install GitVersion'
 
 - script: 'dotnet workload install android'
-  displayName: 'Install .NET 6.0 Android'
+  displayName: 'Install .NET Android'
   
 - task: JavaToolInstaller@0
   displayName: install JDK 11
