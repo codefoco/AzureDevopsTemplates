@@ -181,7 +181,7 @@
         dotnet new ios -o ios_project
         
         (Get-Content -path ./mac_project/mac_project.csproj -Raw) -replace 'net7.0-macos','net6.0-macos' | Set-Content -Path ./mac_project/mac_project.csproj
-        (Get-Content -path ./mac_project/ios_project.csproj -Raw) -replace 'net7.0-ios','net6.0-ios' | Set-Content -Path ./mac_project/ios_project.csproj
+        (Get-Content -path ./ios_project/ios_project.csproj -Raw) -replace 'net7.0-ios','net6.0-ios' | Set-Content -Path ./ios_project/ios_project.csproj
 
         dotnet build ./mac_project
         dotnet build ./ios_project
