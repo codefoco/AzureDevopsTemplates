@@ -120,8 +120,8 @@
     displayName: 'Provisioning Xamarin.Android'
     inputs:
       script: 'cd ~;
-              curl -OL https://download.visualstudio.microsoft.com/download/pr/23a49318-9ff9-4fd0-a625-a952010444f7/093e10f767c6f09ac65943474ea4d6a4/xamarin.android-13.1.99.61.pkg;
-              sudo installer -pkg ~/xamarin.android-13.1.99.61.pkg -target /'
+              curl -OL https://dl.internalx.com/vsts-devdiv/Xamarin.Android/public/7087595/d17-5/797e2e13d1706ace607da43703769c5a55c4de60/xamarin.android-13.2.0.0.pkg;
+              sudo installer -pkg ~/xamarin.android-13.2.0.0.pkg -target /'
 
   # Install GitVersion
   - script: curl -OL https://github.com/GitTools/GitVersion/releases/download/5.11.1/gitversion-osx-x64-5.11.1.tar.gz &&
