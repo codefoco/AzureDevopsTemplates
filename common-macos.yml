@@ -124,7 +124,7 @@
               sudo installer -pkg ~/xamarin.android-13.2.0.6.pkg -target /'
 
   # Install GitVersion
-  - script: curl -OL https://github.com/GitTools/GitVersion/releases/download/5.12.0/gitversion-linux-x64-5.12.0.tar.gz &&
+  - script: curl -OL https://github.com/GitTools/GitVersion/releases/download/5.12.0/gitversion-osx-x64-5.12.0.tar.gz &&
             tar -xvf gitversion-osx-x64-5.12.0.tar.gz &&
             mv gitversion /usr/local/bin
     displayName: 'Install GitVersion 5.12.0'
