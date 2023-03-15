@@ -106,15 +106,15 @@
     displayName: 'Provisioning Xamarin.iOS'
     inputs:
       script: 'cd ~;
-              curl -OL https://download.visualstudio.microsoft.com/download/pr/5f9ea8f6-0afe-46b3-b8e8-5dee4c2dd14c/b357a2b833ba86598aaff58fc013f06c/xamarin.ios-16.2.0.5.pkg;
-              sudo installer -pkg ~/xamarin.ios-16.2.0.5.pkg -target /'
+              curl -OL https://download.visualstudio.microsoft.com/download/pr/cc89cd8e-a615-4d98-8783-8b932996a8fd/8be868ae2c77e0054acb14b1b111dbbb/xamarin.ios-16.2.0.6.pkg;
+              sudo installer -pkg ~/xamarin.ios-16.2.0.6.pkg -target /'
 
   - task: CmdLine@2
     displayName: 'Provisioning Xamarin.Mac'
     inputs:
       script: 'cd ~;
-              curl -OL https://download.visualstudio.microsoft.com/download/pr/5f9ea8f6-0afe-46b3-b8e8-5dee4c2dd14c/c5c4f99a992a8cc51b2bad3d31ef6b96/xamarin.mac-9.1.0.5.pkg;
-              sudo installer -pkg ~/xamarin.mac-9.1.0.5.pkg -target /'
+              curl -OL https://download.visualstudio.microsoft.com/download/pr/cc89cd8e-a615-4d98-8783-8b932996a8fd/8cbf19fbf7e11a522aff3ae4a9f5b1d0/xamarin.mac-9.1.0.6.pkg;
+              sudo installer -pkg ~/xamarin.mac-9.1.0.6.pkg -target /'
 
   - task: CmdLine@2
     displayName: 'Provisioning Xamarin.Android'
