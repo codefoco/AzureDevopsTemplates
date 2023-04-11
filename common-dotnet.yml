@@ -3,13 +3,15 @@
   - task: UseDotNet@2
     inputs:
       packageType: 'sdk'
-      version: '6.0.407'
+      version: '6.0.408'
 
   - task: UseDotNet@2
     inputs:
       packageType: 'sdk'
-      version: '7.0.202'
+      version: '7.0.203'
       
+  # do not upgrade to 6.5.0 because nuget 6.5.0 is broken 
+  
   - task: NuGetToolInstaller@1
     displayName: 'Use NuGet 6.4.0'
     inputs:
