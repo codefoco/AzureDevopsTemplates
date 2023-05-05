@@ -15,8 +15,8 @@
     ## Update this section to newer versions of Xcode (e.g 14.3)
     ## Check Xcode path on ADO here: https://github.com/actions/virtual-environments/blob/main/images/macos/macos-12-Readme.md
     
-  - script: 'sudo mv /Applications/Xcode_14.2.app /Applications/Xcode.app'
-    displayName: 'Move Xcode.app Xcode_14.2 to /Applications/Xcode.app'
+  - script: 'sudo mv /Applications/Xcode_14.3.app /Applications/Xcode.app'
+    displayName: 'Move Xcode.app Xcode_14.3 to /Applications/Xcode.app'
     
   - script: 'sudo xcode-select -s /Applications/Xcode.app/Contents/Developer'
     displayName: 'Ensure xcode-select point to /Applications/Xcode.app'
@@ -101,20 +101,21 @@
               sudo installer -pkg ~/MonoFramework-MDK-6.12.0.190.macos10.xamarin.universal.pkg -target /'
 
   # Azure DevOps hosted pool is still using an old version of Xamarin.iOS, 
+  # Get Xamarin pkg URL at ~/Library/Caches/VisualStudio/17.0/TempDownload/index.html
   # so we will upgrade
   - task: CmdLine@2
     displayName: 'Provisioning Xamarin.iOS'
     inputs:
       script: 'cd ~;
-              curl -OL https://download.visualstudio.microsoft.com/download/pr/cc89cd8e-a615-4d98-8783-8b932996a8fd/8be868ae2c77e0054acb14b1b111dbbb/xamarin.ios-16.2.0.6.pkg;
-              sudo installer -pkg ~/xamarin.ios-16.2.0.6.pkg -target /'
+              curl -OL https://download.visualstudio.microsoft.com/download/pr/1d7d67dc-e079-4367-b340-3a0148f7747b/b7abb138dbc94b9812a42ce940a4aca9/xamarin.ios-16.4.0.6.pkg;
+              sudo installer -pkg ~/xamarin.ios-16.4.0.6.pkg -target /'
 
   - task: CmdLine@2
     displayName: 'Provisioning Xamarin.Mac'
     inputs:
       script: 'cd ~;
-              curl -OL https://download.visualstudio.microsoft.com/download/pr/cc89cd8e-a615-4d98-8783-8b932996a8fd/8cbf19fbf7e11a522aff3ae4a9f5b1d0/xamarin.mac-9.1.0.6.pkg;
-              sudo installer -pkg ~/xamarin.mac-9.1.0.6.pkg -target /'
+              curl -OL https://download.visualstudio.microsoft.com/download/pr/1d7d67dc-e079-4367-b340-3a0148f7747b/f7c9ed9c642bf4b10411f04c40ca8a20/xamarin.mac-9.3.0.6.pkg;
+              sudo installer -pkg ~/xamarin.mac-9.3.0.6.pkg -target /'
 
   - task: CmdLine@2
     displayName: 'Provisioning Xamarin.Android'
