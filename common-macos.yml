@@ -27,15 +27,6 @@
   - script: 'xcode-select -p'
     displayName: 'Show current xcode-select path'
    
-  - script: 'cat /Users/runner/Library/Preferences/Xamarin/Settings.plist'
-    displayName: 'cat /Users/runner/Library/Preferences/Xamarin/Settings.plist'
-    
-  - script: '/usr/libexec/PlistBuddy -c "Set :AppleSdkRoot /Applications/Xcode.app" /Users/runner/Library/Preferences/Xamarin/Settings.plist'
-    displayName: 'Set Preferences/Xamarin/Settings'
-  
-  - script: 'cat /Users/runner/Library/Preferences/Xamarin/Settings.plist'
-    displayName: 'cat /Users/runner/Library/Preferences/Xamarin/Settings.plist'
-    
   - task: InstallAppleCertificate@2
     inputs:
       certSecureFile: 'Distribution.p12'
