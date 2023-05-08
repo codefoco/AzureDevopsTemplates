@@ -1,5 +1,5 @@
 steps:
-- script: 'choco install gitversion.portable --pre '
+- script: 'choco install gitversion.portable --version=5.12.0'
   displayName: 'Install GitVersion'
 
 - script: 'dotnet workload install android'
