@@ -9,6 +9,11 @@
     inputs:
       packageType: 'sdk'
       version: '7.0.203'
+
+  - task: UseDotNet@2
+    inputs:
+      packageType: 'sdk'
+      version: '8.0.100-preview.4'
       
   # do not upgrade to 6.5.0 because nuget 6.5.0 is broken 
   
