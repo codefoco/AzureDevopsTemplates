@@ -2,7 +2,7 @@ steps:
 - script: 'choco install gitversion.portable --version=5.12.0'
   displayName: 'Install GitVersion'
 
-- script: 'dotnet workload install android'
+- script: 'dotnet workload install android wasm-tools-net6'
   displayName: 'Install .NET Android'
   
 - task: JavaToolInstaller@0
