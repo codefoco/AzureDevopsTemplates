@@ -6,9 +6,14 @@
       version: '8.0.100-preview.4.23260.5'
       includePreviewVersions: true
       
+ - task: UseDotNet@2
+    inputs:
+      packageType: 'sdk'
+      version: '7.0.302'
+      
   # do not upgrade to 6.5.0 because nuget 6.5.0 is broken 
   
   - task: NuGetToolInstaller@1
-    displayName: 'Use NuGet 6.4.0'
+    displayName: 'Use NuGet 6.6.0'
     inputs:
-      versionSpec: 6.4.0
+      versionSpec: 6.6.0
