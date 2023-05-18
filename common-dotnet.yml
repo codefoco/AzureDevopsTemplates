@@ -3,16 +3,6 @@
   - task: UseDotNet@2
     inputs:
       packageType: 'sdk'
-      version: '6.0.408'
-
-  - task: UseDotNet@2
-    inputs:
-      packageType: 'sdk'
-      version: '7.0.203'
-
-  - task: UseDotNet@2
-    inputs:
-      packageType: 'sdk'
       version: '8.0.100-preview.4.23260.5'
       includePreviewVersions: true
       
