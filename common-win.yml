@@ -1,6 +1,9 @@
 steps:
 - script: 'choco install gitversion.portable --version=5.12.0'
   displayName: 'Install GitVersion'
+  
+- script: 'choco install nunit-console-runner --version=3.16.3'
+  displayName: 'Install  nunit-console-runner'
 
 - script: 'dotnet workload install android wasm-tools-net6'
   displayName: 'Install .NET Android'
