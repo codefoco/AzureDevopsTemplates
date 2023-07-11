@@ -3,13 +3,13 @@
   - task: UseDotNet@2
     inputs:
       packageType: 'sdk'
-      version: '8.0.100-preview.5.23303.2'
+      version: '8.0.100-preview.6.23330.14'
       includePreviewVersions: true
       
   - task: UseDotNet@2
     inputs:
       packageType: 'sdk'
-      version: '7.0.305'
+      version: '7.0.306'
       
   # do not upgrade to 6.5.0 because nuget 6.5.0 is broken 
   
