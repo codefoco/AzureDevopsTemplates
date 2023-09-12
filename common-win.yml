@@ -5,7 +5,7 @@ steps:
 - script: 'choco install nunit-console-runner --version=3.16.3'
   displayName: 'Install  nunit-console-runner'
 
-- script: 'dotnet workload install android wasm-tools-net6'
+- script: 'dotnet workload install android wasm-tools-net6 maui'
   displayName: 'Install .NET Android'
   
 - task: JavaToolInstaller@0
