@@ -112,8 +112,8 @@
     displayName: 'Provisioning Xamarin.Android'
     inputs:
       script: 'cd ~;
-              curl -OL https://dl.internalx.com/vsts-devdiv/Xamarin.Android/public/7254843/d17-5/a200af12c1e846626b8caebd926ac14c185f71ec/xamarin.android-13.2.0.6.pkg;
-              sudo installer -pkg ~/xamarin.android-13.2.0.6.pkg -target /'
+              curl -OL https://dl.internalx.com/vsts-devdiv/Xamarin.Android/public/8152354/d17-5/a8a26c7b003e2524cc98acb2c2ffc2ddea0f6692/xamarin.android-13.2.1.2.pkg;
+              sudo installer -pkg ~/xamarin.android-13.2.1.2.pkg -target /'
 
   # Install GitVersion
   - script: curl -OL https://github.com/GitTools/GitVersion/releases/download/5.12.0/gitversion-osx-x64-5.12.0.tar.gz &&
@@ -127,7 +127,7 @@
     inputs:
       script: '/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/bin/mtouch --version'
   
-  - script: 'dotnet workload install android ios macos tvos maccatalyst wasm-tools-net6'
+  - script: 'dotnet workload install android ios macos tvos maccatalyst wasm-tools-net6 maui'
     displayName: 'Install .NET 7.0 Android/iOS/macOS/tvOS/MacCatalyst'
 
   - script: 'sudo dotnet workload update'
