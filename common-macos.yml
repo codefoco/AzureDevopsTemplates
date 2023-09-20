@@ -128,7 +128,7 @@
       script: '/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/bin/mtouch --version'
   
   - script: 'dotnet workload install android ios macos tvos maccatalyst wasm-tools-net6 maui'
-    displayName: 'Install .NET 7.0 Android/iOS/macOS/tvOS/MacCatalyst'
+    displayName: 'Install .NET 8.0 Android/iOS/macOS/tvOS/MacCatalyst'
 
   - script: 'sudo dotnet workload update'
-    displayName: 'Update .NET 7.0 workloads'
+    displayName: 'Update .NET 8.0 workloads'
