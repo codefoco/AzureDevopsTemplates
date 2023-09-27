@@ -1,15 +1,15 @@
   steps:
-      
+
+  - task: UseDotNet@2
+    inputs:
+      packageType: 'sdk'
+      version: '7.0.401'
+
   - task: UseDotNet@2
     inputs:
       packageType: 'sdk'
       version: '8.0.100-rc.1.23455.8'
       includePreviewVersions: true
-      
-  - task: UseDotNet@2
-    inputs:
-      packageType: 'sdk'
-      version: '7.0.401'
  
   - task: NuGetToolInstaller@1
     displayName: 'Use NuGet 6.7.0'
