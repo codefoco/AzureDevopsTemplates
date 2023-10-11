@@ -15,8 +15,8 @@
     ## Update this section to newer versions of Xcode (e.g 14.3)
     ## Check Xcode path on ADO here: https://github.com/actions/virtual-environments/blob/main/images/macos/macos-12-Readme.md
     
-  - script: 'sudo mv /Applications/Xcode_14.3.1.app /Applications/Xcode.app'
-    displayName: 'Move Xcode.app Xcode_14.3.1 to /Applications/Xcode.app'
+  - script: 'sudo mv /Applications/Xcode_15.0.app /Applications/Xcode.app'
+    displayName: 'Move Xcode_15.0.app to /Applications/Xcode.app'
     
   - script: 'sudo xcode-select -s /Applications/Xcode.app/Contents/Developer'
     displayName: 'Ensure xcode-select point to /Applications/Xcode.app'
@@ -98,22 +98,22 @@
     displayName: 'Provisioning Xamarin.iOS'
     inputs:
       script: 'cd ~;
-              curl -OL https://download.visualstudio.microsoft.com/download/pr/1d7d67dc-e079-4367-b340-3a0148f7747b/b7abb138dbc94b9812a42ce940a4aca9/xamarin.ios-16.4.0.6.pkg;
-              sudo installer -pkg ~/xamarin.ios-16.4.0.6.pkg -target /'
+              curl -OL https://download.visualstudio.microsoft.com/download/pr/8cbf56b1-ef0d-466f-8cfe-fae4ba8c5080/1174a6a7f61a32d94e267e3bc8c1942f/xamarin.ios-16.4.0.18.pkg;
+              sudo installer -pkg ~/xamarin.ios-16.4.0.18.pkg -target /'
 
   - task: CmdLine@2
     displayName: 'Provisioning Xamarin.Mac'
     inputs:
       script: 'cd ~;
-              curl -OL https://download.visualstudio.microsoft.com/download/pr/1d7d67dc-e079-4367-b340-3a0148f7747b/f7c9ed9c642bf4b10411f04c40ca8a20/xamarin.mac-9.3.0.6.pkg;
-              sudo installer -pkg ~/xamarin.mac-9.3.0.6.pkg -target /'
+              curl -OL https://download.visualstudio.microsoft.com/download/pr/8cbf56b1-ef0d-466f-8cfe-fae4ba8c5080/afd720a8aaa6ec1d4d27ddf0c653a9c1/xamarin.mac-9.3.0.18.pkg;
+              sudo installer -pkg ~/xamarin.mac-9.3.0.18.pkg -target /'
 
   - task: CmdLine@2
     displayName: 'Provisioning Xamarin.Android'
     inputs:
       script: 'cd ~;
-              curl -OL https://dl.internalx.com/vsts-devdiv/Xamarin.Android/public/8152354/d17-5/a8a26c7b003e2524cc98acb2c2ffc2ddea0f6692/xamarin.android-13.2.1.2.pkg;
-              sudo installer -pkg ~/xamarin.android-13.2.1.2.pkg -target /'
+              curl -OL https://download.visualstudio.microsoft.com/download/pr/8cbf56b1-ef0d-466f-8cfe-fae4ba8c5080/e9e853fee3169b1c5128098942f19120/xamarin.android-13.2.2.0.pkg;
+              sudo installer -pkg ~/xamarin.android-13.2.2.0.pkg -target /'
 
   # Install GitVersion
   - script: curl -OL https://github.com/GitTools/GitVersion/releases/download/5.12.0/gitversion-osx-x64-5.12.0.tar.gz &&
