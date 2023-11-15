@@ -3,15 +3,9 @@
   - task: UseDotNet@2
     inputs:
       packageType: 'sdk'
-      version: '7.0.403'
-
-  - task: UseDotNet@2
-    inputs:
-      packageType: 'sdk'
-      version: '8.0.100-rc.2.23502.2'
-      includePreviewVersions: true
+      version: '8.0.100'
  
   - task: NuGetToolInstaller@1
-    displayName: 'Use NuGet 6.7.0'
+    displayName: 'Use NuGet 6.8.0'
     inputs:
-      versionSpec: 6.7.0
+      versionSpec: 6.8.0
