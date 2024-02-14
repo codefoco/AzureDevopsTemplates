@@ -133,15 +133,16 @@
   - script: 'dotnet workload install android ios macos tvos maccatalyst maui --skip-sign-check --no-cache --disable-parallel --skip-manifest-update -v d'
     displayName: 'dotnet workload install android ios macos tvos maccatalyst maui'
 
-  - script: echo { >> 8.0.100.json
-            echo "    \"microsoft.net.sdk.macos\": \"14.2.8022/8.0.100\"," >> 8.0.100.json
-            echo "    \"microsoft.net.sdk.ios\": \"17.2.8022/8.0.100\"," >> 8.0.100.json
-            echo "    \"microsoft.net.sdk.maccatalyst\": \"17.2.8022/8.0.100\"," >> 8.0.100.json
-            echo "    \"microsoft.net.sdk.maui\": \"8.0.6/8.0.100\"," >> 8.0.100.json
-            echo "    \"microsoft.net.sdk.tvos\": \"17.2.8022/8.0.100\"," >> 8.0.100.json
-            echo "    \"microsoft.net.sdk.android\": \"34.0.79/8.0.100\" " >> 8.0.100.json
+  - script: | 
+            echo { >> 8.0.100.json
+            echo '    \"microsoft.net.sdk.macos\": \"14.2.8022/8.0.100\",' >> 8.0.100.json
+            echo '    \"microsoft.net.sdk.ios\": \"17.2.8022/8.0.100\",' >> 8.0.100.json
+            echo '    \"microsoft.net.sdk.maccatalyst\": \"17.2.8022/8.0.100\",' >> 8.0.100.json
+            echo '    \"microsoft.net.sdk.maui\": \"8.0.6/8.0.100\",' >> 8.0.100.json
+            echo '    \"microsoft.net.sdk.tvos\": \"17.2.8022/8.0.100\",' >> 8.0.100.json
+            echo '    \"microsoft.net.sdk.android\": \"34.0.79/8.0.100\" ' >> 8.0.100.json
             echo } >> 8.0.100.json
-    displayName: 'dotnet workload uninstall maccatalyst'
+    displayName: 'Create 8.0.100.json'
 
   - script: 'dotnet workload update --no-cache --from-rollback-file 8.0.100.json -v d'
     displayName: 'dotnet workload update --no-cache --from-rollback-file 8.0.100.json -v d'
