@@ -126,12 +126,58 @@
     displayName: 'Show Xamarin.iOS Version'
     inputs:
       script: '/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/bin/mtouch --version'
-  
+
+  - script: 'dotnet workload uninstall maui'
+    continueOnError: true
+    displayName: 'dotnet workload uninstall maui'
+
+  - script: 'dotnet workload uninstall wasm-tools-net6'
+    continueOnError: true
+    displayName: 'dotnet workload uninstall wasm-tools-net6'
+
+  - script: 'dotnet workload uninstall maccatalyst'
+    continueOnError: true
+    displayName: 'dotnet workload uninstall maccatalyst'
+
+  - script: 'dotnet workload uninstall tvos'
+    continueOnError: true
+    displayName: 'dotnet workload uninstall tvos'
+
+  - script: 'dotnet workload uninstall maccatalyst'
+    continueOnError: true
+    displayName: 'dotnet workload uninstall maccatalyst'
+
+  - script: 'dotnet workload uninstall macos'
+    continueOnError: true
+    displayName: 'dotnet workload uninstall macos'
+
+  - script: 'dotnet workload uninstall ios'
+    continueOnError: true
+    displayName: 'dotnet workload uninstall ios'
+
+  - script: 'dotnet workload uninstall android'
+    continueOnError: true
+    displayName: 'dotnet workload uninstall android'
+
+  - script: 'dotnet workload clean'
+    continueOnError: true
+    displayName: 'dotnet workload clean #1'
+    
   - script: 'dotnet workload install android ios macos tvos maccatalyst wasm-tools-net6 maui'
     displayName: 'Install .NET 8.0 Android/iOS/macOS/tvOS/MacCatalyst'
 
   - script: 'dotnet workload list'
-    displayName: 'dotnet workload list'
+    displayName: 'dotnet workload list # 1'
 
   - script: 'sudo dotnet workload update'
     displayName: 'Update .NET 8.0 workloads'
+
+  - script: 'dotnet workload list'
+    displayName: 'dotnet workload list # 2'
+
+  - script: 'dotnet workload clean'
+    continueOnError: true
+    displayName: 'dotnet workload clean #2'
+
+  - script: 'dotnet workload list'
+    displayName: 'dotnet workload list # 3'
