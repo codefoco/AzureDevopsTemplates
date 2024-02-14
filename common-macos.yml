@@ -130,5 +130,8 @@
   - script: 'dotnet workload install android ios macos tvos maccatalyst wasm-tools-net6 maui'
     displayName: 'Install .NET 8.0 Android/iOS/macOS/tvOS/MacCatalyst'
 
+  - script: 'dotnet workload list'
+    displayName: 'dotnet workload list'
+
   - script: 'sudo dotnet workload update'
     displayName: 'Update .NET 8.0 workloads'
