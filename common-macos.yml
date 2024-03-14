@@ -135,12 +135,12 @@
 
   - script: | 
             echo { >> 8.0.100.json
-            echo '    "microsoft.net.sdk.macos": "14.2.8022/8.0.100",' >> 8.0.100.json
-            echo '    "microsoft.net.sdk.ios": "17.2.8022/8.0.100",' >> 8.0.100.json
-            echo '    "microsoft.net.sdk.maccatalyst": "17.2.8022/8.0.100",' >> 8.0.100.json
-            echo '    "microsoft.net.sdk.maui": "8.0.6/8.0.100",' >> 8.0.100.json
-            echo '    "microsoft.net.sdk.tvos": "17.2.8022/8.0.100",' >> 8.0.100.json
-            echo '    "microsoft.net.sdk.android": "34.0.79/8.0.100" ' >> 8.0.100.json
+            echo '    "microsoft.net.sdk.macos": "14.2.8043/8.0.100",' >> 8.0.100.json
+            echo '    "microsoft.net.sdk.ios": "17.2.8043/8.0.100",' >> 8.0.100.json
+            echo '    "microsoft.net.sdk.maccatalyst": "17.2.8043/8.0.100",' >> 8.0.100.json
+            echo '    "microsoft.net.sdk.maui": "8.0.7/8.0.100",' >> 8.0.100.json
+            echo '    "microsoft.net.sdk.tvos": "17.2.8043/8.0.100",' >> 8.0.100.json
+            echo '    "microsoft.net.sdk.android": "34.0.85/8.0.100" ' >> 8.0.100.json
             echo } >> 8.0.100.json
     displayName: 'Create 8.0.100.json'
 
