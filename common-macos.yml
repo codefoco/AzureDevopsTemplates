@@ -1,8 +1,5 @@
   steps:
 
-  - script: 'brew install --cask visual-studio'
-    displayName: 'Install Visual Studio for Mac'
-  
   - script: '/usr/bin/xcodebuild -version'
     displayName: 'Show Xcode Version' 
     
