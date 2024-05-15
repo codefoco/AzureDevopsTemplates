@@ -15,8 +15,8 @@
     ## Update this section to newer versions of Xcode (e.g 14.3)
     ## Check Xcode path on ADO here: https://github.com/actions/virtual-environments/blob/main/images/macos/macos-12-Readme.md
     
-  - script: 'sudo mv /Applications/Xcode_15.3.app /Applications/Xcode.app'
-    displayName: 'Move Xcode_15.3.app to /Applications/Xcode.app'
+  - script: 'sudo mv /Applications/Xcode_15.4.app /Applications/Xcode.app'
+    displayName: 'Move Xcode_15.4.app to /Applications/Xcode.app'
     
   - script: 'sudo xcode-select -s /Applications/Xcode.app/Contents/Developer'
     displayName: 'Ensure xcode-select point to /Applications/Xcode.app'
