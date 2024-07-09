@@ -98,15 +98,15 @@
     displayName: 'Provisioning Xamarin.iOS'
     inputs:
       script: 'cd ~;
-              curl -OL https://github.com/codefoco/AzureDevopsTemplates/releases/download/v1.0/xamarin.ios-17.2.0.43.pkg;
-              sudo installer -pkg ~/xamarin.ios-17.2.0.43.pkg -target /'
+              curl -OL https://github.com/codefoco/AzureDevopsTemplates/releases/download/v1.0/xamarin.ios-17.2.0.78.pkg;
+              sudo installer -pkg ~/xamarin.ios-17.2.0.78.pkg -target /'
 
   - task: CmdLine@2
     displayName: 'Provisioning Xamarin.Mac'
     inputs:
       script: 'cd ~;
-              curl -OL https://github.com/codefoco/AzureDevopsTemplates/releases/download/v1.0/xamarin.mac-9.2.0.43.pkg;
-              sudo installer -pkg ~/xamarin.mac-9.2.0.43.pkg -target /'
+              curl -OL https://github.com/codefoco/AzureDevopsTemplates/releases/download/v1.0/xamarin.mac-9.2.0.78.pkg;
+              sudo installer -pkg ~/xamarin.mac-9.2.0.78.pkg -target /'
 
   - task: CmdLine@2
     displayName: 'Provisioning Xamarin.Android'
