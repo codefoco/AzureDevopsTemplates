@@ -6,6 +6,6 @@
       version: '8.0.303'
  
   - task: NuGetToolInstaller@1
-    displayName: 'Use NuGet 6.10.1'
+    displayName: 'Use NuGet 6.10.2'
     inputs:
-      versionSpec: 6.10.1
+      versionSpec: 6.10.2
