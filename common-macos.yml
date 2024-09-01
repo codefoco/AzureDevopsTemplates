@@ -150,5 +150,5 @@
   - script: 'dotnet --info'
     displayName: 'dotnet --info'
 
-  - script: 'dotnet workload clean'
-    displayName: 'dotnet workload clean #1'
+  # - script: 'dotnet workload clean' # Regression on .NET https://github.com/dotnet/runtime/issues/107233
+  #   displayName: 'dotnet workload clean #1'
