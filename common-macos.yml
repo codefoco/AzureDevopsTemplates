@@ -21,8 +21,8 @@
   - script: 'sudo xcode-select -s /Applications/Xcode.app/Contents/Developer'
     displayName: 'Ensure xcode-select point to /Applications/Xcode.app'
 
-  - script: 'xcode-select --install'
-    displayName: 'Ensure command line tools is installed'
+  # - script: 'xcode-select --install'
+  #   displayName: 'Ensure command line tools is installed'
     
   - script: '/usr/bin/xcodebuild -version'
     displayName: 'Show Xcode Version'
