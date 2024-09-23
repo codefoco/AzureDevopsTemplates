@@ -30,6 +30,8 @@
   - script: 'xcode-select -p'
     displayName: 'Show current xcode-select path'
 
+  - script: 'ls -l /Applications/'
+    displayName: 'ls -l /Applications/'
    
   - task: InstallAppleCertificate@2
     inputs:
