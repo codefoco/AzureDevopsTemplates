@@ -4,7 +4,13 @@
     inputs:
       packageType: 'sdk'
       version: '8.0.401'
- 
+  
+  - task: UseDotNet@2
+    inputs:
+      packageType: 'sdk'
+      includePreviewVersions: true
+      version: '9.0.100-rc.1.24452.12'
+        
   - task: NuGetToolInstaller@1
     displayName: 'Use NuGet 6.11.0'
     inputs:
