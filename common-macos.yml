@@ -104,15 +104,15 @@
     displayName: 'Provisioning Xamarin.iOS'
     inputs:
       script: 'cd ~;
-              curl -OL https://github.com/codefoco/AzureDevopsTemplates/releases/download/v1.0/xamarin.ios-17.5.0.271.pkg;
-              sudo installer -pkg ~/xamarin.ios-17.5.0.271.pkg  -target /'
+              curl -OL https://github.com/codefoco/AzureDevopsTemplates/releases/download/v1.0/xamarin.ios-17.99.0.303.pkg;
+              sudo installer -pkg ~/xamarin.ios-17.99.0.303.pkg  -target /'
 
   - task: CmdLine@2
     displayName: 'Provisioning Xamarin.Mac'
     inputs:
       script: 'cd ~;
-              curl -OL https://github.com/codefoco/AzureDevopsTemplates/releases/download/v1.0/xamarin.mac-9.5.0.271.pkg;
-              sudo installer -pkg ~/xamarin.mac-9.5.0.271.pkg -target /'
+              curl -OL https://github.com/codefoco/AzureDevopsTemplates/releases/download/v1.0/xamarin.mac-9.99.0.303.pkg;
+              sudo installer -pkg ~/xamarin.mac-9.99.0.303.pkg -target /'
 
   - task: CmdLine@2
     displayName: 'Provisioning Xamarin.Android'
@@ -122,10 +122,10 @@
               sudo installer -pkg ~/xamarin.android-13.2.2.0.pkg -target /'
 
   # Install GitVersion
-  - script: curl -OL https://github.com/GitTools/GitVersion/releases/download/5.12.0/gitversion-osx-x64-5.12.0.tar.gz &&
-            tar -xvf gitversion-osx-x64-5.12.0.tar.gz &&
+  - script: curl -OL https://github.com/GitTools/GitVersion/releases/download/6.0.2/gitversion-osx-x64-6.0.2.tar.gz &&
+            tar -xvf gitversion-osx-x64-6.0.2.tar.gz &&
             mv gitversion /usr/local/bin
-    displayName: 'Install GitVersion 5.12.0'
+    displayName: 'Install GitVersion 6.0.2'
 
   # Print the current version of Xamarin.iOS
   - task: CmdLine@2
@@ -156,8 +156,6 @@
   - script: 'dotnet --info'
     displayName: 'dotnet --info'
 
-  - script: 'sudo xcode-select -s /Applications/Xcode.app/Contents/Developer'
-    displayName: 'Ensure(2) xcode-select point to /Applications/Xcode.app'
     
   # - script: 'dotnet workload clean' # Regression on .NET https://github.com/dotnet/runtime/issues/107233
   #   displayName: 'dotnet workload clean #1'
