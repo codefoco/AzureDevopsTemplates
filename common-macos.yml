@@ -66,18 +66,23 @@
   - task: InstallAppleProvisioningProfile@1
     inputs:
       provisioningProfileLocation: 'secureFiles'
-      provProfileSecureFile: 'AppStore.mobileprovision'
+      provProfileSecureFile: 'AppStore_Distribuition.mobileprovision'
 
   - task: InstallAppleProvisioningProfile@1
     inputs:
       provisioningProfileLocation: 'secureFiles'
-      provProfileSecureFile: 'Development.mobileprovision'
+      provProfileSecureFile: 'iOS_Development.mobileprovision'
 
   - task: InstallAppleProvisioningProfile@1
     inputs:
       provisioningProfileLocation: 'secureFiles'
-      provProfileSecureFile: 'MacAppStore.provisionprofile'
+      provProfileSecureFile: 'macOS_AppStore_Distribution.provisionprofile'
 
+  - task: InstallAppleProvisioningProfile@1
+    inputs:
+      provisioningProfileLocation: 'secureFiles'
+      provProfileSecureFile: 'macOS_Development.provisionprofile'
+      
   - task: InstallAppleProvisioningProfile@1
     inputs:
       provisioningProfileLocation: 'secureFiles'
@@ -86,7 +91,7 @@
   - task: InstallAppleProvisioningProfile@1
     inputs:
       provisioningProfileLocation: 'secureFiles'
-      provProfileSecureFile: 'tvOSAppStore.mobileprovision'
+      provProfileSecureFile: 'tvOS_AppStore_Distribution.mobileprovision'
       
   - task: JavaToolInstaller@0
     displayName: install JDK 11
