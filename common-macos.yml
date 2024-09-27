@@ -44,7 +44,13 @@
       certSecureFile: 'DeveloperIDApplication.p12'
       certPwd: '$(CertificatePwd)'
       keychain: 'temp'
-
+      
+  - task: InstallAppleCertificate@2
+    inputs:
+      certSecureFile: 'DeveloperIDInstaller.p12'
+      certPwd: '$(CertificatePwd)'
+      keychain: 'temp'
+      
   - task: InstallAppleCertificate@2
     inputs:
       certSecureFile: 'Development.p12'
