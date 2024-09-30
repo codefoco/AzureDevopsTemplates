@@ -12,6 +12,6 @@
       version: '9.0.100-rc.1.24452.12'
         
   - task: NuGetToolInstaller@1
-    displayName: 'Use NuGet 6.11.0'
+    displayName: 'Use NuGet 6.11.1'
     inputs:
-      versionSpec: 6.11.0
+      versionSpec: 6.11.1
