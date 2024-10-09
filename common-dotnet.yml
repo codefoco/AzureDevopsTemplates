@@ -3,13 +3,13 @@
   - task: UseDotNet@2
     inputs:
       packageType: 'sdk'
-      version: '8.0.402'
+      version: '8.0.403'
   
   - task: UseDotNet@2
     inputs:
       packageType: 'sdk'
       includePreviewVersions: true
-      version: '9.0.100-rc.1.24452.12'
+      version: '9.0.100-rc.2.24474.11'
         
   - task: NuGetToolInstaller@1
     displayName: 'Use NuGet 6.11.1'
