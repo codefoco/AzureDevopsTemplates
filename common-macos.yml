@@ -35,38 +35,33 @@
    
   - task: InstallAppleCertificate@2
     inputs:
-      certSecureFile: 'Distribution.p12'
-      certPwd: '$(CertificatePwd)'
-      keychain: 'temp'
-      opensslPkcsArgs: '-legacy'
-  
-  - task: InstallAppleCertificate@2
-    inputs:
       certSecureFile: 'DeveloperIDApplication.p12'
       certPwd: '$(CertificatePwd)'
       keychain: 'temp'
-      opensslPkcsArgs: '-legacy'
       
   - task: InstallAppleCertificate@2
     inputs:
       certSecureFile: 'DeveloperIDInstaller.p12'
       certPwd: '$(CertificatePwd)'
       keychain: 'temp'
-      opensslPkcsArgs: '-legacy'
       
   - task: InstallAppleCertificate@2
     inputs:
       certSecureFile: 'Development.p12'
       certPwd: '$(CertificatePwd)'
       keychain: 'temp'
-      opensslPkcsArgs: '-legacy'
       
   - task: InstallAppleCertificate@2
     inputs:
       certSecureFile: 'MacInstallerDistribution.p12'
       certPwd: '$(CertificatePwd)'
       keychain: 'temp'
-      opensslPkcsArgs: '-legacy'
+
+  - task: InstallAppleCertificate@2
+    inputs:
+      certSecureFile: 'Distribution.p12'
+      certPwd: '$(CertificatePwd)'
+      keychain: 'temp'
 
   - task: InstallAppleProvisioningProfile@1
     inputs:
