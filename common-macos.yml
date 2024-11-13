@@ -41,7 +41,6 @@
       certSecureFile: 'DeveloperIDApplication.p12'
       certPwd: '$(CertificatePwd)'
       keychain: 'temp'
-      opensslPkcsArgs: '-legacy'
       
   - task: InstallAppleCertificate@2
     inputs:
@@ -54,6 +53,7 @@
       certSecureFile: 'Development.p12'
       certPwd: '$(CertificatePwd)'
       keychain: 'temp'
+      opensslPkcsArgs: '-legacy'
       
   - task: InstallAppleCertificate@2
     inputs:
