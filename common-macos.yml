@@ -1,7 +1,7 @@
   steps:
 
   - script: '/Users/runner/Library/Android/sdk/cmdline-tools/latest/bin/sdkmanager "build-tools;32.0.0"'
-    displayName: 'Install Android Build Tools 32.0.0' 
+    displayName: 'Install Android Build Tools 32.0.0 ' 
     
   - script: '/usr/bin/xcodebuild -version'
     displayName: 'Show Xcode Version' 
