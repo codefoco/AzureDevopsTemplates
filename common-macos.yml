@@ -98,6 +98,9 @@
     
   - script: 'xcode-select -p'
     displayName: 'Show current xcode-select path'
+
+  - script: 'ls -l /Applications/'
+    displayName: 'ls -l /Applications/'
     
   - script: 'sudo rm /Applications/Xcode.app'
     displayName: 'Remove Xcode.app symlink due Xamarin.Mac/iOS bug'
@@ -108,8 +111,8 @@
     ## Update this section to newer versions of Xcode (e.g 14.3)
     ## Check Xcode path on ADO here: https://github.com/actions/virtual-environments/blob/main/images/macos/macos-12-Readme.md
     
-  - script: 'sudo mv /Applications/Xcode_16.1_Release_Candidate.app /Applications/Xcode.app'
-    displayName: 'Move Xcode_16.1_Release_Candidate.app to /Applications/Xcode.app'
+  - script: 'sudo mv /Applications/Xcode_16.1.app /Applications/Xcode.app'
+    displayName: 'Move Xcode_16.1.app to /Applications/Xcode.app'
     
   - script: 'sudo xcode-select -s /Applications/Xcode.app/Contents/Developer'
     displayName: 'Ensure xcode-select point to /Applications/Xcode.app'
@@ -122,9 +125,6 @@
     
   - script: 'xcode-select -p'
     displayName: 'Show current xcode-select path'
-
-  - script: 'ls -l /Applications/'
-    displayName: 'ls -l /Applications/'
    
   - task: InstallAppleCertificate@2
     continueOnError: true
