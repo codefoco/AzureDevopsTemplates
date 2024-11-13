@@ -1,6 +1,6 @@
   steps:
 
-  - script: '/Users/runner/Library/Android/sdk/cmdline-tools/latest/bin/sdkmanager "build-tools;34.0.3"'
+  - script: '/Users/runner/Library/Android/sdk/cmdline-tools/latest/bin/sdkmanager "build-tools;32.0.0"'
     displayName: 'Install Android Build Tools 34.0.3' 
     
   - script: '/usr/bin/xcodebuild -version'
