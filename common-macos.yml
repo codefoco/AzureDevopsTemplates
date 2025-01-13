@@ -120,7 +120,7 @@
   - script: 'sudo mv /Applications/Xcode_16.2.app /Applications/Xcode.app'
     displayName: 'Move Xcode_16.2.app to /Applications/Xcode.app'
     
-  - script: 'sudo xcode-select -s /Applications/Xcode.app/Contents/Developer'
+  - script: 'sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer'
     displayName: 'Ensure xcode-select point to /Applications/Xcode.app'
 
   # - script: 'xcode-select --install'
@@ -131,7 +131,37 @@
     
   - script: 'xcode-select -p'
     displayName: 'Show current xcode-select path'
-   
+
+  - script: 'sudo xcodebuild -license accept'
+    displayName: 'Xcode License accepted'
+    continueOnError: true
+
+  - script: 'sudo xcodebuild -runFirstLaunch'
+    displayName: 'Xcode run first launch'
+    continueOnError: true
+
+  - script: 'xcodebuild -downloadPlatform iOS'
+    displayName: 'Xcode Download iOS platforms'
+
+  - script: 'xcodebuild -downloadPlatform tvOS'
+    displayName: 'Xcode Download tvOS platforms'
+
+  - script: 'xcodebuild -downloadPlatform iOS -exportPath ~/Downloads/ -buildVersion 22B81'
+    displayName: 'Download iOS 18.1 platform'
+    continueOnError: true
+
+  - script: 'xcrun simctl runtime add ~/Downloads/iphonesimulator_18.1_22B81.dmg'
+    displayName: 'Install iOS 18.1 runtime'
+    continueOnError: true
+
+  - script: 'xcodebuild -downloadPlatform tvOS -exportPath ~/Downloads/ -buildVersion 22J578'
+    displayName: 'Download tvOS 18.1 platform'
+    continueOnError: true
+
+  - script: 'xcrun simctl runtime add ~/Downloads/appletvsimulator_18.1_22J578.dmg'
+    displayName: 'Install tvOS 18.1 runtime'
+    continueOnError: true
+    
   - task: InstallAppleCertificate@2
     continueOnError: true
     inputs:
