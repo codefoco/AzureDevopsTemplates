@@ -146,21 +146,21 @@
   - script: 'xcodebuild -downloadPlatform tvOS'
     displayName: 'Xcode Download tvOS platforms'
 
-  - script: 'xcodebuild -downloadPlatform iOS -exportPath ~/Downloads/ -buildVersion 22B81'
-    displayName: 'Download iOS 18.1 platform'
-    continueOnError: true
+  # - script: 'xcodebuild -downloadPlatform iOS -exportPath ~/Downloads/ -buildVersion 22B81'
+  #   displayName: 'Download iOS 18.1 platform'
+  #   continueOnError: true
 
-  - script: 'xcrun simctl runtime add ~/Downloads/iphonesimulator_18.1_22B81.dmg'
-    displayName: 'Install iOS 18.1 runtime'
-    continueOnError: true
+  # - script: 'xcrun simctl runtime add ~/Downloads/iphonesimulator_18.1_22B81.dmg'
+  #   displayName: 'Install iOS 18.1 runtime'
+  #   continueOnError: true
 
-  - script: 'xcodebuild -downloadPlatform tvOS -exportPath ~/Downloads/ -buildVersion 22J578'
-    displayName: 'Download tvOS 18.1 platform'
-    continueOnError: true
+  # - script: 'xcodebuild -downloadPlatform tvOS -exportPath ~/Downloads/ -buildVersion 22J578'
+  #   displayName: 'Download tvOS 18.1 platform'
+  #   continueOnError: true
 
-  - script: 'xcrun simctl runtime add ~/Downloads/appletvsimulator_18.1_22J578.dmg'
-    displayName: 'Install tvOS 18.1 runtime'
-    continueOnError: true
+  # - script: 'xcrun simctl runtime add ~/Downloads/appletvsimulator_18.1_22J578.dmg'
+  #   displayName: 'Install tvOS 18.1 runtime'
+  #   continueOnError: true
     
   - task: InstallAppleCertificate@2
     continueOnError: true
@@ -197,45 +197,45 @@
       certPwd: '$(CertificatePwd)'
       keychain: 'temp'
 
-  - task: InstallAppleCertificate@2
-    continueOnError: true
-    inputs:
-      certSecureFile: 'DeveloperIDApplication.p12'
-      certPwd: '$(CertificatePwd)'
-      keychain: 'temp'
-      opensslPkcsArgs: -legacy
+  # - task: InstallAppleCertificate@2
+  #   continueOnError: true
+  #   inputs:
+  #     certSecureFile: 'DeveloperIDApplication.p12'
+  #     certPwd: '$(CertificatePwd)'
+  #     keychain: 'temp'
+  #     opensslPkcsArgs: -legacy
       
-  - task: InstallAppleCertificate@2
-    continueOnError: true
-    inputs:
-      certSecureFile: 'DeveloperIDInstaller.p12'
-      certPwd: '$(CertificatePwd)'
-      keychain: 'temp'
-      opensslPkcsArgs: -legacy
+  # - task: InstallAppleCertificate@2
+  #   continueOnError: true
+  #   inputs:
+  #     certSecureFile: 'DeveloperIDInstaller.p12'
+  #     certPwd: '$(CertificatePwd)'
+  #     keychain: 'temp'
+  #     opensslPkcsArgs: -legacy
       
-  - task: InstallAppleCertificate@2
-    continueOnError: true
-    inputs:
-      certSecureFile: 'Development.p12'
-      certPwd: '$(CertificatePwd)'
-      keychain: 'temp'
-      opensslPkcsArgs: -legacy
+  # - task: InstallAppleCertificate@2
+  #   continueOnError: true
+  #   inputs:
+  #     certSecureFile: 'Development.p12'
+  #     certPwd: '$(CertificatePwd)'
+  #     keychain: 'temp'
+  #     opensslPkcsArgs: -legacy
       
-  - task: InstallAppleCertificate@2
-    continueOnError: true
-    inputs:
-      certSecureFile: 'MacInstallerDistribution.p12'
-      certPwd: '$(CertificatePwd)'
-      keychain: 'temp'
-      opensslPkcsArgs: -legacy
+  # - task: InstallAppleCertificate@2
+  #   continueOnError: true
+  #   inputs:
+  #     certSecureFile: 'MacInstallerDistribution.p12'
+  #     certPwd: '$(CertificatePwd)'
+  #     keychain: 'temp'
+  #     opensslPkcsArgs: -legacy
 
-  - task: InstallAppleCertificate@2
-    continueOnError: true
-    inputs:
-      certSecureFile: 'Distribution.p12'
-      certPwd: '$(CertificatePwd)'
-      keychain: 'temp'
-      opensslPkcsArgs: -legacy
+  # - task: InstallAppleCertificate@2
+  #   continueOnError: true
+  #   inputs:
+  #     certSecureFile: 'Distribution.p12'
+  #     certPwd: '$(CertificatePwd)'
+  #     keychain: 'temp'
+  #     opensslPkcsArgs: -legacy
       
   - task: InstallAppleProvisioningProfile@1
     inputs:
