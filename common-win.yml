@@ -2,7 +2,7 @@ steps:
 - script: 'choco install gitversion.portable --version=6.1.0'
   displayName: 'Install GitVersion'
   
-- script: 'choco install nunit-console-runner --version=3.19.1'
+- script: 'choco install nunit-console-runner --version=3.19.2'
   displayName: 'Install  nunit-console-runner'
 
 - script: 'dotnet workload install android wasm-tools-net6 maui'
