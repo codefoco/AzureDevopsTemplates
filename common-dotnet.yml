@@ -13,4 +13,4 @@
   - task: NuGetToolInstaller@1
     displayName: 'Use NuGet 6.13.1'
     inputs:
-      versionSpec: 6.13.1
+      versionSpec: 6.12.2
