@@ -9,6 +9,11 @@
     inputs:
       packageType: 'sdk'
       version: '9.0.203'
+
+  - task: UseDotNet@2
+    inputs:
+      packageType: 'sdk'
+      version: '10.0.100-preview.3.25201.16'
         
   - task: NuGetToolInstaller@1
     displayName: 'Use NuGet 6.13.2'
