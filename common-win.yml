@@ -5,7 +5,7 @@ steps:
 - script: 'choco install nunit-console-runner --version=3.19.2'
   displayName: 'Install  nunit-console-runner'
 
-- script: 'dotnet workload install android maui mobile-librarybuilder-net9'
+- script: 'dotnet workload install android maui mobile-librarybuilder-net9 android-net8'
   displayName: 'Install .NET Android'
   
 - task: JavaToolInstaller@0
