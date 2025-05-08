@@ -321,8 +321,8 @@
   - script: 'dotnet --info'
     displayName: 'dotnet --info'
 
-  - script: 'dotnet workload install android ios macos tvos maccatalyst maui  --skip-sign-check --no-cache --disable-parallel --skip-manifest-update -v d'
-    displayName: 'dotnet workload install android ios macos tvos maccatalyst maui '
+  - script: 'dotnet workload install android ios macos tvos maccatalyst maui mobile-librarybuilder-net9 --skip-sign-check --no-cache --disable-parallel --skip-manifest-update -v d'
+    displayName: 'dotnet workload install android ios macos tvos maccatalyst maui mobile-librarybuilder-net9'
 
   # - script: | 
   #           echo { >> 8.0.100.json
