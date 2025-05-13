@@ -98,7 +98,10 @@
 
   - script: '/Users/runner/Library/Android/sdk/cmdline-tools/latest/bin/sdkmanager "platforms;android-35"'
     displayName: 'Install Android platforms 35'
-    
+
+  - script: '/Users/runner/Library/Android/sdk/cmdline-tools/latest/bin/sdkmanager "platforms;android-36"'
+    displayName: 'Install Android platforms 36'
+  
   - script: '/usr/bin/xcodebuild -version'
     displayName: 'Show Xcode Version' 
     
