@@ -140,11 +140,12 @@
     displayName: 'Xcode run first launch'
     continueOnError: true
 
-  - script: 'xcodebuild -downloadPlatform iOS'
-    displayName: 'Xcode Download iOS platforms'
+  # # For some reson this started failing with code 70
+  # - script: 'xcodebuild -downloadPlatform iOS'
+  #   displayName: 'Xcode Download iOS platforms'
 
-  - script: 'xcodebuild -downloadPlatform tvOS'
-    displayName: 'Xcode Download tvOS platforms'
+  # - script: 'xcodebuild -downloadPlatform tvOS'
+  #   displayName: 'Xcode Download tvOS platforms'
 
   # - script: 'xcodebuild -downloadPlatform iOS -exportPath ~/Downloads/ -buildVersion 22B81'
   #   displayName: 'Download iOS 18.1 platform'
