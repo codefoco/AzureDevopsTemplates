@@ -272,9 +272,9 @@
       provProfileSecureFile: 'tvOS_AppStore_Distribution.mobileprovision'
       
   - task: JavaToolInstaller@0
-    displayName: install JDK 11
+    displayName: install JDK 17
     inputs:
-      versionSpec: '11'
+      versionSpec: '17'
       jdkArchitectureOption: 'x64'
       jdkSourceOption: 'PreInstalled'
       
