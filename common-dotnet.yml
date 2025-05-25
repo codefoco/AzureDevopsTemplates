@@ -1,9 +1,9 @@
   steps:
 
-  # - task: UseDotNet@2
-  #   inputs:
-  #     packageType: 'sdk'
-  #     version: '8.0.409'
+  - task: UseDotNet@2
+    inputs:
+      packageType: 'sdk'
+      version: '8.0.410'
   
   - task: UseDotNet@2
     inputs:
@@ -16,6 +16,6 @@
       version: '10.0.100-preview.4.25258.110'
         
   - task: NuGetToolInstaller@1
-    displayName: 'Use NuGet 6.13.2'
+    displayName: 'Use NuGet 6.14.0'
     inputs:
-      versionSpec: 6.13.2
+      versionSpec: 6.14.0
