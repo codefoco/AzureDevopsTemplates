@@ -3,12 +3,12 @@
   - task: UseDotNet@2
     inputs:
       packageType: 'sdk'
-      version: '8.0.411'
+      version: '8.0.412'
   
   - task: UseDotNet@2
     inputs:
       packageType: 'sdk'
-      version: '9.0.301'
+      version: '9.0.302'
 
   - task: UseDotNet@2
     inputs:
