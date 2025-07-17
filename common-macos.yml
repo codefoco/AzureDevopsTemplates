@@ -328,19 +328,20 @@
   - script: 'dotnet workload install android ios macos tvos maccatalyst maui mobile-librarybuilder-net9 --skip-sign-check --no-cache --disable-parallel --skip-manifest-update -v d'
     displayName: 'dotnet workload install android ios macos tvos maccatalyst maui mobile-librarybuilder-net9'
 
-  # - script: | 
-  #           echo { >> 8.0.100.json
-  #           echo '    "microsoft.net.sdk.macos": "14.2.8053/8.0.100",' >> 8.0.100.json
-  #           echo '    "microsoft.net.sdk.ios": "17.2.8053/8.0.100",' >> 8.0.100.json
-  #           echo '    "microsoft.net.sdk.maccatalyst": "17.2.8053/8.0.100",' >> 8.0.100.json
-  #           echo '    "microsoft.net.sdk.maui": "8.0.21/8.0.100",' >> 8.0.100.json
-  #           echo '    "microsoft.net.sdk.tvos": "17.2.8053/8.0.100",' >> 8.0.100.json
-  #           echo '    "microsoft.net.sdk.android": "34.0.95/8.0.100" ' >> 8.0.100.json
-  #           echo } >> 8.0.100.json
-  #   displayName: 'Create 8.0.100.json'
+  # .NET 10 Preview6 bug. Microsoft put the wrong manifest so installing Preview6 workloads will install an old version
+  - script: | 
+            echo { >> 10.0.100.json
+            echo '    "microsoft.net.sdk.macos": "15.5.10415-net10-p6/10.0.100-preview.6",' >> 10.0.100.json
+            echo '    "microsoft.net.sdk.ios": "18.5.10415-net10-p6/10.0.100-preview.6",' >> 10.0.100.json
+            echo '    "microsoft.net.sdk.maccatalyst": "18.5.10415-net10-p6/10.0.100-preview.6",' >> 10.0.100.json
+            echo '    "microsoft.net.sdk.maui": "10.0.0-preview.6.25359.8/10.0.100-preview.6",' >> 10.0.100.json
+            echo '    "microsoft.net.sdk.tvos": "18.5.10415-net10-p6/10.0.100-preview.6",' >> 10.0.100.json
+            echo '    "microsoft.net.sdk.android": "36.0.0-preview.6.169/10.0.100-preview.6" ' >> 10.0.100.json
+            echo } >> 10.0.100.json
+    displayName: 'Create 10.0.100.json'
 
-  # - script: 'dotnet workload update --no-cache --from-rollback-file 8.0.100.json -v d'
-  #   displayName: 'dotnet workload update --no-cache --from-rollback-file 8.0.100.json -v d'
+  - script: 'dotnet workload update --no-cache --from-rollback-file 10.0.100.json -v d'
+    displayName: 'dotnet workload update --no-cache --from-rollback-file 10.0.100.json -v d'
     
   - script: 'dotnet --info'
     displayName: 'dotnet --info'
