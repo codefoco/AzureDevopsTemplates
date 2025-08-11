@@ -1,5 +1,5 @@
 steps:
-- script: 'choco install gitversion.portable --version=6.3.0'
+- script: 'choco install gitversion.portable --version=6.4.0'
   displayName: 'Install GitVersion'
   
 - script: 'choco install nunit-console-runner --version=3.19.2'
