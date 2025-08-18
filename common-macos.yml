@@ -82,8 +82,8 @@
             echo 'System.TeamProject=$(System.TeamProject)'
             echo 'System.TeamProjectId=$(System.TeamProjectId)'
             echo 'TF_BUILD=$(TF_BUILD)'
-            echo '========== Tool Version =========='
-            /usr/bin/openssl --version 
+            # echo '========== Tool Version =========='
+            # /usr/bin/openssl --version 
   
     displayName: 'Show Build Info' 
 
@@ -328,17 +328,17 @@
   - script: 'dotnet workload install android ios macos tvos maccatalyst maui mobile-librarybuilder-net9 --skip-sign-check --no-cache --disable-parallel --skip-manifest-update -v d'
     displayName: 'dotnet workload install android ios macos tvos maccatalyst maui mobile-librarybuilder-net9'
 
-  # .NET 10 Preview6 bug. Microsoft put the wrong manifest so installing Preview6 workloads will install an old version
-  # - script: | 
-  #           echo { >> 10.0.100.json
-  #           echo '    "microsoft.net.sdk.macos": "15.5.10415-net10-p6/10.0.100-preview.6",' >> 10.0.100.json
-  #           echo '    "microsoft.net.sdk.ios": "18.5.10415-net10-p6/10.0.100-preview.6",' >> 10.0.100.json
-  #           echo '    "microsoft.net.sdk.maccatalyst": "18.5.10415-net10-p6/10.0.100-preview.6",' >> 10.0.100.json
-  #           echo '    "microsoft.net.sdk.maui": "10.0.0-preview.6.25359.8/10.0.100-preview.6",' >> 10.0.100.json
-  #           echo '    "microsoft.net.sdk.tvos": "18.5.10415-net10-p6/10.0.100-preview.6",' >> 10.0.100.json
-  #           echo '    "microsoft.net.sdk.android": "36.0.0-preview.6.169/10.0.100-preview.6" ' >> 10.0.100.json
-  #           echo } >> 10.0.100.json
-  #   displayName: 'Create 10.0.100.json'
+  .NET 10 Preview bug. Microsoft put the wrong manifest so installing Preview7 workloads will install an old version
+  - script: | 
+            echo { >> 10.0.100.json
+            echo '    "microsoft.net.sdk.macos": "15.5.10601-net10-p7/10.0.100-preview.7",' >> 10.0.100.json
+            echo '    "microsoft.net.sdk.ios": "18.5.10601-net10-p7/10.0.100-preview.7",' >> 10.0.100.json
+            echo '    "microsoft.net.sdk.maccatalyst": "18.5.10601-net10-p7/10.0.100-preview.7",' >> 10.0.100.json
+            echo '    "microsoft.net.sdk.maui": "10.0.0-preview.7.25406.3/10.0.100-preview.7",' >> 10.0.100.json
+            echo '    "microsoft.net.sdk.tvos": "18.5.10601-net10-p7/10.0.100-preview.7",' >> 10.0.100.json
+            echo '    "microsoft.net.sdk.android": "36.0.0-preview.7.229/10.0.100-preview.7" ' >> 10.0.100.json
+            echo } >> 10.0.100.json
+    displayName: 'Create 10.0.100.json'
 
   # - script: 'dotnet workload update --no-cache --from-rollback-file 10.0.100.json -v d'
   #   displayName: 'dotnet workload update --no-cache --from-rollback-file 10.0.100.json -v d'
