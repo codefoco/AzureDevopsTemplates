@@ -82,8 +82,8 @@
             echo 'System.TeamProject=$(System.TeamProject)'
             echo 'System.TeamProjectId=$(System.TeamProjectId)'
             echo 'TF_BUILD=$(TF_BUILD)'
-            # echo '========== Tool Version =========='
-            # /usr/bin/openssl --version 
+            echo '========== Tool Version =========='
+
   
     displayName: 'Show Build Info' 
 
