@@ -340,8 +340,8 @@
             echo } >> 10.0.100.json
     displayName: 'Create 10.0.100.json'
 
-  # - script: 'dotnet workload update --no-cache --from-rollback-file 10.0.100.json -v d'
-  #   displayName: 'dotnet workload update --no-cache --from-rollback-file 10.0.100.json -v d'
+  - script: 'dotnet workload update --no-cache --from-rollback-file 10.0.100.json -v d'
+    displayName: 'dotnet workload update --no-cache --from-rollback-file 10.0.100.json -v d'
     
   - script: 'dotnet --info'
     displayName: 'dotnet --info'
