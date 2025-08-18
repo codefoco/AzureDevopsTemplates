@@ -328,7 +328,7 @@
   - script: 'dotnet workload install android ios macos tvos maccatalyst maui mobile-librarybuilder-net9 --skip-sign-check --no-cache --disable-parallel --skip-manifest-update -v d'
     displayName: 'dotnet workload install android ios macos tvos maccatalyst maui mobile-librarybuilder-net9'
 
-  .NET 10 Preview bug. Microsoft put the wrong manifest so installing Preview7 workloads will install an old version
+  # .NET 10 Preview bug. Microsoft put the wrong manifest so installing Preview7 workloads will install an old version
   - script: | 
             echo { >> 10.0.100.json
             echo '    "microsoft.net.sdk.macos": "15.5.10601-net10-p7/10.0.100-preview.7",' >> 10.0.100.json
