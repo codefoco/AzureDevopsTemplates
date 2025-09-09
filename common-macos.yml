@@ -120,8 +120,8 @@
     ## Update this section to newer versions of Xcode (e.g 14.3)
     ## Check Xcode path on ADO here: https://github.com/actions/virtual-environments/blob/main/images/macos/macos-12-Readme.md
     
-  - script: 'sudo mv /Applications/Xcode_16.4.app /Applications/Xcode.app'
-    displayName: 'Move Xcode_16.4.app to /Applications/Xcode.app'
+  - script: 'sudo mv /Applications/Xcode_26_beta_7.app /Applications/Xcode.app'
+    displayName: 'Move Xcode_26_beta_7.app to /Applications/Xcode.app'
     
   - script: 'sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer'
     displayName: 'Ensure xcode-select point to /Applications/Xcode.app'
@@ -328,15 +328,15 @@
   - script: 'dotnet workload install android ios macos tvos maccatalyst maui mobile-librarybuilder-net9 --skip-sign-check --no-cache --disable-parallel --skip-manifest-update -v d'
     displayName: 'dotnet workload install android ios macos tvos maccatalyst maui mobile-librarybuilder-net9'
 
-  # .NET 10 Preview bug. Microsoft put the wrong manifest so installing Preview7 workloads will install an old version
+  # .NET 10 Preview bug. Microsoft put the wrong manifest so installing workloads will install an old version
   - script: | 
             echo { >> 10.0.100.json
-            echo '    "microsoft.net.sdk.macos": "15.5.10601-net10-p7/10.0.100-preview.7",' >> 10.0.100.json
-            echo '    "microsoft.net.sdk.ios": "18.5.10601-net10-p7/10.0.100-preview.7",' >> 10.0.100.json
-            echo '    "microsoft.net.sdk.maccatalyst": "18.5.10601-net10-p7/10.0.100-preview.7",' >> 10.0.100.json
-            echo '    "microsoft.net.sdk.maui": "10.0.0-preview.7.25406.3/10.0.100-preview.7",' >> 10.0.100.json
-            echo '    "microsoft.net.sdk.tvos": "18.5.10601-net10-p7/10.0.100-preview.7",' >> 10.0.100.json
-            echo '    "microsoft.net.sdk.android": "36.0.0-preview.7.229/10.0.100-preview.7" ' >> 10.0.100.json
+            echo '    "microsoft.net.sdk.macos": "15.5.10727-net10-rc.1/10.0.100-rc.1",' >> 10.0.100.json
+            echo '    "microsoft.net.sdk.ios": "18.5.10727-net10-rc.1/10.0.100-rc.1",' >> 10.0.100.json
+            echo '    "microsoft.net.sdk.maccatalyst": "18.5.10727-net10-rc.1/10.0.100-rc.1",' >> 10.0.100.json
+            echo '    "microsoft.net.sdk.maui": "10.0.0-rc.1.25452.6/10.0.100-rc.1",' >> 10.0.100.json
+            echo '    "microsoft.net.sdk.tvos": "18.5.10727-net10-rc.1/10.0.100-rc.1",' >> 10.0.100.json
+            echo '    "microsoft.net.sdk.android": "36.0.0-rc.1.285/10.0.100-rc.1" ' >> 10.0.100.json
             echo } >> 10.0.100.json
     displayName: 'Create 10.0.100.json'
 
