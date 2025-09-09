@@ -150,21 +150,21 @@
   # - script: 'xcodebuild -downloadPlatform tvOS'
   #   displayName: 'Xcode Download tvOS platforms'
 
-  # - script: 'xcodebuild -downloadPlatform iOS -exportPath ~/Downloads/ -buildVersion 22B81'
-  #   displayName: 'Download iOS 18.1 platform'
-  #   continueOnError: true
+  - script: 'xcodebuild -downloadPlatform iOS -exportPath ~/Downloads/ -buildVersion 22G86'
+    displayName: 'Download iOS 18.6 platform'
+    continueOnError: true
 
-  # - script: 'xcrun simctl runtime add ~/Downloads/iphonesimulator_18.1_22B81.dmg'
-  #   displayName: 'Install iOS 18.1 runtime'
-  #   continueOnError: true
+  - script: 'xcrun simctl runtime add ~/Downloads/iphonesimulator_18.6_22G86.dmg'
+    displayName: 'Install iOS 18.6 runtime'
+    continueOnError: true
 
-  # - script: 'xcodebuild -downloadPlatform tvOS -exportPath ~/Downloads/ -buildVersion 22J578'
-  #   displayName: 'Download tvOS 18.1 platform'
-  #   continueOnError: true
+  - script: 'xcodebuild -downloadPlatform tvOS -exportPath ~/Downloads/ -buildVersion 22L572'
+    displayName: 'Download tvOS 18.5 platform'
+    continueOnError: true
 
-  # - script: 'xcrun simctl runtime add ~/Downloads/appletvsimulator_18.1_22J578.dmg'
-  #   displayName: 'Install tvOS 18.1 runtime'
-  #   continueOnError: true
+  - script: 'xcrun simctl runtime add ~/Downloads/appletvsimulator_18.5_22L572.dmg'
+    displayName: 'Install tvOS 18.5 runtime'
+    continueOnError: true
     
   - task: InstallAppleCertificate@2
     continueOnError: true
