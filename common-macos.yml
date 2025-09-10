@@ -144,11 +144,13 @@
     continueOnError: true
 
   # # For some reson this started failing with code 70
-  # - script: 'xcodebuild -downloadPlatform iOS'
-  #   displayName: 'Xcode Download iOS platforms'
+  - script: 'xcodebuild -downloadPlatform iOS'
+    displayName: 'Xcode Download iOS platforms'
+    continueOnError: true
 
-  # - script: 'xcodebuild -downloadPlatform tvOS'
-  #   displayName: 'Xcode Download tvOS platforms'
+  - script: 'xcodebuild -downloadPlatform tvOS'
+    displayName: 'Xcode Download tvOS platforms'
+    continueOnError: true
 
   - script: 'xcodebuild -downloadPlatform iOS -exportPath ~/Downloads/ -buildVersion 22G86'
     displayName: 'Download iOS 18.6 platform'
@@ -158,6 +160,15 @@
     displayName: 'Install iOS 18.6 runtime'
     continueOnError: true
 
+
+  - script: 'xcodebuild -downloadPlatform iOS -exportPath ~/Downloads/ -buildVersion 22F77'
+    displayName: 'Download iOS 18.5 platform'
+    continueOnError: true
+
+  - script: 'xcrun simctl runtime add ~/Downloads/iphonesimulator_18.5_22F77.dmg'
+    displayName: 'Install iOS 18.5 runtime'
+    continueOnError: true
+    
   - script: 'xcodebuild -downloadPlatform tvOS -exportPath ~/Downloads/ -buildVersion 22L572'
     displayName: 'Download tvOS 18.5 platform'
     continueOnError: true
