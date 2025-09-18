@@ -120,8 +120,8 @@
     ## Update this section to newer versions of Xcode (e.g 14.3)
     ## Check Xcode path on ADO here: https://github.com/actions/virtual-environments/blob/main/images/macos/macos-12-Readme.md
 
-  - script: 'sudo mv /Applications/Xcode_16.4.app /Applications/Xcode.app'
-    displayName: 'Move Xcode_16.4.app to /Applications/Xcode.app'
+  - script: 'sudo mv /Applications/Xcode_26.0.app /Applications/Xcode.app'
+    displayName: 'Move Xcode_26.0.app to /Applications/Xcode.app'
     
   # - script: 'sudo mv /Applications/Xcode_26_beta_7.app /Applications/Xcode.app'
   #   displayName: 'Move Xcode_26_beta_7.app to /Applications/Xcode.app'
