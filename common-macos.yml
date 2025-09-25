@@ -296,7 +296,7 @@
     displayName: 'Provisioning Mono SDK'
     inputs:
       script: 'cd ~;
-              curl -OL https://download.mono-project.com/archive/6.12.0/macos-10-universal/MonoFramework-MDK-6.12.0.206.macos10.xamarin.universal.pkg;
+              curl -OL https://github.com/codefoco/AzureDevopsTemplates/releases/download/v1.0/MonoFramework-MDK-6.12.0.206.macos10.xamarin.universal.pkg;
               sudo installer -pkg ~/MonoFramework-MDK-6.12.0.206.macos10.xamarin.universal.pkg -target /'
 
   # Azure DevOps hosted pool is still using an old version of Xamarin.iOS, 
@@ -320,7 +320,7 @@
     displayName: 'Provisioning Xamarin.Android'
     inputs:
       script: 'cd ~;
-              curl -OL https://download.visualstudio.microsoft.com/download/pr/8cbf56b1-ef0d-466f-8cfe-fae4ba8c5080/e9e853fee3169b1c5128098942f19120/xamarin.android-13.2.2.0.pkg;
+              curl -OL https://github.com/codefoco/AzureDevopsTemplates/releases/download/v1.0/xamarin.android-13.2.2.0.pkg;
               sudo installer -pkg ~/xamarin.android-13.2.2.0.pkg -target /'
 
   # Install GitVersion
