@@ -294,6 +294,7 @@
   # Install Mono
   - task: CmdLine@2
     displayName: 'Provisioning Mono SDK'
+    retryCountOnTaskFailure: 2
     inputs:
       script: 'cd ~;
               curl -OL https://github.com/codefoco/AzureDevopsTemplates/releases/download/v1.0/MonoFramework-MDK-6.12.0.206.macos10.xamarin.universal.pkg;
@@ -304,6 +305,7 @@
   # so we will upgrade
   - task: CmdLine@2
     displayName: 'Provisioning Xamarin.iOS'
+    retryCountOnTaskFailure: 2
     inputs:
       script: 'cd ~;
               curl -OL https://github.com/codefoco/AzureDevopsTemplates/releases/download/v1.0/xamarin.ios-17.99.0.303.pkg;
@@ -311,6 +313,7 @@
 
   - task: CmdLine@2
     displayName: 'Provisioning Xamarin.Mac'
+    retryCountOnTaskFailure: 2
     inputs:
       script: 'cd ~;
               curl -OL https://github.com/codefoco/AzureDevopsTemplates/releases/download/v1.0/xamarin.mac-9.99.0.303.pkg;
@@ -318,6 +321,7 @@
 
   - task: CmdLine@2
     displayName: 'Provisioning Xamarin.Android'
+    retryCountOnTaskFailure: 2
     inputs:
       script: 'cd ~;
               curl -OL https://github.com/codefoco/AzureDevopsTemplates/releases/download/v1.0/xamarin.android-13.2.2.0.pkg;
@@ -340,6 +344,7 @@
 
   - script: 'dotnet workload install android ios macos tvos maccatalyst maui mobile-librarybuilder-net9 --skip-sign-check --no-cache --disable-parallel --skip-manifest-update -v d'
     displayName: 'dotnet workload install android ios macos tvos maccatalyst maui mobile-librarybuilder-net9'
+    retryCountOnTaskFailure: 2
 
   # .NET 10 Preview bug. Microsoft put the wrong manifest so installing workloads will install an old version
   - script: | 
@@ -355,6 +360,7 @@
 
   - script: 'dotnet workload update --no-cache --from-rollback-file 10.0.100.json -v d'
     displayName: 'dotnet workload update --no-cache --from-rollback-file 10.0.100.json -v d'
+    retryCountOnTaskFailure: 2
     
   - script: 'dotnet --info'
     displayName: 'dotnet --info'
