@@ -93,8 +93,8 @@
   # - script: '/Users/runner/Library/Android/sdk/cmdline-tools/latest/bin/sdkmanager "platforms;android-33"'
   #   displayName: 'Install Android platforms 33' 
     
-  - script: '/Users/runner/Library/Android/sdk/cmdline-tools/latest/bin/sdkmanager "platforms;android-34"'
-    displayName: 'Install Android platforms 34'
+  # - script: '/Users/runner/Library/Android/sdk/cmdline-tools/latest/bin/sdkmanager "platforms;android-34"'
+  #   displayName: 'Install Android platforms 34'
 
   - script: '/Users/runner/Library/Android/sdk/cmdline-tools/latest/bin/sdkmanager "platforms;android-35"'
     displayName: 'Install Android platforms 35'
