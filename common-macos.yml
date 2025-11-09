@@ -328,10 +328,10 @@
               sudo installer -pkg ~/xamarin.android-13.2.2.0.pkg -target /'
 
   # Install GitVersion
-  - script: curl -OL https://github.com/GitTools/GitVersion/releases/download/6.4.0/gitversion-osx-x64-6.4.0.tar.gz &&
-            tar -xvf gitversion-osx-x64-6.4.0.tar.gz &&
+  - script: curl -OL https://github.com/GitTools/GitVersion/releases/download/6.5.0/gitversion-osx-x64-6.5.0.tar.gz &&
+            tar -xvf gitversion-osx-x64-6.5.0.tar.gz &&
             mv gitversion /usr/local/bin
-    displayName: 'Install GitVersion 6.4.0'
+    displayName: 'Install GitVersion 6.5.0'
 
   # Print the current version of Xamarin.iOS
   - task: CmdLine@2
