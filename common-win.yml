@@ -29,9 +29,13 @@ steps:
   displayName: 'Provisioning Xamarin.Android'
   retryCountOnTaskFailure: 2
   inputs:
-    script: 'curl -OL https://github.com/codefoco/AzureDevopsTemplates/releases/download/v1.0/Xamarin.Android.Sdk-13.2.2.0.vsix;
-             VSIXInstaller.exe .\Xamarin.Android.Sdk-13.2.2.0.vsix /quiet'
+    script: 'curl -OL https://github.com/codefoco/AzureDevopsTemplates/releases/download/v1.0/Xamarin.Android.Sdk-13.2.2.0.vsix'
 
+- script: |
+    echo "Installing VSIX extension..."
+    "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\Common7\IDE\VSIXInstaller.exe" /quiet ".\Xamarin.Android.Sdk-13.2.2.0.vsix"
+  displayName: 'Install VSIX extension'
+  
 # - task: CmdLine@2
 #   displayName: 'Setup NDK path (due bug on NDK)'
 #   inputs:
