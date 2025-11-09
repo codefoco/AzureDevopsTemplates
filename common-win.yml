@@ -2,18 +2,21 @@ steps:
 - script: 'choco install gitversion.portable --version=6.5.0'
   displayName: 'Install GitVersion'
   
-- script: 'choco install nunit-console-runner --version=3.20.1'
+- script: 'choco install nunit-console-runner --version=3.20.2'
   displayName: 'Install  nunit-console-runner'
 
-- script: '"C:\Android\android-sdk\cmdline-tools\latest\bin\sdkmanager" "platforms;android-33"'
-  displayName: 'Install Android platforms 33' 
+# - script: '"C:\Android\android-sdk\cmdline-tools\latest\bin\sdkmanager" "platforms;android-33"'
+#   displayName: 'Install Android platforms 33' 
 
-- script: '"C:\Android\android-sdk\cmdline-tools\latest\bin\sdkmanager" "platforms;android-34"'
+# - script: '"C:\Android\android-sdk\cmdline-tools\latest\bin\sdkmanager" "platforms;android-34"'
   displayName: 'Install Android platforms 34' 
 
 - script: '"C:\Android\android-sdk\cmdline-tools\latest\bin\sdkmanager" "platforms;android-35"'
   displayName: 'Install Android platforms 35' 
 
+- script: '"C:\Android\android-sdk\cmdline-tools\latest\bin\sdkmanager" "platforms;android-36"'
+  displayName: 'Install Android platforms 36' 
+  
 - script: 'dotnet workload install android maui'
   displayName: 'Install .NET Android'
   
