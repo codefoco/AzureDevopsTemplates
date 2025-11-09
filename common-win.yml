@@ -1,5 +1,5 @@
 steps:
-- script: 'choco install gitversion.portable --version=6.4.0'
+- script: 'choco install gitversion.portable --version=6.5.0'
   displayName: 'Install GitVersion'
   
 - script: 'choco install nunit-console-runner --version=3.20.1'
@@ -14,7 +14,24 @@ steps:
     versionSpec: '17'
     jdkArchitectureOption: 'x64'
     jdkSourceOption: 'PreInstalled'
-   
+    
+- script: '"C:\Program Files (x86)\Android\sdk\cmdline-tools\latest\bin\sdkmanager" "platforms;android-33"'
+  displayName: 'Install Android platforms 33' 
+
+- script: '"C:\Program Files (x86)\Android\sdk\cmdline-tools\latest\bin\sdkmanager" "platforms;android-34"'
+  displayName: 'Install Android platforms 34' 
+
+- script: '"C:\Program Files (x86)\Android\sdk\cmdline-tools\latest\bin\sdkmanager" "platforms;android-35"'
+  displayName: 'Install Android platforms 35' 
+
+# Install Xamarin.Android
+- task: CmdLine@2
+  displayName: 'Provisioning Xamarin.Android'
+  retryCountOnTaskFailure: 2
+  inputs:
+    script: 'curl -OL https://github.com/codefoco/AzureDevopsTemplates/releases/download/v1.0/Xamarin.Android.Sdk-13.2.2.0.vsix;
+             VSIXInstaller.exe .\Xamarin.Android.Sdk-13.2.2.0.vsix /quiet'
+
 # - task: CmdLine@2
 #   displayName: 'Setup NDK path (due bug on NDK)'
 #   inputs:
