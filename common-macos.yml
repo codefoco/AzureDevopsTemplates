@@ -138,46 +138,46 @@
   - script: 'xcode-select -p'
     displayName: 'Show current xcode-select path'
 
-  - script: 'sudo xcodebuild -license accept'
-    displayName: 'Xcode License accepted'
-    continueOnError: true
+  # - script: 'sudo xcodebuild -license accept'
+  #   displayName: 'Xcode License accepted'
+  #   continueOnError: true
 
-  - script: 'sudo xcodebuild -runFirstLaunch'
-    displayName: 'Xcode run first launch'
-    continueOnError: true
+  # - script: 'sudo xcodebuild -runFirstLaunch'
+  #   displayName: 'Xcode run first launch'
+  #   continueOnError: true
 
-  - script: 'xcodebuild -downloadPlatform iOS -exportPath ~/Downloads/ -buildVersion 22G86'
-    displayName: 'Download iOS 18.6 platform'
-    continueOnError: true
+  # - script: 'xcodebuild -downloadPlatform iOS -exportPath ~/Downloads/ -buildVersion 22G86'
+  #   displayName: 'Download iOS 18.6 platform'
+  #   continueOnError: true
 
-  - script: 'xcrun simctl runtime add ~/Downloads/iphonesimulator_18.6_22G86.dmg'
-    displayName: 'Install iOS 18.6 runtime'
-    continueOnError: true
+  # - script: 'xcrun simctl runtime add ~/Downloads/iphonesimulator_18.6_22G86.dmg'
+  #   displayName: 'Install iOS 18.6 runtime'
+  #   continueOnError: true
 
-  - script: 'xcodebuild -downloadPlatform iOS -exportPath ~/Downloads/ -buildVersion 22F77'
-    displayName: 'Download iOS 18.5 platform'
-    continueOnError: true
+  # - script: 'xcodebuild -downloadPlatform iOS -exportPath ~/Downloads/ -buildVersion 22F77'
+  #   displayName: 'Download iOS 18.5 platform'
+  #   continueOnError: true
 
-  - script: 'xcrun simctl runtime add ~/Downloads/iphonesimulator_18.5_22F77.dmg'
-    displayName: 'Install iOS 18.5 runtime'
-    continueOnError: true
+  # - script: 'xcrun simctl runtime add ~/Downloads/iphonesimulator_18.5_22F77.dmg'
+  #   displayName: 'Install iOS 18.5 runtime'
+  #   continueOnError: true
     
-  - script: 'xcodebuild -downloadPlatform tvOS -exportPath ~/Downloads/ -buildVersion 22L572'
-    displayName: 'Download tvOS 18.5 platform'
-    continueOnError: true
+  # - script: 'xcodebuild -downloadPlatform tvOS -exportPath ~/Downloads/ -buildVersion 22L572'
+  #   displayName: 'Download tvOS 18.5 platform'
+  #   continueOnError: true
 
-  - script: 'xcrun simctl runtime add ~/Downloads/appletvsimulator_18.5_22L572.dmg'
-    displayName: 'Install tvOS 18.5 runtime'
-    continueOnError: true
+  # - script: 'xcrun simctl runtime add ~/Downloads/appletvsimulator_18.5_22L572.dmg'
+  #   displayName: 'Install tvOS 18.5 runtime'
+  #   continueOnError: true
 
   # # For some reson this started failing with code 70
-  - script: 'xcodebuild -downloadPlatform iOS'
-    displayName: 'Xcode Download iOS platforms'
-    continueOnError: true
+  # - script: 'xcodebuild -downloadPlatform iOS'
+  #   displayName: 'Xcode Download iOS platforms'
+  #   continueOnError: true
 
-  - script: 'xcodebuild -downloadPlatform tvOS'
-    displayName: 'Xcode Download tvOS platforms'
-    continueOnError: true
+  # - script: 'xcodebuild -downloadPlatform tvOS'
+  #   displayName: 'Xcode Download tvOS platforms'
+  #   continueOnError: true
     
   - task: InstallAppleCertificate@2
     continueOnError: true
