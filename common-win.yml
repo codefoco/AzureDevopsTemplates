@@ -9,7 +9,7 @@ steps:
 #   displayName: 'Install Android platforms 33' 
 
 # - script: '"C:\Android\android-sdk\cmdline-tools\latest\bin\sdkmanager" "platforms;android-34"'
-  displayName: 'Install Android platforms 34' 
+#   displayName: 'Install Android platforms 34' 
 
 - script: '"C:\Android\android-sdk\cmdline-tools\latest\bin\sdkmanager" "platforms;android-35"'
   displayName: 'Install Android platforms 35' 
