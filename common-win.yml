@@ -44,3 +44,17 @@ steps:
 #   inputs:
 #     script: 'mklink /D Android "C:\Program Files (x86)\Android"'
 #     workingDirectory: 'C:\'
+
+# - powershell: |
+#     # Define download URL for Windows 10 SDK 19041
+#     $sdkUrl = "https://download.microsoft.com/download/1/4/3/143F3C4C-6C2E-4E7F-9D6B-5F3A3C1C6C7F/winsdksetup.exe"
+#     $sdkInstaller = "$(Agent.TempDirectory)\winsdksetup.exe"
+
+#     Write-Host "Downloading Windows 10 SDK installer..."
+#     Invoke-WebRequest -Uri $sdkUrl -OutFile $sdkInstaller
+
+#     Write-Host "Installing Windows 10 SDK silently..."
+#     Start-Process -FilePath $sdkInstaller -ArgumentList "/quiet /norestart" -Wait -NoNewWindow
+
+#     Write-Host "Windows 10 SDK installation completed."
+#   displayName: "Download and Install Windows 10 SDK (10.0.19041)"
