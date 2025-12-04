@@ -1,0 +1,15 @@
+
+steps:
+  - task: DockerInstaller@0
+    inputs:
+      dockerVersion: '28.5.1'
+      releaseType: 'stable'
+      
+  - bash: |
+          curl -L -o ~/.docker/cli-plugins/docker-buildx --create-dirs https://github.com/docker/buildx/releases/download/v0.29.1/buildx-v0.29.1.linux-amd64
+          chmod a+x ~/.docker/cli-plugins/docker-buildx
+          docker run --privileged --rm tonistiigi/binfmt:qemu-v10.0.4-56 --install all
+          ~/.docker/cli-plugins/docker-buildx create --use
+          ~/.docker/cli-plugins/docker-buildx inspect --bootstrap
+          sudo echo '{ "experimental": true }' | sudo tee /etc/docker/daemon.json
+    displayName: Prepare Docker buildx
