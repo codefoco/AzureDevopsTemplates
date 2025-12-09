@@ -348,18 +348,18 @@
 
   # .NET 10 Preview bug. Microsoft put the wrong manifest so installing workloads will install an old version
   - script: | 
-            echo { >> 10.0.100.json
-            echo '    "microsoft.net.sdk.macos": "26.1.10494/10.0.100",' >> 10.0.100.json
-            echo '    "microsoft.net.sdk.ios": "26.1.10494/10.0.100",' >> 10.0.100.json
-            echo '    "microsoft.net.sdk.maccatalyst": "26.1.10494/10.0.100",' >> 10.0.100.json
-            echo '    "microsoft.net.sdk.maui": "10.0.0/10.0.100",' >> 10.0.100.json
-            echo '    "microsoft.net.sdk.tvos": "26.1.10494/10.0.100",' >> 10.0.100.json
-            echo '    "microsoft.net.sdk.android": "36.1.2/10.0.100" ' >> 10.0.100.json
-            echo } >> 10.0.100.json
-    displayName: 'Create 10.0.100.json'
+            echo { >> 10.0.101.json
+            echo '    "microsoft.net.sdk.macos": "26.1.10502/10.0.100",' >> 10.0.101.json
+            echo '    "microsoft.net.sdk.ios": "26.1.10502/10.0.100",' >> 10.0.101.json
+            echo '    "microsoft.net.sdk.maccatalyst": "26.1.10502/10.0.100",' >> 10.0.101.json
+            echo '    "microsoft.net.sdk.maui": "10.0.1/10.0.100",' >> 10.0.101.json
+            echo '    "microsoft.net.sdk.tvos": "26.1.10502/10.0.100",' >> 10.0.101.json
+            echo '    "microsoft.net.sdk.android": "36.1.2/10.0.100" ' >> 10.0.101.json
+            echo } >> 10.0.101.json
+    displayName: 'Create 10.0.101.json'
 
-  - script: 'dotnet workload update --no-cache --from-rollback-file 10.0.100.json -v d'
-    displayName: 'dotnet workload update --no-cache --from-rollback-file 10.0.100.json -v d'
+  - script: 'dotnet workload update --no-cache --from-rollback-file 10.0.101.json -v d'
+    displayName: 'dotnet workload update --no-cache --from-rollback-file 10.0.101.json -v d'
     retryCountOnTaskFailure: 2
     
   - script: 'dotnet --info'
