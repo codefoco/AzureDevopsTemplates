@@ -349,12 +349,12 @@
   # .NET 10 Preview bug. Microsoft put the wrong manifest so installing workloads will install an old version
   - script: | 
             echo { >> 10.0.101.json
-            echo '    "microsoft.net.sdk.macos": "26.2.10191/10.0.100",' >> 10.0.101.json
-            echo '    "microsoft.net.sdk.ios": "26.2.10191/10.0.100",' >> 10.0.101.json
-            echo '    "microsoft.net.sdk.maccatalyst": "26.2.10191/10.0.100",' >> 10.0.101.json
+            echo '    "microsoft.net.sdk.macos": "26.2.10197/10.0.100",' >> 10.0.101.json
+            echo '    "microsoft.net.sdk.ios": "26.2.10197/10.0.100",' >> 10.0.101.json
+            echo '    "microsoft.net.sdk.maccatalyst": "26.2.10197/10.0.100",' >> 10.0.101.json
             echo '    "microsoft.net.sdk.maui": "10.0.1/10.0.100",' >> 10.0.101.json
-            echo '    "microsoft.net.sdk.tvos": "26.2.10191/10.0.100",' >> 10.0.101.json
-            echo '    "microsoft.net.sdk.android": "36.1.2/10.0.100" ' >> 10.0.101.json
+            echo '    "microsoft.net.sdk.tvos": "26.2.10197/10.0.100",' >> 10.0.101.json
+            echo '    "microsoft.net.sdk.android": "36.1.30/10.0.100" ' >> 10.0.101.json
             echo } >> 10.0.101.json
     displayName: 'Create 10.0.101.json'
 
