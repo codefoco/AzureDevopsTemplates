@@ -3,12 +3,12 @@
   - task: UseDotNet@2
     inputs:
       packageType: 'sdk'
-      version: '9.0.311'
+      version: '9.0.312'
 
   - task: UseDotNet@2
     inputs:
       packageType: 'sdk'
-      version: '10.0.103'
+      version: '10.0.104'
         
   - task: NuGetToolInstaller@1
     displayName: 'Use NuGet 7.3.0'
