@@ -8,7 +8,7 @@
   - task: UseDotNet@2
     inputs:
       packageType: 'sdk'
-      version: '10.0.104'
+      version: '10.0.200'
         
   - task: NuGetToolInstaller@1
     displayName: 'Use NuGet 7.3.0'
