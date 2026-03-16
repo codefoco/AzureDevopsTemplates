@@ -2,7 +2,7 @@
 steps:
   - task: DockerInstaller@0
     inputs:
-      dockerVersion: '29.2.1'
+      dockerVersion: '29.3.0'
       releaseType: 'stable'
       
   - bash: |
