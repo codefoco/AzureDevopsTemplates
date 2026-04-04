@@ -120,8 +120,8 @@
     ## Update this section to newer versions of Xcode (e.g 14.3)
     ## Check Xcode path on ADO here: https://github.com/actions/virtual-environments/blob/main/images/macos/macos-12-Readme.md
 
-  - script: 'sudo mv /Applications/Xcode_26.3.app /Applications/Xcode.app'
-    displayName: 'Move /Applications/Xcode_26.3.app to /Applications/Xcode.app'
+  - script: 'sudo mv /Applications/Xcode_26.4.app /Applications/Xcode.app'
+    displayName: 'Move /Applications/Xcode_26.4.app to /Applications/Xcode.app'
     
   # - script: 'sudo mv /Applications/Xcode_26_beta_7.app /Applications/Xcode.app'
   #   displayName: 'Move Xcode_26_beta_7.app to /Applications/Xcode.app'
@@ -328,10 +328,10 @@
               sudo installer -pkg ~/xamarin.android-13.2.2.0.pkg -target /'
 
   # Install GitVersion
-  - script: curl -OL https://github.com/GitTools/GitVersion/releases/download/6.6.1/gitversion-osx-x64-6.6.1.tar.gz &&
-            tar -xvf gitversion-osx-x64-6.6.1.tar.gz &&
+  - script: curl -OL https://github.com/GitTools/GitVersion/releases/download/6.7.0/gitversion-osx-x64-6.7.0.tar.gz &&
+            tar -xvf gitversion-osx-x64-6.7.0.tar.gz &&
             mv gitversion /usr/local/bin
-    displayName: 'Install GitVersion 6.6.1'
+    displayName: 'Install GitVersion 6.7.0'
 
   # Print the current version of Xamarin.iOS
   - task: CmdLine@2
