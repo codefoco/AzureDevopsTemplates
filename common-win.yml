@@ -16,6 +16,9 @@ steps:
 
 - script: '"C:\Android\android-sdk\cmdline-tools\latest\bin\sdkmanager" "platforms;android-36"'
   displayName: 'Install Android platforms 36' 
+
+- script: '"C:\Android\android-sdk\cmdline-tools\latest\bin\sdkmanager" "platforms;android-37"'
+  displayName: 'Install Android platforms 37' 
   
 - script: 'dotnet workload install android maui'
   displayName: 'Install .NET Android'
