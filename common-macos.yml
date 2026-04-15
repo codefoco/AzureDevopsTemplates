@@ -87,6 +87,10 @@
   
     displayName: 'Show Build Info' 
 
+
+    - script: 'ls -l /Applications/'
+      displayName: 'ls -l /Applications/'
+
   # - script: '/Users/runner/Library/Android/sdk/cmdline-tools/latest/bin/sdkmanager "build-tools;32.0.0"'
   #   displayName: 'Install Android Build Tools 32.0.0'
 
@@ -102,17 +106,15 @@
   - script: '/Users/runner/Library/Android/sdk/cmdline-tools/latest/bin/sdkmanager "platforms;android-36"'
     displayName: 'Install Android platforms 36'
 
-  - script: '/Users/runner/Library/Android/sdk/cmdline-tools/latest/bin/sdkmanager "platforms;android-37"'
-    displayName: 'Install Android platforms 37'
+  # Not available yet.
+  # - script: '/Users/runner/Library/Android/sdk/cmdline-tools/latest/bin/sdkmanager "platforms;android-37"'
+  #   displayName: 'Install Android platforms 37'
   
   - script: '/usr/bin/xcodebuild -version'
     displayName: 'Show Xcode Version' 
     
   - script: 'xcode-select -p'
     displayName: 'Show current xcode-select path'
-
-  - script: 'ls -l /Applications/'
-    displayName: 'ls -l /Applications/'
     
   - script: 'sudo rm /Applications/Xcode.app'
     displayName: 'Remove Xcode.app symlink due Xamarin.Mac/iOS bug'
