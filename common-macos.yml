@@ -88,8 +88,8 @@
     displayName: 'Show Build Info' 
 
 
-    - script: 'ls -l /Applications/'
-      displayName: 'ls -l /Applications/'
+  - script: 'ls -l /Applications/'
+    displayName: 'ls -l /Applications/'
 
   # - script: '/Users/runner/Library/Android/sdk/cmdline-tools/latest/bin/sdkmanager "build-tools;32.0.0"'
   #   displayName: 'Install Android Build Tools 32.0.0'
