@@ -147,8 +147,8 @@
   - script: 'sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer'
     displayName: 'Ensure xcode-select point to /Applications/Xcode.app'
 
-  # - script: 'xcode-select --install'
-  #   displayName: 'Ensure command line tools is installed'
+  - script: 'xcode-select --install'
+    displayName: 'Ensure command line tools is installed'
     
   - script: '/usr/bin/xcodebuild -version'
     displayName: 'Show Xcode Version'
@@ -164,11 +164,19 @@
     displayName: 'Xcode run first launch'
     continueOnError: true
 
-  - script: 'xcodebuild -downloadPlatform iOS -exportPath ~/Downloads/ -buildVersion 22G86'
+  - script: |
+      sudo killall -9 com.apple.CoreSimulator.CoreSimulatorService
+      sudo killall -9 com.apple.CoreSimulator.SimDeviceType
+      sudo killall -9 com.apple.CoreSimulator.SimRuntime
+  
+    displayName: "Select and rename Xcode.app"
+    continueOnError: true
+
+  - script: 'xcodebuild -downloadPlatform iOS -buildVersion 18.6 -exportPath ~/Downloads/'
     displayName: 'Download iOS 18.6 platform'
     continueOnError: true
 
-  - script: 'xcrun simctl runtime add ~/Downloads/iphonesimulator_18.6_22G86.dmg'
+  - script: 'sudo xcrun simctl runtime add ~/Downloads/iphonesimulator_18.2_22G86.dmg'
     displayName: 'Install iOS 18.6 runtime'
     continueOnError: true
 
@@ -180,22 +188,28 @@
   #   displayName: 'Install iOS 18.5 runtime'
   #   continueOnError: true
     
-  - script: 'xcodebuild -downloadPlatform tvOS -exportPath ~/Downloads/ -buildVersion 22L572'
+  - script: 'xcodebuild -downloadPlatform iOS -buildVersion 18.5 ~/Downloads/'
     displayName: 'Download tvOS 18.5 platform'
     continueOnError: true
 
-  - script: 'xcrun simctl runtime add ~/Downloads/appletvsimulator_18.5_22L572.dmg'
+  - script: 'sudo xcrun simctl runtime add ~/Downloads/appletvsimulator_18.5_22L572.dmg'
     displayName: 'Install tvOS 18.5 runtime'
     continueOnError: true
 
+  - script: 'sudo xcodebuild -runFirstLaunch'
+    displayName: 'Xcode run first launch (again)'
+    continueOnError: true
+    
   # For some reson this started failing with code 70
   - script: 'xcodebuild -downloadPlatform iOS'
     displayName: 'Xcode Download iOS platforms'
     continueOnError: true
+    retryCountOnTaskFailure: 2
 
   - script: 'xcodebuild -downloadPlatform tvOS'
     displayName: 'Xcode Download tvOS platforms'
     continueOnError: true
+    retryCountOnTaskFailure: 2
     
   - task: InstallAppleCertificate@2
     continueOnError: true
