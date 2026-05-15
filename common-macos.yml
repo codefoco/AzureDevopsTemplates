@@ -149,6 +149,7 @@
 
   - script: 'xcode-select --install'
     displayName: 'Ensure command line tools is installed'
+    continueOnError: true
     
   - script: '/usr/bin/xcodebuild -version'
     displayName: 'Show Xcode Version'
