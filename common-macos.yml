@@ -125,8 +125,21 @@
     ## Update this section to newer versions of Xcode (e.g 14.3)
     ## Check Xcode path on ADO here: https://github.com/actions/virtual-environments/blob/main/images/macos/macos-12-Readme.md
 
-  - script: 'sudo mv /Applications/Xcode_26.5_Release_Candidate.app /Applications/Xcode.app'
-    displayName: 'Move /Applications/Xcode_26.5_Release_Candidate.app to /Applications/Xcode.app'
+  - script: |
+      if [ -d "/Applications/Xcode_26.5_Release_Candidate.app" ]; then
+          echo "Found Release Candidate — renaming"
+          sudo mv /Applications/Xcode_26.5_Release_Candidate.app /Applications/Xcode.app
+  
+      elif [ -d "/Applications/Xcode_26.5_beta_2.app" ]; then
+          echo "Found Beta 2 — renaming"
+          sudo mv /Applications/Xcode_26.5_beta_2.app /Applications/Xcode.app
+  
+      else
+          echo "❌ No expected Xcode app found"
+          ls -1 /Applications | grep Xcode
+          exit 1
+      fi
+    displayName: "Select and rename Xcode.app"
     
   # - script: 'sudo mv /Applications/Xcode_26_beta_7.app /Applications/Xcode.app'
   #   displayName: 'Move Xcode_26_beta_7.app to /Applications/Xcode.app'
