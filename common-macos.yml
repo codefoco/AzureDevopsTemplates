@@ -100,15 +100,15 @@
   # - script: '/Users/runner/Library/Android/sdk/cmdline-tools/latest/bin/sdkmanager "platforms;android-34"'
   #   displayName: 'Install Android platforms 34'
 
-  - script: '/Users/runner/Library/Android/sdk/cmdline-tools/latest/bin/sdkmanager "platforms;android-35"'
-    displayName: 'Install Android platforms 35'
+  # - script: '/Users/runner/Library/Android/sdk/cmdline-tools/latest/bin/sdkmanager "platforms;android-35"'
+  #   displayName: 'Install Android platforms 35'
 
   - script: '/Users/runner/Library/Android/sdk/cmdline-tools/latest/bin/sdkmanager "platforms;android-36"'
     displayName: 'Install Android platforms 36'
 
   # Not available yet.
-  # - script: '/Users/runner/Library/Android/sdk/cmdline-tools/latest/bin/sdkmanager "platforms;android-37"'
-  #   displayName: 'Install Android platforms 37'
+  - script: '/Users/runner/Library/Android/sdk/cmdline-tools/latest/bin/sdkmanager "platforms;android-37.0"'
+    displayName: 'Install Android platforms 37'
   
   - script: '/usr/bin/xcodebuild -version'
     displayName: 'Show Xcode Version' 
@@ -125,8 +125,8 @@
     ## Update this section to newer versions of Xcode (e.g 14.3)
     ## Check Xcode path on ADO here: https://github.com/actions/virtual-environments/blob/main/images/macos/macos-12-Readme.md
 
-  - script: 'sudo mv /Applications/Xcode_26.3.app /Applications/Xcode.app'
-    displayName: 'Move /Applications/Xcode_26.3.app to /Applications/Xcode.app'
+  - script: 'sudo mv /Applications/Xcode_26.4.1.app /Applications/Xcode.app'
+    displayName: 'Move /Applications/Xcode_26.4.1.app to /Applications/Xcode.app'
     
   # - script: 'sudo mv /Applications/Xcode_26_beta_7.app /Applications/Xcode.app'
   #   displayName: 'Move Xcode_26_beta_7.app to /Applications/Xcode.app'
