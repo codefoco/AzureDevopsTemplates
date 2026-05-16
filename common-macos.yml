@@ -165,10 +165,10 @@
     displayName: 'Xcode run first launch'
     continueOnError: true
 
-  # - script: |
-  #     sudo killall -9 com.apple.CoreSimulator.CoreSimulatorService
-  #     sudo killall -9 com.apple.CoreSimulator.SimDeviceType
-  #     sudo killall -9 com.apple.CoreSimulator.SimRuntime
+  - script: |
+      sudo killall -9 com.apple.CoreSimulator.CoreSimulatorService
+      sudo killall -9 com.apple.CoreSimulator.SimDeviceType
+      sudo killall -9 com.apple.CoreSimulator.SimRuntime
   
   #   displayName: "Select and rename Xcode.app"
   #   continueOnError: true
@@ -205,12 +205,12 @@
   - script: 'xcodebuild -downloadPlatform iOS'
     displayName: 'Xcode Download iOS platforms'
     continueOnError: true
-    retryCountOnTaskFailure: 2
+    retryCountOnTaskFailure: 4
 
   - script: 'xcodebuild -downloadPlatform tvOS'
     displayName: 'Xcode Download tvOS platforms'
     continueOnError: true
-    retryCountOnTaskFailure: 2
+    retryCountOnTaskFailure: 4
     
   - task: InstallAppleCertificate@2
     continueOnError: true
