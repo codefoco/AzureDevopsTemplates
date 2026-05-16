@@ -173,13 +173,13 @@
     displayName: "Select and rename Xcode.app"
     continueOnError: true
 
-  - script: 'xcodebuild -downloadPlatform iOS -buildVersion 18.6 -exportPath ~/Downloads/'
-    displayName: 'Download iOS 18.6 platform'
-    continueOnError: true
+  # - script: 'xcodebuild -downloadPlatform iOS -buildVersion 18.6 -exportPath ~/Downloads/'
+  #   displayName: 'Download iOS 18.6 platform'
+  #   continueOnError: true
 
-  - script: 'sudo xcrun simctl runtime add ~/Downloads/iphonesimulator_18.2_22G86.dmg'
-    displayName: 'Install iOS 18.6 runtime'
-    continueOnError: true
+  # - script: 'sudo xcrun simctl runtime add ~/Downloads/iphonesimulator_18.2_22G86.dmg'
+  #   displayName: 'Install iOS 18.6 runtime'
+  #   continueOnError: true
 
   # - script: 'xcodebuild -downloadPlatform iOS -exportPath ~/Downloads/ -buildVersion 22F77'
   #   displayName: 'Download iOS 18.5 platform'
@@ -189,13 +189,13 @@
   #   displayName: 'Install iOS 18.5 runtime'
   #   continueOnError: true
     
-  - script: 'xcodebuild -downloadPlatform iOS -buildVersion 18.5 ~/Downloads/'
-    displayName: 'Download tvOS 18.5 platform'
-    continueOnError: true
+  # - script: 'xcodebuild -downloadPlatform iOS -buildVersion 18.5 ~/Downloads/'
+  #   displayName: 'Download tvOS 18.5 platform'
+  #   continueOnError: true
 
-  - script: 'sudo xcrun simctl runtime add ~/Downloads/appletvsimulator_18.5_22L572.dmg'
-    displayName: 'Install tvOS 18.5 runtime'
-    continueOnError: true
+  # - script: 'sudo xcrun simctl runtime add ~/Downloads/appletvsimulator_18.5_22L572.dmg'
+  #   displayName: 'Install tvOS 18.5 runtime'
+  #   continueOnError: true
 
   - script: 'sudo xcodebuild -runFirstLaunch'
     displayName: 'Xcode run first launch (again)'
