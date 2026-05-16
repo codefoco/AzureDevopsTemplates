@@ -165,13 +165,13 @@
     displayName: 'Xcode run first launch'
     continueOnError: true
 
-  - script: |
-      sudo killall -9 com.apple.CoreSimulator.CoreSimulatorService
-      sudo killall -9 com.apple.CoreSimulator.SimDeviceType
-      sudo killall -9 com.apple.CoreSimulator.SimRuntime
+  # - script: |
+  #     sudo killall -9 com.apple.CoreSimulator.CoreSimulatorService
+  #     sudo killall -9 com.apple.CoreSimulator.SimDeviceType
+  #     sudo killall -9 com.apple.CoreSimulator.SimRuntime
   
-    displayName: "Select and rename Xcode.app"
-    continueOnError: true
+  #   displayName: "Select and rename Xcode.app"
+  #   continueOnError: true
 
   # - script: 'xcodebuild -downloadPlatform iOS -buildVersion 18.6 -exportPath ~/Downloads/'
   #   displayName: 'Download iOS 18.6 platform'
