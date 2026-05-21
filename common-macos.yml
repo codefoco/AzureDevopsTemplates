@@ -133,6 +133,10 @@
       elif [ -d "/Applications/Xcode_26.5_beta_2.app" ]; then
           echo "Found Beta 2 — renaming"
           sudo mv /Applications/Xcode_26.5_beta_2.app /Applications/Xcode.app
+
+      elif [ -d "/Applications/Xcode_26.3.app" ]; then
+          echo "Found Beta 2 — renaming"
+          sudo mv /Applications/Xcode_26.3.app /Applications/Xcode.app
   
       else
           echo "❌ No expected Xcode app found"
