@@ -130,7 +130,7 @@
           echo "Found Xcode_26.5.app — renaming"
           sudo mv /Applications/Xcode_26.5.app /Applications/Xcode.app
   
-      if [ -d "/Applications/Xcode_26.5_Release_Candidate.app" ]; then
+      elif [ -d "/Applications/Xcode_26.5_Release_Candidate.app" ]; then
           echo "Found Xcode_26.5 Release Candidate — renaming"
           sudo mv /Applications/Xcode_26.5_Release_Candidate.app /Applications/Xcode.app
   
