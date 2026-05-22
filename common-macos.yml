@@ -106,7 +106,6 @@
   - script: '/Users/runner/Library/Android/sdk/cmdline-tools/latest/bin/sdkmanager "platforms;android-36"'
     displayName: 'Install Android platforms 36'
 
-  # Not available yet.
   - script: '/Users/runner/Library/Android/sdk/cmdline-tools/latest/bin/sdkmanager "platforms;android-37.0"'
     displayName: 'Install Android platforms 37'
   
@@ -126,16 +125,21 @@
     ## Check Xcode path on ADO here: https://github.com/actions/virtual-environments/blob/main/images/macos/macos-12-Readme.md
 
   - script: |
+
+      if [ -d "/Applications/Xcode_26.5.app" ]; then
+          echo "Found Xcode_26.5.app — renaming"
+          sudo mv /Applications/Xcode_26.5.app /Applications/Xcode.app
+  
       if [ -d "/Applications/Xcode_26.5_Release_Candidate.app" ]; then
-          echo "Found Release Candidate — renaming"
+          echo "Found Xcode_26.5 Release Candidate — renaming"
           sudo mv /Applications/Xcode_26.5_Release_Candidate.app /Applications/Xcode.app
   
       elif [ -d "/Applications/Xcode_26.5_beta_2.app" ]; then
-          echo "Found Beta 2 — renaming"
+          echo "Found Xcode_26.5 Beta 2 — renaming"
           sudo mv /Applications/Xcode_26.5_beta_2.app /Applications/Xcode.app
 
       elif [ -d "/Applications/Xcode_26.3.app" ]; then
-          echo "Found Beta 2 — renaming"
+          echo "Found Xcode_26.3— renaming"
           sudo mv /Applications/Xcode_26.3.app /Applications/Xcode.app
   
       else
