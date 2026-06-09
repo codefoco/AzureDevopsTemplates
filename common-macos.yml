@@ -394,7 +394,7 @@
             echo '    "microsoft.net.sdk.maccatalyst": "26.5.10284/10.0.100",' >> 10.0.101.json
             echo '    "microsoft.net.sdk.maui": "10.0.1/10.0.100",' >> 10.0.101.json
             echo '    "microsoft.net.sdk.tvos": "26.5.10284/10.0.100",' >> 10.0.101.json
-            echo '    "microsoft.net.sdk.android": "36.1.53/10.0.100" ' >> 10.0.101.json
+            echo '    "microsoft.net.sdk.android": "36.1.69/10.0.100" ' >> 10.0.101.json
             echo } >> 10.0.101.json
     displayName: 'Create 10.0.101.json'
 
