@@ -6,7 +6,7 @@ steps:
       releaseType: 'stable'
       
   - bash: |
-          curl -L -o ~/.docker/cli-plugins/docker-buildx --create-dirs https://github.com/docker/buildx/releases/download/v0.35.0/buildx-v0.35.1.linux-amd64
+          curl -L -o ~/.docker/cli-plugins/docker-buildx --create-dirs https://github.com/docker/buildx/releases/download/v0.35.0/buildx-v0.35.0.linux-amd64
           chmod a+x ~/.docker/cli-plugins/docker-buildx
           docker run --privileged --rm tonistiigi/binfmt:qemu-v10.2.3-67 --install all
           ~/.docker/cli-plugins/docker-buildx create --use
