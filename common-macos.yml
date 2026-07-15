@@ -364,10 +364,10 @@
               sudo installer -pkg ~/xamarin.android-13.2.2.0.pkg -target /'
 
   # Install GitVersion
-  - script: curl -OL https://github.com/GitTools/GitVersion/releases/download/6.8.1/gitversion-osx-x64-6.8.1.tar.gz &&
-            tar -xvf gitversion-osx-x64-6.8.1.tar.gz &&
+  - script: curl -OL https://github.com/GitTools/GitVersion/releases/download/6.8.2/gitversion-osx-x64-6.8.2.tar.gz &&
+            tar -xvf gitversion-osx-x64-6.8.2.tar.gz &&
             mv gitversion /usr/local/bin
-    displayName: 'Install GitVersion 6.8.1'
+    displayName: 'Install GitVersion 6.8.2'
 
   # Print the current version of Xamarin.iOS
   - task: CmdLine@2
@@ -385,11 +385,11 @@
   # .NET 10 Preview bug. Microsoft put the wrong manifest so installing workloads will install an old version
   - script: | 
             echo { >> 10.0.101.json
-            echo '    "microsoft.net.sdk.macos": "26.5.10284/10.0.100",' >> 10.0.101.json
-            echo '    "microsoft.net.sdk.ios": "26.5.10284/10.0.100",' >> 10.0.101.json
-            echo '    "microsoft.net.sdk.maccatalyst": "26.5.10284/10.0.100",' >> 10.0.101.json
+            echo '    "microsoft.net.sdk.macos": "26.5.10301/10.0.100",' >> 10.0.101.json
+            echo '    "microsoft.net.sdk.ios": "26.5.10301/10.0.100",' >> 10.0.101.json
+            echo '    "microsoft.net.sdk.maccatalyst": "26.5.10301/10.0.100",' >> 10.0.101.json
             echo '    "microsoft.net.sdk.maui": "10.0.1/10.0.100",' >> 10.0.101.json
-            echo '    "microsoft.net.sdk.tvos": "26.5.10284/10.0.100",' >> 10.0.101.json
+            echo '    "microsoft.net.sdk.tvos": "26.5.10301/10.0.100",' >> 10.0.101.json
             echo '    "microsoft.net.sdk.android": "36.1.69/10.0.100" ' >> 10.0.101.json
             echo } >> 10.0.101.json
     displayName: 'Create 10.0.101.json'
