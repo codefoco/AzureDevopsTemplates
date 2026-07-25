@@ -378,24 +378,49 @@
   - script: 'dotnet --info'
     displayName: 'dotnet --info'
 
-  - script: 'dotnet workload install android ios macos tvos maccatalyst maui mobile-librarybuilder-net9 --skip-sign-check --no-cache --disable-parallel --skip-manifest-update -v d'
-    displayName: 'dotnet workload install android ios macos tvos maccatalyst maui mobile-librarybuilder-net9'
-    retryCountOnTaskFailure: 2
-
   # .NET 10 Preview bug. Microsoft put the wrong manifest so installing workloads will install an old version
   - script: | 
-            echo { >> 10.0.101.json
-            echo '    "microsoft.net.sdk.macos": "26.5.10301/10.0.100",' >> 10.0.101.json
-            echo '    "microsoft.net.sdk.ios": "26.5.10301/10.0.100",' >> 10.0.101.json
-            echo '    "microsoft.net.sdk.maccatalyst": "26.5.10301/10.0.100",' >> 10.0.101.json
-            echo '    "microsoft.net.sdk.maui": "10.0.1/10.0.100",' >> 10.0.101.json
-            echo '    "microsoft.net.sdk.tvos": "26.5.10301/10.0.100",' >> 10.0.101.json
-            echo '    "microsoft.net.sdk.android": "36.1.69/10.0.100" ' >> 10.0.101.json
-            echo } >> 10.0.101.json
-    displayName: 'Create 10.0.101.json'
+            echo { >> 11.0.101.json
+            echo '    "microsoft.net.sdk.macos": "26.5.11720-net11-p6/11.0.100-preview.6",' >> 11.0.101.json
+            echo '    "microsoft.net.sdk.ios": "26.5.11720-net11-p6/11.0.100-preview.6",' >> 11.0.101.json
+            echo '    "microsoft.net.sdk.maccatalyst": "26.5.11720-net11-p6/11.0.100-preview.6",' >> 11.0.101.json
+            echo '    "microsoft.net.sdk.maui": "11.0.0-preview.6.26360.8/11.0.100-preview.6",' >> 11.0.101.json
+            echo '    "microsoft.net.sdk.tvos": "26.5.11720-net11-p6/11.0.100-preview.6",' >> 11.0.101.json
+            echo '    "microsoft.net.sdk.android": "37.0.0-preview.6.59/11.0.100-preview.6" ' >> 11.0.101.json
+            echo } >> 11.0.101.json
+    displayName: 'Create 11.0.101.json'
+    
+  - script: 'dotnet workload install ios --no-cache --from-rollback-file 11.0.101.json -v d'
+    displayName: 'dotnet workload install ios --no-cache --from-rollback-file 11.0.101.json -v d'
+    retryCountOnTaskFailure: 2
 
-  - script: 'dotnet workload update --no-cache --from-rollback-file 10.0.101.json -v d'
-    displayName: 'dotnet workload update --no-cache --from-rollback-file 10.0.101.json -v d'
+  - script: 'dotnet workload install macos --no-cache --from-rollback-file 11.0.101.json -v d'
+    displayName: 'dotnet workload install macos --no-cache --from-rollback-file 11.0.101.json -v d'
+    retryCountOnTaskFailure: 2
+
+  - script: 'dotnet workload install maccatalyst --no-cache --from-rollback-file 11.0.101.json -v d'
+    displayName: 'dotnet workload install maccatalyst --no-cache --from-rollback-file 11.0.101.json -v d'
+    retryCountOnTaskFailure: 2
+
+  - script: 'dotnet workload install tvos --no-cache --from-rollback-file 11.0.101.json -v d'
+    displayName: 'dotnet workload install tvos --no-cache --from-rollback-file 11.0.101.json -v d'
+    retryCountOnTaskFailure: 2
+
+  - script: 'dotnet workload install android --no-cache --from-rollback-file 11.0.101.json -v d'
+    displayName: 'dotnet workload install android --no-cache --from-rollback-file 11.0.101.json -v d'
+    retryCountOnTaskFailure: 2
+
+  - script: 'dotnet workload install maui --no-cache --from-rollback-file 11.0.101.json -v d'
+    displayName: 'dotnet workload install maui --no-cache --from-rollback-file 11.0.101.json -v d'
+    retryCountOnTaskFailure: 2
+
+
+  - script: 'dotnet workload install mobile-librarybuilder-net9 --skip-sign-check --no-cache --disable-parallel --skip-manifest-update -v d'
+    displayName: 'dotnet workload install mobile-librarybuilder-net9'
+    retryCountOnTaskFailure: 2
+
+  - script: 'dotnet workload install mobile-librarybuilder-net10 --skip-sign-check --no-cache --disable-parallel --skip-manifest-update -v d'
+    displayName: 'dotnet workload install mobile-librarybuilder-net10'
     retryCountOnTaskFailure: 2
     
   - script: 'dotnet --info'
