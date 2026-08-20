@@ -271,6 +271,7 @@ steps:
       opensslPkcsArgs: -legacy
       customKeychainPath: '$(Agent.TempDirectory)/ios_signing_temp.keychain'
       keychainPassword: '$(KeychainSharedPwd)'
+      setUpPartitionIdACLForPrivateKey: false
       deleteCustomKeychain: false
       
   - task: InstallAppleCertificate@2
@@ -282,6 +283,7 @@ steps:
       opensslPkcsArgs: -legacy
       customKeychainPath: '$(Agent.TempDirectory)/ios_signing_temp.keychain'
       keychainPassword: '$(KeychainSharedPwd)'
+      setUpPartitionIdACLForPrivateKey: false
       deleteCustomKeychain: false
       
   - task: InstallAppleCertificate@2
@@ -293,6 +295,7 @@ steps:
       opensslPkcsArgs: -legacy
       customKeychainPath: '$(Agent.TempDirectory)/ios_signing_temp.keychain'
       keychainPassword: '$(KeychainSharedPwd)'
+      setUpPartitionIdACLForPrivateKey: false
       deleteCustomKeychain: false
 
   - task: InstallAppleCertificate@2
@@ -304,6 +307,7 @@ steps:
       opensslPkcsArgs: -legacy
       customKeychainPath: '$(Agent.TempDirectory)/ios_signing_temp.keychain'
       keychainPassword: '$(KeychainSharedPwd)'
+      setUpPartitionIdACLForPrivateKey: false
       deleteCustomKeychain: true
       
   - task: InstallAppleProvisioningProfile@1
