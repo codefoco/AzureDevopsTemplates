@@ -248,67 +248,67 @@ steps:
   #     certSecureFile: 'Distribution.p12'
   #     certPwd: '$(CertificatePwd)'
   #     keychain: 'temp'
-  - script: 'echo "##vso[task.setvariable variable=KeychainSharedPwd]$(CertificatePwd)"'
-    displayName: 'Initialize Keychain Variables'
-  
+
   - task: InstallAppleCertificate@2
-    continueOnError: true
+    displayName: '1. Install Developer ID Application (Initializes Keychain)'
     inputs:
       certSecureFile: 'DeveloperIDApplication.p12'
       certPwd: '$(CertificatePwd)'
       keychain: 'custom'
       opensslPkcsArgs: -legacy
       customKeychainPath: '$(Agent.TempDirectory)/ios_signing_temp.keychain'
-      keychainPassword: '$(KeychainSharedPwd)'
-      deleteCustomKeychain: false
-      
-  - task: InstallAppleCertificate@2
-    continueOnError: true
-    inputs:
-      certSecureFile: 'DeveloperIDInstaller.p12'
-      certPwd: '$(CertificatePwd)'
-      keychain: 'custom'
-      opensslPkcsArgs: -legacy
-      customKeychainPath: '$(Agent.TempDirectory)/ios_signing_temp.keychain'
-      keychainPassword: '$(KeychainSharedPwd)'
-      setUpPartitionIdACLForPrivateKey: false
-      deleteCustomKeychain: false
-      
-  - task: InstallAppleCertificate@2
-    continueOnError: true
-    inputs:
-      certSecureFile: 'Development.p12'
-      certPwd: '$(CertificatePwd)'
-      keychain: 'custom'
-      opensslPkcsArgs: -legacy
-      customKeychainPath: '$(Agent.TempDirectory)/ios_signing_temp.keychain'
-      keychainPassword: '$(KeychainSharedPwd)'
-      setUpPartitionIdACLForPrivateKey: false
-      deleteCustomKeychain: false
-      
-  - task: InstallAppleCertificate@2
-    continueOnError: true
-    inputs:
-      certSecureFile: 'MacInstallerDistribution.p12'
-      certPwd: '$(CertificatePwd)'
-      keychain: 'custom'
-      opensslPkcsArgs: -legacy
-      customKeychainPath: '$(Agent.TempDirectory)/ios_signing_temp.keychain'
-      keychainPassword: '$(KeychainSharedPwd)'
-      setUpPartitionIdACLForPrivateKey: false
+      keychainPassword: '$(CertificatePwd)'       # Bypasses variable scoping bugs
       deleteCustomKeychain: false
 
-  - task: InstallAppleCertificate@2
-    continueOnError: true
+  # 2. Download the remaining 4 files from Secure Files onto the runner machine
+  - task: DownloadSecureFile@1
+    displayName: 'Download Installer Certificate'
+    name: certInstaller
     inputs:
-      certSecureFile: 'Distribution.p12'
-      certPwd: '$(CertificatePwd)'
-      keychain: 'custom'
-      opensslPkcsArgs: -legacy
-      customKeychainPath: '$(Agent.TempDirectory)/ios_signing_temp.keychain'
-      keychainPassword: '$(KeychainSharedPwd)'
-      setUpPartitionIdACLForPrivateKey: false
-      deleteCustomKeychain: true
+      secureFile: 'DeveloperIDInstaller.p12'
+  
+  - task: DownloadSecureFile@1
+    displayName: 'Download Development Certificate'
+    name: certDev
+    inputs:
+      secureFile: 'Development.p12'
+  
+  - task: DownloadSecureFile@1
+    displayName: 'Download Mac Installer Distribution Certificate'
+    name: certMacDist
+    inputs:
+      secureFile: 'MacInstallerDistribution.p12'
+  
+  - task: DownloadSecureFile@1
+    displayName: 'Download Distribution Certificate'
+    name: certDist
+    inputs:
+      secureFile: 'Distribution.p12'
+
+  # 3. Import them directly via native macOS CLI commands to bypass the Microsoft task bug
+  - script: |
+      set -e
+      KEYCHAIN_PATH="$(Agent.TempDirectory)/ios_signing_temp.keychain"
+      
+      echo "========== Unlocking Shared Build Keychain =========="
+      /usr/bin/security unlock-keychain -p "$(CertificatePwd)" "$KEYCHAIN_PATH"
+      
+      echo "========== Importing Remaining Certificates =========="
+      
+      /usr/bin/security import "$(certInstaller.secureFilePath)" \
+        -P "$(CertificatePwd)" -A -t cert -f pkcs12 -k "$KEYCHAIN_PATH"
+        
+      /usr/bin/security import "$(certDev.secureFilePath)" \
+        -P "$(CertificatePwd)" -A -t cert -f pkcs12 -k "$KEYCHAIN_PATH"
+        
+      /usr/bin/security import "$(certMacDist.secureFilePath)" \
+        -P "$(CertificatePwd)" -A -t cert -f pkcs12 -k "$KEYCHAIN_PATH"
+        
+      /usr/bin/security import "$(certDist.secureFilePath)" \
+        -P "$(CertificatePwd)" -A -t cert -f pkcs12 -k "$KEYCHAIN_PATH"
+        
+      echo "All certificates successfully linked into environment!"
+    displayName: 'Bypass Bug: Import Certificates via Security CLI'
       
   - task: InstallAppleProvisioningProfile@1
     inputs:
