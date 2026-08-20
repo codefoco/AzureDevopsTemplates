@@ -1,46 +1,48 @@
-  steps:
+variables:
+  KeychainSharedPwd: '$(CertificatePwd)'
 
+steps:
   - script: |
             echo '========== Environment Variables =========='
             printenv
-            echo '========== Pipeline Variables =========='
-            echo 'Agent.BuildDirectory=$(Agent.BuildDirectory)'
-            echo 'Agent.HomeDirectory=$(Agent.HomeDirectory)'
-            echo 'Agent.Id=$(Agent.Id)'
-            echo 'Agent.JobName=$(Agent.JobName)'
-            echo 'Agent.JobStatus=$(Agent.JobStatus)'
-            echo 'Agent.MachineName=$(Agent.MachineName)'
-            echo 'Agent.Name=$(Agent.Name)'
-            echo 'Agent.OS=$(Agent.OS)'
-            echo 'Agent.OSArchitecture=$(Agent.OSArchitecture)'
-            echo 'Agent.TempDirectory=$(Agent.TempDirectory)'
-            echo 'Agent.ToolsDirectory=$(Agent.ToolsDirectory)'
-            echo 'Agent.WorkFolder=$(Agent.WorkFolder)'
-            echo 'Build.ArtifactStagingDirectory=$(Build.ArtifactStagingDirectory)'
-            echo 'Build.BuildId=$(Build.BuildId)'
-            echo 'Build.BuildNumber=$(Build.BuildNumber)'
-            echo 'Build.BuildUri=$(Build.BuildUri)'
-            echo 'Build.BinariesDirectory=$(Build.BinariesDirectory)'
-            echo 'Build.ContainerId=$(Build.ContainerId)'
-            echo 'Build.DefinitionName=$(Build.DefinitionName)'
-            echo 'Build.DefinitionVersion=$(Build.DefinitionVersion)'
-            echo 'Build.QueuedBy=$(Build.QueuedBy)'
-            echo 'Build.QueuedById=$(Build.QueuedById)'
-            echo 'Build.Reason=$(Build.Reason)'
-            echo 'Build.Repository.Clean=$(Build.Repository.Clean)'
-            echo 'Build.Repository.LocalPath=$(Build.Repository.LocalPath)'
-            echo 'Build.Repository.ID=$(Build.Repository.ID)'
-            echo 'Build.Repository.Name=$(Build.Repository.Name)'
-            echo 'Build.Repository.Provider=$(Build.Repository.Provider)'
-            echo 'Build.Repository.Tfvc.Workspace=$(Build.Repository.Tfvc.Workspace)'
-            echo 'Build.Repository.Uri=$(Build.Repository.Uri)'
-            echo 'Build.RequestedFor=$(Build.RequestedFor)'
-            echo 'Build.RequestedForEmail=$(Build.RequestedForEmail)'
-            echo 'Build.RequestedForId=$(Build.RequestedForId)'
-            echo 'Build.SourceBranch=$(Build.SourceBranch)'
-            echo 'Build.SourceBranchName=$(Build.SourceBranchName)'
-            echo 'Build.SourcesDirectory=$(Build.SourcesDirectory)'
-            echo 'Build.SourceVersion=$(Build.SourceVersion)'
+            # echo '========== Pipeline Variables =========='
+            # echo 'Agent.BuildDirectory=$(Agent.BuildDirectory)'
+            # echo 'Agent.HomeDirectory=$(Agent.HomeDirectory)'
+            # echo 'Agent.Id=$(Agent.Id)'
+            # echo 'Agent.JobName=$(Agent.JobName)'
+            # echo 'Agent.JobStatus=$(Agent.JobStatus)'
+            # echo 'Agent.MachineName=$(Agent.MachineName)'
+            # echo 'Agent.Name=$(Agent.Name)'
+            # echo 'Agent.OS=$(Agent.OS)'
+            # echo 'Agent.OSArchitecture=$(Agent.OSArchitecture)'
+            # echo 'Agent.TempDirectory=$(Agent.TempDirectory)'
+            # echo 'Agent.ToolsDirectory=$(Agent.ToolsDirectory)'
+            # echo 'Agent.WorkFolder=$(Agent.WorkFolder)'
+            # echo 'Build.ArtifactStagingDirectory=$(Build.ArtifactStagingDirectory)'
+            # echo 'Build.BuildId=$(Build.BuildId)'
+            # echo 'Build.BuildNumber=$(Build.BuildNumber)'
+            # echo 'Build.BuildUri=$(Build.BuildUri)'
+            # echo 'Build.BinariesDirectory=$(Build.BinariesDirectory)'
+            # echo 'Build.ContainerId=$(Build.ContainerId)'
+            # echo 'Build.DefinitionName=$(Build.DefinitionName)'
+            # echo 'Build.DefinitionVersion=$(Build.DefinitionVersion)'
+            # echo 'Build.QueuedBy=$(Build.QueuedBy)'
+            # echo 'Build.QueuedById=$(Build.QueuedById)'
+            # echo 'Build.Reason=$(Build.Reason)'
+            # echo 'Build.Repository.Clean=$(Build.Repository.Clean)'
+            # echo 'Build.Repository.LocalPath=$(Build.Repository.LocalPath)'
+            # echo 'Build.Repository.ID=$(Build.Repository.ID)'
+            # echo 'Build.Repository.Name=$(Build.Repository.Name)'
+            # echo 'Build.Repository.Provider=$(Build.Repository.Provider)'
+            # echo 'Build.Repository.Tfvc.Workspace=$(Build.Repository.Tfvc.Workspace)'
+            # echo 'Build.Repository.Uri=$(Build.Repository.Uri)'
+            # echo 'Build.RequestedFor=$(Build.RequestedFor)'
+            # echo 'Build.RequestedForEmail=$(Build.RequestedForEmail)'
+            # echo 'Build.RequestedForId=$(Build.RequestedForId)'
+            # echo 'Build.SourceBranch=$(Build.SourceBranch)'
+            # echo 'Build.SourceBranchName=$(Build.SourceBranchName)'
+            # echo 'Build.SourcesDirectory=$(Build.SourcesDirectory)'
+            # echo 'Build.SourceVersion=$(Build.SourceVersion)'
             # echo 'Build.SourceVersionMessage=$(Build.SourceVersionMessage)'
             # echo 'Build.StagingDirectory=$(Build.StagingDirectory)'
             # echo 'Build.Repository.Git.SubmoduleCheckout=$(Build.Repository.Git.SubmoduleCheckout)'
@@ -169,12 +171,12 @@
     displayName: 'Xcode run first launch'
     continueOnError: true
 
-  - script: |
-      sudo killall -9 com.apple.CoreSimulator.CoreSimulatorService
-      sudo killall -9 com.apple.CoreSimulator.SimDeviceType
-      sudo killall -9 com.apple.CoreSimulator.SimRuntime
-    displayName: "Select and rename Xcode.app"
-    continueOnError: true
+  # - script: |
+  #     sudo killall -9 com.apple.CoreSimulator.CoreSimulatorService
+  #     sudo killall -9 com.apple.CoreSimulator.SimDeviceType
+  #     sudo killall -9 com.apple.CoreSimulator.SimRuntime
+  #   displayName: "Select and rename Xcode.app"
+  #   continueOnError: true
 
   # - script: 'xcodebuild -downloadPlatform iOS -buildVersion 18.6 -exportPath ~/Downloads/'
   #   displayName: 'Download iOS 18.6 platform'
@@ -255,40 +257,55 @@
     inputs:
       certSecureFile: 'DeveloperIDApplication.p12'
       certPwd: '$(CertificatePwd)'
-      keychain: 'temp'
+      keychain: 'custom'
       opensslPkcsArgs: -legacy
+      customKeychainPath: '$(Agent.TempDirectory)/ios_signing_temp.keychain'
+      keychainPassword: '$(KeychainSharedPwd)'
+      deleteCustomKeychain: false
       
   - task: InstallAppleCertificate@2
     continueOnError: true
     inputs:
       certSecureFile: 'DeveloperIDInstaller.p12'
       certPwd: '$(CertificatePwd)'
-      keychain: 'temp'
+      keychain: 'custom'
       opensslPkcsArgs: -legacy
+      customKeychainPath: '$(Agent.TempDirectory)/ios_signing_temp.keychain'
+      keychainPassword: '$(KeychainSharedPwd)'
+      deleteCustomKeychain: false
       
   - task: InstallAppleCertificate@2
     continueOnError: true
     inputs:
       certSecureFile: 'Development.p12'
       certPwd: '$(CertificatePwd)'
-      keychain: 'temp'
+      keychain: 'custom'
       opensslPkcsArgs: -legacy
+      customKeychainPath: '$(Agent.TempDirectory)/ios_signing_temp.keychain'
+      keychainPassword: '$(KeychainSharedPwd)'
+      deleteCustomKeychain: false
       
   - task: InstallAppleCertificate@2
     continueOnError: true
     inputs:
       certSecureFile: 'MacInstallerDistribution.p12'
       certPwd: '$(CertificatePwd)'
-      keychain: 'temp'
+      keychain: 'custom'
       opensslPkcsArgs: -legacy
+      customKeychainPath: '$(Agent.TempDirectory)/ios_signing_temp.keychain'
+      keychainPassword: '$(KeychainSharedPwd)'
+      deleteCustomKeychain: false
 
   - task: InstallAppleCertificate@2
     continueOnError: true
     inputs:
       certSecureFile: 'Distribution.p12'
       certPwd: '$(CertificatePwd)'
-      keychain: 'temp'
+      keychain: 'custom'
       opensslPkcsArgs: -legacy
+      customKeychainPath: '$(Agent.TempDirectory)/ios_signing_temp.keychain'
+      keychainPassword: '$(KeychainSharedPwd)'
+      deleteCustomKeychain: true
       
   - task: InstallAppleProvisioningProfile@1
     inputs:
