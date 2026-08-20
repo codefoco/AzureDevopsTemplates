@@ -1,6 +1,3 @@
-variables:
-  KeychainSharedPwd: '$(CertificatePwd)'
-
 steps:
   - script: |
             echo '========== Environment Variables =========='
@@ -251,7 +248,11 @@ steps:
   #     certSecureFile: 'Distribution.p12'
   #     certPwd: '$(CertificatePwd)'
   #     keychain: 'temp'
-
+  - script: |
+    # Dynamically inject the alias variable into the pipeline context
+    echo "##vso[task.setvariable variable=KeychainSharedPwd]$(CertificatePwd)"
+  displayName: 'Initialize Keychain Variables'
+  
   - task: InstallAppleCertificate@2
     continueOnError: true
     inputs:
