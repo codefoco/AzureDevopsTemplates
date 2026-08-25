@@ -249,16 +249,11 @@ steps:
   #     certPwd: '$(CertificatePwd)'
   #     keychain: 'temp'
 
-  - task: InstallAppleCertificate@2
-    displayName: '1. Install Developer ID Application (Initializes Keychain)'
+  - task: DownloadSecureFile@1
+    displayName: 'Download Developer ID Application Certificate'
+    name: certDevIdApp
     inputs:
-      certSecureFile: 'DeveloperIDApplication.p12'
-      certPwd: '$(CertificatePwd)'
-      keychain: 'custom'
-      opensslPkcsArgs: -legacy
-      customKeychainPath: '$(Agent.TempDirectory)/ios_signing_temp.keychain'
-      keychainPassword: '$(CertificatePwd)'       # Bypasses variable scoping bugs
-      deleteCustomKeychain: false
+      secureFile: 'DeveloperIDApplication.p12'
 
   # 2. Download the remaining 4 files from Secure Files onto the runner machine
   - task: DownloadSecureFile@1
@@ -290,11 +285,26 @@ steps:
       set -e
       KEYCHAIN_PATH="$(Agent.TempDirectory)/ios_signing_temp.keychain"
       
+      echo "========== Creating Shared Build Keychain =========="
+      if [ -f "$KEYCHAIN_PATH" ]; then
+        echo "Keychain file already exists, deleting it first."
+        rm -f "$KEYCHAIN_PATH"
+      fi
+      /usr/bin/security create-keychain -p "$(CertificatePwd)" "$KEYCHAIN_PATH"
+      
+      echo "========== Setting Keychain Search List =========="
+      /usr/bin/security list-keychains -d user -s "$KEYCHAIN_PATH" $(/usr/bin/security list-keychains -d user | xargs)
+      /usr/bin/security default-keychain -s "$KEYCHAIN_PATH"
+      
       echo "========== Unlocking Shared Build Keychain =========="
       /usr/bin/security unlock-keychain -p "$(CertificatePwd)" "$KEYCHAIN_PATH"
+      /usr/bin/security set-keychain-settings -t 21600 -u "$KEYCHAIN_PATH"
       
-      echo "========== Importing Remaining Certificates =========="
+      echo "========== Importing All Certificates =========="
       
+      /usr/bin/security import "$(certDevIdApp.secureFilePath)" \
+        -P "$(CertificatePwd)" -A -t cert -f pkcs12 -k "$KEYCHAIN_PATH"
+
       /usr/bin/security import "$(certInstaller.secureFilePath)" \
         -P "$(CertificatePwd)" -A -t cert -f pkcs12 -k "$KEYCHAIN_PATH"
         
