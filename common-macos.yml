@@ -414,7 +414,7 @@ steps:
             echo '    "microsoft.net.sdk.macos": "26.5.12194-net11-rc.1/11.0.100-rc.1",' >> 11.0.101.json
             echo '    "microsoft.net.sdk.ios": "26.5.12194-net11-rc.1/11.0.100-rc.1",' >> 11.0.101.json
             echo '    "microsoft.net.sdk.maccatalyst": "26.5.12194-net11-rc.1/11.0.100-rc.1",' >> 11.0.101.json
-            echo '    "microsoft.net.sdk.maui": "11.0.0-rc.1.26451.6/11.0.100-preview.6",' >> 11.0.101.json
+            echo '    "microsoft.net.sdk.maui": "11.0.0-rc.1.26451.6/11.0.100-rc.1",' >> 11.0.101.json
             echo '    "microsoft.net.sdk.tvos": "26.5.12194-net11-rc.1/11.0.100-rc.1",' >> 11.0.101.json
             echo '    "microsoft.net.sdk.android": "37.0.0-rc.1.2257/11.0.100-rc.1" ' >> 11.0.101.json
             echo } >> 11.0.101.json
@@ -445,9 +445,9 @@ steps:
     retryCountOnTaskFailure: 2
 
 
-  - script: 'dotnet workload install mobile-librarybuilder-net9 --skip-sign-check --no-cache --disable-parallel --skip-manifest-update -v d'
-    displayName: 'dotnet workload install mobile-librarybuilder-net9'
-    retryCountOnTaskFailure: 2
+  # - script: 'dotnet workload install mobile-librarybuilder-net9 --skip-sign-check --no-cache --disable-parallel --skip-manifest-update -v d'
+  #   displayName: 'dotnet workload install mobile-librarybuilder-net9'
+  #   retryCountOnTaskFailure: 2
 
   - script: 'dotnet workload install mobile-librarybuilder-net10 --skip-sign-check --no-cache --disable-parallel --skip-manifest-update -v d'
     displayName: 'dotnet workload install mobile-librarybuilder-net10'
