@@ -411,12 +411,12 @@ steps:
   # .NET 10 Preview bug. Microsoft put the wrong manifest so installing workloads will install an old version
   - script: | 
             echo { >> 11.0.101.json
-            echo '    "microsoft.net.sdk.macos": "26.5.12194-net11-rc.1/11.0.100-rc.1",' >> 11.0.101.json
-            echo '    "microsoft.net.sdk.ios": "26.5.12194-net11-rc.1/11.0.100-rc.1",' >> 11.0.101.json
-            echo '    "microsoft.net.sdk.maccatalyst": "26.5.12194-net11-rc.1/11.0.100-rc.1",' >> 11.0.101.json
-            echo '    "microsoft.net.sdk.maui": "11.0.0-rc.1.26451.6/11.0.100-rc.1",' >> 11.0.101.json
-            echo '    "microsoft.net.sdk.tvos": "26.5.12194-net11-rc.1/11.0.100-rc.1",' >> 11.0.101.json
-            echo '    "microsoft.net.sdk.android": "37.0.0-rc.1.2257/11.0.100-rc.1" ' >> 11.0.101.json
+            echo '    "microsoft.net.sdk.macos": "27.0.12212-net11-rc.2/11.0.100-rc.2",' >> 11.0.101.json
+            echo '    "microsoft.net.sdk.ios": "27.0.12212-net11-rc.2/11.0.100-rc.2",' >> 11.0.101.json
+            echo '    "microsoft.net.sdk.maccatalyst": "27.0.12212-net11-rc.2/11.0.100-rc.2",' >> 11.0.101.json
+            echo '    "microsoft.net.sdk.maui": "11.0.0-rc.2.26505.5/11.0.100-rc.2",' >> 11.0.101.json
+            echo '    "microsoft.net.sdk.tvos": "27.0.12212-net11-rc.2/11.0.100-rc.2",' >> 11.0.101.json
+            echo '    "microsoft.net.sdk.android": "37.2.0-rc.2.84/11.0.100-rc.2" ' >> 11.0.101.json
             echo } >> 11.0.101.json
     displayName: 'Create 11.0.101.json'
     
