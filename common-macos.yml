@@ -150,9 +150,9 @@ steps:
   - script: 'sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer'
     displayName: 'Ensure xcode-select point to /Applications/Xcode.app'
 
-  - script: 'xcode-select --install'
-    displayName: 'Ensure command line tools is installed'
-    continueOnError: true
+  # - script: 'xcode-select --install'
+  #   displayName: 'Ensure command line tools is installed'
+  #   continueOnError: true
     
   - script: '/usr/bin/xcodebuild -version'
     displayName: 'Show Xcode Version'
