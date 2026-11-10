@@ -17,5 +17,5 @@ steps:
       sudo apt-get update
     displayName: 'Setup mono apt' 
 
-  - script: 'sudo apt-get install -y mono-devel'
-    displayName: 'sudo apt install mono-devel'
+  - script: 'sudo apt-get install -y mono-devel msbuild'
+    displayName: 'sudo apt install mono-devel msbuild'
