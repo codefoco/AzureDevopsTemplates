@@ -13,4 +13,4 @@
   - task: NuGetToolInstaller@1
     displayName: 'Use NuGet 7.9.0'
     inputs:
-      versionSpec: 7.9.0
+      versionSpec: 8.0.0
