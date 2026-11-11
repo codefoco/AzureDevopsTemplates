@@ -16,8 +16,10 @@ steps:
       echo "deb [signed-by=/usr/share/keyrings/mono-official-archive-keyring.gpg] https://download.mono-project.com/repo/ubuntu stable-focal main" | sudo tee /etc/apt/sources.list.d/mono-official-stable.list
       sudo apt-get update
 
-      sudo cert-sync /etc/ssl/certs/ca-certificates.crt
     displayName: 'Setup mono apt' 
 
   - script: 'sudo apt-get install -y mono-devel msbuild'
     displayName: 'sudo apt install mono-devel msbuild'
+      
+  - script: 'sudo cert-sync /etc/ssl/certs/ca-certificates.crt'
+    displayName: 'sudo cert-sync /etc/ssl/certs/ca-certificates.crt
