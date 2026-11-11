@@ -22,4 +22,4 @@ steps:
     displayName: 'sudo apt install mono-devel msbuild'
       
   - script: 'sudo cert-sync /etc/ssl/certs/ca-certificates.crt'
-    displayName: 'sudo cert-sync /etc/ssl/certs/ca-certificates.crt
+    displayName: 'sudo cert-sync /etc/ssl/certs/ca-certificates.crt'
