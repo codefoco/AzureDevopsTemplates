@@ -10,7 +10,9 @@
       packageType: 'sdk'
       version: '11.0.100'
       
+  # Don't bump to 8 otherwise it will break UWP restore
+  
   - task: NuGetToolInstaller@1
-    displayName: 'Use NuGet 8.0.0'
+    displayName: 'Use NuGet 7.9.0'
     inputs:
-      versionSpec: 8.0.0
+      versionSpec: 7.9.0
