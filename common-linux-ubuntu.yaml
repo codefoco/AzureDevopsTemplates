@@ -18,8 +18,8 @@ steps:
 
     displayName: 'Setup mono apt' 
 
-  - script: 'sudo apt-get install -y mono-devel msbuild'
-    displayName: 'sudo apt install mono-devel msbuild'
+  - script: 'sudo apt-get install -y mono-devel msbuild ca-certificates-mono'
+    displayName: 'sudo apt install mono-devel msbuild ca-certificates-mono'
       
-  - script: 'sudo cert-sync /etc/ssl/certs/ca-certificates.crt'
-    displayName: 'sudo cert-sync /etc/ssl/certs/ca-certificates.crt'
+  - script: 'sudo $(which cert-sync) /etc/ssl/certs/ca-certificates.crt'
+    displayName: 'sudo $(which cert-sync) /etc/ssl/certs/ca-certificates.crt'
