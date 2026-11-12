@@ -1,4 +1,10 @@
 steps:
+
+- task: UseDotNet@2
+  inputs:
+    packageType: 'sdk'
+    version: '9.0.321'
+      
 - script: 'choco install gitversion.portable --version=6.8.2'
   displayName: 'Install GitVersion'
   
