@@ -41,5 +41,5 @@ steps:
       else
         echo "System.Reflection.Metadata is already 5.0.0.0. Skipping patch."
       fi
-  displayName: 'Ensure System.Reflection.Metadata 5.0.0.0 for Mono MSBuild'
+    displayName: 'Ensure System.Reflection.Metadata 5.0.0.0 for Mono MSBuild'
 
