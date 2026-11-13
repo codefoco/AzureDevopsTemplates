@@ -1,21 +1,19 @@
-steps:
   - script: |
       sudo apt-get update && sudo apt-get install -y ca-certificates gnupg
       
-      # 1. Download to a temporary keyring (which will be in keybox format)
-      sudo gpg --homedir /tmp --no-default-keyring --keyring /tmp/mono-legacy.gpg --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
+      # 1. Download to a temporary keyring
+      sudo gpg --homedir /tmp --no-default-keyring --keyring /tmp/mono-legacy.gpg --keyserver hkp://://ubuntu.com --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
       
-      # 2. Export it cleanly into a raw OpenPGP format that modern apt accepts
+      # 2. Export cleanly into raw OpenPGP format
       sudo mkdir -p /usr/share/keyrings
       sudo gpg --no-default-keyring --keyring /tmp/mono-legacy.gpg --export --output /usr/share/keyrings/mono-official-archive-keyring.gpg
       
-      # 3. Clean up the temp file
+      # 3. Clean up temp file
       sudo rm /tmp/mono-legacy.gpg
 
-      # 4. Add the repository and update
-      echo "deb [signed-by=/usr/share/keyrings/mono-official-archive-keyring.gpg] https://download.mono-project.com/repo/ubuntu stable-focal main" | sudo tee /etc/apt/sources.list.d/mono-official-stable.list
+      # 4. Add repository and update
+      echo "deb [signed-by=/usr/share/keyrings/mono-official-archive-keyring.gpg] https://mono-project.com stable-focal main" | sudo tee /etc/apt/sources.list.d/mono-official-stable.list
       sudo apt-get update
-
     displayName: 'Setup mono apt' 
 
   - script: 'sudo apt-get install -y mono-devel msbuild ca-certificates-mono'
@@ -23,3 +21,31 @@ steps:
       
   - script: 'sudo $(which cert-sync) /etc/ssl/certs/ca-certificates.crt'
     displayName: 'sudo $(which cert-sync) /etc/ssl/certs/ca-certificates.crt'
+
+  # Patch Mono MSBuild assemblies on Ubuntu 26.04
+  - script: |
+      MSBUILD_BIN="/usr/lib/mono/msbuild/Current/bin"
+      
+      # Locate System.Reflection.Metadata.dll from the pre-installed .NET SDK (8.0/9.0/10.0)
+      DOTNET_DLL=$(find /usr/share/dotnet/sdk -name "System.Reflection.Metadata.dll" | sort -V | head -n 1)
+      
+      if [ -n "$DOTNET_DLL" ]; then
+        echo "Patching MSBuild with $DOTNET_DLL"
+        sudo cp -f "$DOTNET_DLL" "$MSBUILD_BIN/System.Reflection.Metadata.dll"
+        
+        # Update MSBuild.dll.config bindingRedirect to match the copied DLL version
+        DLL_VER=$(monodis --assembly "$MSBUILD_BIN/System.Reflection.Metadata.dll" | awk '/Version:/ {print $2}')
+        if [ -n "$DLL_VER" ]; then
+          echo "Updating bindingRedirect newVersion to $DLL_VER"
+          sudo sed -i -E "s/(<dependentAssembly>.*System\.Reflection\.Metadata.*newVersion=\")[^\"]+(\")/\1$DLL_VER\2/g" "$MSBUILD_BIN/MSBuild.dll.config"
+          # Fallback inline replacement if XML spans multiple lines
+          sudo python3 -c "
+      import re
+      p = '$MSBUILD_BIN/MSBuild.dll.config'
+      txt = open(p).read()
+      txt = re.sub(r'(name=\"System\.Reflection\.Metadata\"[^>]*/>\s*<bindingRedirect[^>]*newVersion=\")[^\"]+(\")', r'\g<1>$DLL_VER\g<2>', txt)
+      open(p, 'w').write(txt)
+      "
+        fi
+      fi
+    displayName: 'Fix Mono MSBuild System.Reflection.Metadata on Ubuntu 26.04'
