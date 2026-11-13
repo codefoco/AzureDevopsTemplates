@@ -26,20 +26,20 @@ steps:
 
   # Patch Mono MSBuild assemblies on Ubuntu 26.04
   - script: |
-    MSBUILD_BIN="/usr/lib/mono/msbuild/Current/bin"
-    CURRENT_VER=$(monodis --assembly "$MSBUILD_BIN/System.Reflection.Metadata.dll" 2>/dev/null | awk '/Version:/ {print $2}')
-
-    if [ "$CURRENT_VER" != "5.0.0.0" ]; then
-      echo "Detected System.Reflection.Metadata version '$CURRENT_VER' (expected 5.0.0.0). Patching..."
-      TMP_DIR="/tmp/srm-patch"
-      mkdir -p "$TMP_DIR"
-      curl -sL "https://nuget.org" -o "$TMP_DIR/srm.nupkg"
-      unzip -q "$TMP_DIR/srm.nupkg" -d "$TMP_DIR/extracted"
-      sudo cp -f "$TMP_DIR/extracted/lib/netstandard2.0/System.Reflection.Metadata.dll" "$MSBUILD_BIN/System.Reflection.Metadata.dll"
-      sudo gacutil -i "$MSBUILD_BIN/System.Reflection.Metadata.dll"
-      rm -rf "$TMP_DIR"
-    else
-      echo "System.Reflection.Metadata is already 5.0.0.0. Skipping patch."
-    fi
+      MSBUILD_BIN="/usr/lib/mono/msbuild/Current/bin"
+      CURRENT_VER=$(monodis --assembly "$MSBUILD_BIN/System.Reflection.Metadata.dll" 2>/dev/null | awk '/Version:/ {print $2}')
+  
+      if [ "$CURRENT_VER" != "5.0.0.0" ]; then
+        echo "Detected System.Reflection.Metadata version '$CURRENT_VER' (expected 5.0.0.0). Patching..."
+        TMP_DIR="/tmp/srm-patch"
+        mkdir -p "$TMP_DIR"
+        curl -sL "https://nuget.org" -o "$TMP_DIR/srm.nupkg"
+        unzip -q "$TMP_DIR/srm.nupkg" -d "$TMP_DIR/extracted"
+        sudo cp -f "$TMP_DIR/extracted/lib/netstandard2.0/System.Reflection.Metadata.dll" "$MSBUILD_BIN/System.Reflection.Metadata.dll"
+        sudo gacutil -i "$MSBUILD_BIN/System.Reflection.Metadata.dll"
+        rm -rf "$TMP_DIR"
+      else
+        echo "System.Reflection.Metadata is already 5.0.0.0. Skipping patch."
+      fi
   displayName: 'Ensure System.Reflection.Metadata 5.0.0.0 for Mono MSBuild'
 
